@@ -5,14 +5,14 @@ website:
   title: "Amalan"  # Your name
   description: "Amalan Mahendran is a applied statistician focusing on big data and experimental design"   # A brief slogan (optional)
   image: img/my_image.jpg
-  
+
   favicon: img/favicon.png
-  
+
   # start of the navigation bar at the top of the website
   navbar:
     pinned: true
     logo: /img/logo.png
-    
+
     # your social media handles
     right:
       - text: "Publication"
@@ -24,7 +24,7 @@ website:
       - text: "Interests"
         href: interests/index.qmd
       - text: "CV Web"
-        href: https://amalan-cv.netlify.com/  
+        href: https://amalan-cv.netlify.com/
       - text: "CV"
         href: cv/index.qmd
       - text: Socials
@@ -46,13 +46,13 @@ website:
             url: https://amalan-constat.r-universe.dev/builds
           - icon: mailbox
             text: Email Me
-            href: "mailto:mail.amalan0595@gmail.com"  
-  
+            href: "mailto:mail.amalan0595@gmail.com"
+
 # Don't touch unless you know what you are doing :) ------------
-  search: 
+  search:
     location: navbar
     type: textbox
-  page-footer: 
+  page-footer:
     left: |
       <span class="faux-block">&#169; 2023 Amalan CC BY-SA 4.0</span>
     right: |
@@ -62,7 +62,7 @@ project:
   type: website
   output-dir: docs
 
-  preview: 
+  preview:
     port: 22222
     browser: true
     watch-inputs: true
@@ -70,12 +70,12 @@ project:
 
 execute:
   freeze: true
-      
+
 
 format:
   html:
     fontsize: 1.1em
-    theme: 
+    theme:
       light: [flatly, html/styles_light.scss]
       dark: [darkly, html/styles_dark.scss]
     toc: false
