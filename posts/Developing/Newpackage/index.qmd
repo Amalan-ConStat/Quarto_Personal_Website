@@ -1,0 +1,235 @@
+---
+title: Build a New Package with Existing R packages
+date: '2018-12-23'
+categories:
+  - R
+tags:
+  - R
+  - R package
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"  
+---
+# Introduction
+
+Package development is a sense of accomplishment for any statistical programmer who needs self
+satisfaction. I developed the R package [fitODBOD]()
+for the purpose of fitting Over dispersed Binomial Outcome Data using Binomial Mixture 
+Distributions and Alternate Binomial Distributions. It was a an amazing journey learning how 
+to develop an R package, which took me around 6 months while understanding the theoretical
+aspects of my research project and doing my 4th year courses. 
+
+I am still learning new things related to R, which is helpful for this R package development.
+Making package version updates regularly is for the benefit of the user. I have learned new ways
+to express the theoretical concepts in the simplest form of functions, classes and methods. Currently,
+I am exploring the possibility of using Rshiny dashboard and GUI. 
+
+In the beginning, R package developers have used manual techniques (which mean difficult techniques)  
+to develop R functions, documentation and examples for their packages. Over time it has changed rapidly,
+where currently we are using R packages to develop our own R package. In this post I shall briefly 
+mention these packages which you can use. Using these packages it is possible to make package development
+stress free, time efficient and objective effective. Simultaneously we can make our R packages more attractive
+for the users, which would lead to lot of attention in the R community.
+
+There are three types of packages in my perspective, first "Most Essential Packages" which cannot be 
+ignored, second "Essential packages" it is your choice to ignore and finally, "Still I have not Used" packages.
+
+# Most Essential Packages
+
+There are three packages in my main interest list and they are [devtools](https://cran.r-project.org/package=devtools),
+[roxygen2](https://cran.r-project.org/package=roxygen2) and [testhat](https://cran.r-project.org/package=testthat).
+
+## devtools
+
+Collection of packages which would significantly help the package development 
+process. Functions such as dev_mode, check_failures, check_win and check_man.
+
+[Link for the package](https://cran.r-project.org/package=devtools)
+
+### pkgbuild
+
+Locates compilers needed to build R packages on various platforms.
+
+[Link for the package](https://cran.r-project.org/package=pkgbuild)
+
+### pkgload
+
+Simulate the process of installing a package and then attacking it.
+
+[Link for the package](https://cran.r-project.org/package=pkgload)
+
+### rcmdcheck 
+
+Run "R CMD check" from R programmaticallly, and capture the results
+of the individual checks.
+
+[Link for the package](https://cran.r-project.org/package=rcmdcheck)
+
+### usethis
+
+Automating few tasks related to package building.
+
+[Link for the package](https://cran.r-project.org/package=usethis)
+
+## roxygen2
+
+Generate Rd documentation, and Namespace file with simplicity
+which would save time, when package update occurs.
+
+[Link for the package](https://cran.r-project.org/package=roxygen2)
+
+### knitr 
+
+Useful to develop vignettes related to R package development.
+
+[Link for the package](https://cran.r-project.org/package=knitr)
+
+### markdown, rmarkdown, rmdformats
+
+Html formats to vignettes in R package development and special template
+styles for the vignettes.
+
+[markdown](https://cran.r-project.org/package=markdown) [rmarkdown](https://cran.r-project.org/package=rmarkdown) [rmdformats](https://cran.r-project.org/package=rmdformats)
+
+### spelling
+
+Checking for spelling issues in Rd documentation files.
+
+[Link for the package](https://cran.r-project.org/package=spelling)
+
+### trackmd
+
+Tracking changes in markdown files for vignette.
+
+[Link for the package](https://github.com/ropenscilabs/trackmd)
+
+## testthat
+
+Checking if functions work properly by testing them in 
+multiple ways for errors, outputs and inputs.
+
+[Link for the package](https://cran.r-project.org/package=testthat)
+
+# Essential Packages
+
+We would not necessarily need these packages to develop our package, but
+it would make things more official if we choose to use them. Creating official badges,
+using GitHub for version control, checking for code coverage, distinct logo and having a website
+to explore the functions and vignettes of the package. 
+
+## git2r and gh
+
+Access to GitHub so that version control would occur smoothly with integration in Rstudio.
+
+[git2r](https://cran.r-project.org/package=git2r) [gh](https://cran.r-project.org/package=gh)
+
+## desc 
+
+Editing the Description file using package rather than manually editing the file.
+
+[Link to package](https://cran.r-project.org/package=desc)
+
+## covr
+
+Checking code coverage, which means does all functions have examples and are there tests for
+error messages, etc.
+
+[Link to package](https://cran.r-project.org/package=covr)
+
+## badgecreatr and badger
+
+Adding badges to GitHub repository, for example Download, CRAN status, code coverage, 
+Release date, version and much more.
+
+[badgecreatr](https://cran.r-project.org/package=badgecreatr) [badger](https://cran.r-project.org/package=badger)
+
+## hexSticker
+
+Creating a hexagon sticker for your package. Mostly just for the fun, but in a while its like
+promoting a brand.
+
+[Link to package](https://cran.r-project.org/package=hexSticker)
+
+## pkgdown
+
+Using man files, vignette of your package to develop a static website. Further, it is possible to
+promote this site to get more people interested in the package.
+
+[Link to package](https://cran.r-project.org/package=pkgdown)
+
+#  Still I have not Used
+
+In this list I will explore packages which can be used to make package development
+more simple and elegant. Mostly using functions for the tasks of proper code spaces, indent
+and necessary R versions of dependency packages.
+
+## packrat
+
+Manage the R packages in an isolated, portable and reproducible way.
+
+[Link to package](https://cran.r-project.org/package=packrat)
+
+## pkgconfig
+
+Set configuration options on a per-package basis. 
+
+[Link to package](https://cran.r-project.org/package=pkgconfig)
+
+## pkginspector
+
+Understand internal structure of an R package.
+
+[Link to package](https://github.com/ropenscilabs/pkginspector)
+
+## rvcheck
+
+Check latest release version of R and R packages.
+
+[Link to package](https://cran.r-project.org/package=rvcheck)
+
+## rversions
+
+Focusing on R version 'r-release' and 'r-oldrel'. Further all previous R versions.
+
+[Link to package](https://cran.r-project.org/package=rversions)
+
+## formatR
+
+Spaces and Indent for the code automatically added
+
+[Link to package](https://cran.r-project.org/package=formatR)
+
+## whoami
+
+Username and full-name of current user, also email address and GitHub username.
+
+[Link to package](https://cran.r-project.org/package=whoami)
+
+# Conclusion
+
+Hopefully we would have more packages and awareness towards R package development
+with more simplicity in the coming years. Even though we have more than 15,000 packages 
+in CRAN it would still rapidly increase in the coming years, not only in CRAN but also in 
+GitHub as well. 
+
+So far this post has only word content and links, therefore I am adding a screenshot of my 
+fitODBOD package GitHub ReadME.md file. This screen shot includes badges for downloads,
+R version, published date, package version and a hexagon logo sticker.
+
+![](screenshots/GitHub1.png)
+
+![](screenshots/GitHub2.png)
+
+I hope this blog post is useful for anyone who has intentions to develop their R package or 
+in the process of development or version controlling. I developed fitODBOD as a research
+project for my final year and it included a thesis report as well. Over time I wrote a 
+Journal article as well and it is still under review. Also I have seen R package development
+as a PhD submission as well. Therefore it would be worthwhile developing an R package as a way 
+to keep an active status regarding your field of interest in Statistics. 
+
+*THANK YOU*

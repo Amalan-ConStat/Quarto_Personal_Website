@@ -1,0 +1,657 @@
+---
+title: Tree of Binomial Distribution
+date: '2019-02-14'
+categories:
+  - Binomial 
+  - Blog
+  - fitODBOD
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+# Binomial Distribution
+
+The binomial distribution can be defined, using the binomial expansion 
+
+$$ (q+p)^n = \sum_{x=0}^{n} {n \choose k} p^k q^{(n-k)} = \sum_{x=0}^{n} \frac{n!} {k! (n-k)!} p^k q^{(n-k)}$$
+
+as the distribution of a random variable X for which 
+
+$$Pr[X=x] = {n \choose k} p^k q^{(n-k)}$$ 
+
+$x=0,1,2,...,n.$ where $q+p=1$, $p,q>0$ and $n$ is a positive integer. When $n=1$, the distribution is known as the 
+Bernoulli distribution. The mean and variance are $\mu=np$ and  $\mu_2 = npq$.
+
+If $n$ independent trials are made and in each there is probability $p$ that the outcome $E$ will occur, 
+then the number of trials in which $E$ occurs can be represented by a random variable $X$ having the binomial distribution 
+with parameters $n$, $p$. 
+
+This situation occurs when a sample of fixed size $n$ is taken from an infinite population 
+where each element in the population has an **"equal"** and **"independent"** probability $p$ of possession of a specified 
+attribute. The situation also arises when a sample of fixed size $n$ is taken from a infinite population where each 
+element in the population has an **"equal"** and **"independent"** probability $p$ of having a specified attribute 
+and elements are sampled independently and sequentially with replacement. 
+
+The distribution was derived by James Bernoulli (in his treatise Ars Conjectandi, published in 1713), 
+for the case $p = r/(r+s)$, where $r$ and $s$ are positive integers.
+
+The binomial distribution is of such importance in applied probability and statistics that it is frequently 
+necessary to calculate probabilities based on this distribution. Although the calculation of sums of the form
+
+$$ \sum_{x} {n \choose x} p^x q^{(n-x)}$$
+
+is straightforward, it can be tedious, especially when n and x are large and when there are a large number of terms in 
+the summation. It is not surprising that a great deal of attention and ingenuity have been applied to constructing 
+useful approximations for sums of this kind. 
+
+## Applications 
+
+1. The binomial distribution arises whenever underlying events have two possible outcomes, the chances of which remain
+constant. The importance of the distribution has extended from its original application in gaming to many other areas. 
+
+2. Its use in genetics arises because the inheritance of biological characteristics depends on genes that occur in pairs;
+see, for example, Fisher and Matheras (1936) analysis of data on straight versus wavy hair in mice.
+
+3. More recent application in genetics is the study of the number of nucleotides that are in the same state in two 
+DNA sequences (Kaplan and Risko, 1982). 
+
+4. The number of defectives found in random samples of size n from a stable production process is a binomial
+variable; acceptance sampling is a very important application of the test for the mean of a binomial sample against a
+hypothetical value. 
+
+5. Seber (1982b) has given a number of instances of the use of the binomial distribution in animal ecology, for example, 
+in mark-recapture estimation of the size of an animal population. Boswell, Ord, and Patil (1979) gave applications in 
+plant ecology. 
+
+Although appealing in their simplicity, the assumptions of independence and constant probability for the binomial
+distribution are not often precisely satisfied. Published critical appraisals of the extent of departure from these
+assumptions in actual situations are rather rare.
+
+# Binomial Mixture Distributions
+
+The binomial distribution has two parameters, $n$ and $p$, and either or both of these may be supposed to have a probability
+distribution. We will not discuss cases in which both $n$ and $p$ vary, though it is easy to construct such examples. 
+
+In most cases discussed in the statistical literature, $p$ has a continuous distribution, while $n$ is discrete. The 
+latter restriction is necessary, but the former is not.
+
+However, discrete distributions for $p$ have not been found to be useful and have not attracted much attention from a
+theoretical point of view. 
+
+# Main Groups for Binomial Distribution
+
+More than 50 distributions are in this blog post but I shall not explain 
+them even briefly. This blog post is to introduce them and let you know the 
+reader about these distributions with article references.
+
+In this section I introduce the main groups, where the number of groups are 6. Further,
+the Binomial Parent group has a very broad approach. "Binomial Parent" means, 
+Where Binomial Distribution is the Parent distribution and by mixing them with other distributions
+we can produce a new distribution which would satisfy real data but not fully satisfy the condition 
+of Binomial Distribution.
+
+Clearly with the vast number of distributions and sub groups it is not possible to draw them in one
+diagram, therefore I have divided them in sub groups and sub topics in the following sections.
+
+```{r,eval=FALSE}
+#| label = "Diagramme"
+library(DiagrammeR)
+
+DiagrammeR("graph TB;
+            A[Binomial <br> Distribution]-->B[Binomial <br> Not Parent];
+            A-->D[Other with <br> no sub groups];
+            A-->C[Binomial <br> Parent];
+            A-->M[Alternate Binomial <br> Distribution];
+            A-->N[Neyman Type A <br> Distribution];
+            A-->O[Hermite Distribution];
+            C-->CA[Mixing Parameter];
+            CA-->CAA[N/n <br> Binomial];
+            CA-->CAB[K <br> Binomial];
+            CA-->CAC[Y <br> Binomial];
+            CA-->CAE[p transformed <br> Binomial];
+            CA-->CAF[Cumulative Distribution <br> Function];
+            CA-->CAD[p <br> Binomial];
+            CA-->CAG[Log Inverse <br> Distribution <br> 0,1 Domain]",width=1000,height=400)
+```
+
+## Other With No Sub-Groups
+
+First sub group in discussion is "Other With No Sub-Groups", which is an abbreviation for Binomial distributions
+which were direcly created for the purpose of satisfying specific real world situations and theoretical concepts.
+
+```{r,eval=FALSE}
+#| label = "Other with No Sub-Groups"
+DiagrammeR("graph TB;
+            B[Binomial <br> Distribution]-->A[Other with <br> no sub groups];
+            A-->D[Grassia Binomial <br> Distribution];
+            A-->E[Zero Modified <br> Binomial Distribution];
+            A-->F[Dandekar's Modified <br> Binomial Distribution];
+            A-->G[Simplex Binomial <br> Mixture Model];
+            A-->H[Double Binomial <br> Distribution];
+            A-->I[Finite Binomial <br> Mixtures];
+            A-->J[Binomial Distribution <br> of order K];
+            A-->K[Truncated Binomial <br> Distribution];
+            A-->L[Weighted Binomial <br> Distribution];",width=1000,height=400)
+```
+
+Below is the list of Distributions in this sub group with article references.
+
+### Grassia Binomial Distribution
+
+Kemp, A. W., and Kemp, C. D (2004). Factorial moment characterizations for certain binomial-type
+distributions, Communications in Statistics-Theory and Methods, 33, 3059-3068. 
+
+Harkness, W. L. (1970). The classical occupancy problem revisited, Random Counts in Scientific Work, Vol. 3:Random Counts in
+Physical Science, Geo Science, and Business, G. P. Patil (editor), 107-126. University Park: Pennsylvania State University 
+Press. 
+
+Weiss, G. H. (1965). A model for the spread of epidemics by carriers, Biometrics, 21, 481-490. 
+
+Dietz, K. (1966). On the model of Weiss for the spread of epidemics by carriers, Journal of Applied Probability, 3, 
+375-382. 
+
+Downton, F. (1967). Epidemics with carriers: A note on a paper by Dietz, Journal of Applied Probability, 4, 264-270. 
+
+Daley, D. J., and Gani, J. (1999). Epidemic Modelling:An Introduction,Cambridge: Cambridge University Press.  
+
+Grassia, A. (1977). On a family of distributions with argument between 0 and 1 obtained by transformation of the gamma 
+and derived compound distributions, Australian Journal of Statistics, 19, 108-114.
+
+Alanko, T., and Duffy, J. C. (1996). Compound binomial distributions for modelling consumption data, The Statistician, 
+45, 269-286. 
+
+Chatfield, C., and Goodhardt, G. J. (1970). The beta-binomial model for consumer purchasing behaviour, Applied Statistics, 
+19, 240-250.
+
+Consul, P. C., and Jain, G. C. (1971). On the log-gamma distribution and its properties, Statistische Hefte, 12, 100-106.
+
+### Zero Modified Binomial Distribution
+
+Dowling, M. M., and Nakamura, M. (1997). Estimating parameters for discrete distributions via the empirical probability
+generating function, Communications in Statistics-Simulation and Computation, 26, 301-313. 
+
+Khatri, C. G. (1961). On the distributions obtained by varying the number of trials in a binomial distribution, Annals of 
+the Institute of Statistical Mathematics, Tokyo, 13, 47-51.
+
+### Dandekar's Modified Binomial Distribution
+
+Patil, G. P., Boswell, M. T., Joshi, S. W., and Ratnaparkhi, M. V. (1984). Dictionary and Bibliography of Statistical 
+Distributions in Scientific Work, Vol. 1: Discrete Models, Fairland, MD: International Co-operative Publishing House. 
+
+Dandekar, V. M. (1955). Certain modified forms of binomial and Poisson distributions, Sankhya, 15, 237-250. 
+
+### Simplex Binomial Mixture Model
+
+Barndorff-Neilsen, O. E., and Jorgensen, B. (1991). Some parametric models on the simplex, Journal of 
+Multivariate Analysis, 39, 106-116. 
+
+Jorgensen, B. (1997). The Theory of Regression Models, London: Chapman & Hall/CRC. 
+
+### Double Binomial Distribution
+
+Lindsey, J. K. (1995). Modelling Frequency and Count Data, Oxford: Oxford University Press.
+
+Efron, B. (1986). Double exponential families and their use in generalized linear regression, Journal of the 
+American Statistical Association, 81, 709-721. 
+
+### Finite Biomial Mixtures
+
+Teicher, H. (1961). Identifiability of mixtures, Annals of Mathematical Statistics, 32, 244-248.
+
+Blischke, W. R. (1962). Moment estimation for the parameters of a mixture of two binomial distributions, Annals of 
+Mathematical Statistics, 33, 444-454. 
+
+Blischke, W. R. (1964). Estimating the parameters of mixtures of binomial distributions, Journal of the American Statistical 
+Association, 59, 510-528. 
+
+Blischke, W. R. (1965). Mixtures of discrete distributions, Classical and Contagious Discrete Distributions, G. P. Patil
+(editor), 351-372. Calcutta: Statistical Publishing Society; Oxford: Pergamon.
+
+Everitt, B. S., and Hand, D. J. (1981). Finite Mixture Distributions, London: Chapman & Hall.
+
+Bondesson, L. (1988). On the gain by spreading seeds: A statistical analysis of sowing experiments, Scandinavian 
+Journal of Forest Research, 305-314.
+
+Gelfand, A. E., and Soloman, H. (1975). Analysing the decision making process of the American jury, Journal of the 
+American Statistical Association, 70, 305-310. 
+
+Hasselblad, V. (1969). Estimation of finite mixtures of distributions from the exponential family, Journal of the 
+American Statistical Association, 64, 1459-1471. 
+
+Rider, P. R. (1962a). Estimating the parameters of mixed Poisson, binomial and Weibull distributions, Bulletin of the
+International Statistical Institute, 39(2), 225-232. 
+
+### Binomial Distribution of order K
+
+Ling, K. D. (1988). On binomial distributions of order k, Statistics and Probability Letters, 6, 371-376.
+
+Shanthikumar, J. G. (1985). Discrete random variate generation using uniformization, European Journal of Operational 
+Research, 21, 387-398. 
+
+Chiang, D., and Niu, S. C. (1981). Reliability of consecutive-k-out-of-n:F systems, IEEE Transactions on Reliability, 
+R-30, 87-89. 
+
+Bollinger, R. C., and Salvia, A. A. (1982). Consecutive-k-out-of-n: F networks, IEEE Transactions on Reliability, 
+R-31, 53-55. 
+
+Hirano, K. (1986). Some properties of the distributions of order k, Fibonacci Numbers and Their Applications, A. N. 
+Philippou, G. E. Bergum, and A. F. Horadam (editors), 43-53. Dordrecht: Reidel.
+
+Philippou, A. N., and Makri, F. S. (1986). Success runs and longest runs, Statistics and Probability Letters, 4, 101-105
+(corrected version 211-215). 
+
+Feller, W. (1957). An Introduction to Probability Theory and Its Applications (second edition), Vol. 1, New York: Wiley. 
+
+Aki, S., and Hirano, K. (1988). Some characteristics of the binomial distribution of order k and related distributions,
+Statistical Theory and Data Analysis, Vol. 2, K. Matusita (editor), 211-222. Amsterdam: Elsevier.
+
+### Truncated Binomial Distribution
+
+Stephan, F. F. (1945). The expected value and variance of the reciprocal and other negative powers of a positive Bernoullian 
+variate, Annals of Mathematical Statistics, 16, 50-61.
+
+Shah, S. M. (1966). On estimating the parameter of a doubly truncated binomial distribution, Journal of the American
+Statistical Association, 61, 259-263.
+
+Newell, D. J. (1965). Unusual frequency distributions, Biometrics, 21, 159-168. 
+
+Grab, E. L., and Savage, I. R. (1954). Tables of the expected value of 1/x for positive Bernoulli and Poisson variables,
+Journal of the American Statistical Association, 49, 169-177. 
+
+Finney, D. J. (1949). The truncated binomial distribution, Annals of Eugenics, London, 14, 319-328. 
+
+### Weighted Binomial Distribution
+
+Patil, G. P., Rao, C. R., and Zelen, M. (1986). A Computerized Bibliography of Weighted Distributions and Related Weighted
+Methods for Statistical Analysis and Interpretations of Encountered Data, Observational Studies, Representativeness Issues,
+and Resulting Inferences, University Park, PA: Centre for Statistical Ecology and Environmental Statistics, Pennsylvania State
+University.
+
+Patil, G. P., Rao, C. R., and Ratnaparkhi, M. V. (1986). On discrete weighted distributions and their use in model choice 
+for observed data, Communications in Statistics-Theory and Methods, 15, 907-918. 
+
+Rao, C. R. (1965). On discrete distributions arising out of methods of ascertainment, Classical and 
+Contagious Discrete Distributions,G. P Patil (editor), 320-332. Calcutta: Statistical Publishing Society; Oxford: Pergamon. 
+(Republished Sankhya, A27, 1965, 311-324.)
+
+Rao, C. R. (1985). Weighted distributions arising out of methods of ascertainment: What populations does a sample represent?,
+A Celebration of Statistics: ISI Centenary Volume, A. C. Atkinson and S. E. Fienberg (editors), 543-569. New York:
+SpringerVerlag.
+
+## Binomial Not Parent
+
+This is the sub group where Binomial Distribution is not the parent but
+rather some other different distribution like Hypergeometric or Negative Binomial or Poisson.
+
+```{r,eval=FALSE}
+#| label = "Binomial not parent"
+DiagrammeR("graph TB;
+            A[Binomial <br> Distribution]-->B[Binomial Not Parent];
+            B-->BA[Hypergeometric <br> + Binomial];
+            B-->BB[Negative Binomial <br> + Binomial];
+            B-->BC[Poisson + <br> Binomial];",width=800,height=400
+)
+```
+
+### Hypergeometric + Binomial
+
+$$Hypergeometric (n,Y,N) \bigwedge_Y Binomial(N,p)$$
+
+### Negative Binomial + Binomial
+
+$$Negative Binomial (kY,P) \bigwedge_Y Binomial(n,p)$$
+
+### Poisson + Binomial
+
+$$ Poisson (\theta) \bigwedge_{\theta/\phi} Binomial(n,p)$$
+
+## Alternate Binomial Distributions
+
+This is a sub group of distributions which can be used as an alternative to
+Binomial Distribution.
+
+```{r,eval=FALSE}
+#| label = "Alternate Binomial Distributions"
+DiagrammeR("graph TB;
+            A[Binomial <br> Distribution]-->B[Alternate Binomial <br> Distribution];
+            B-->C[Additive Binomial <br> Distribution];
+            B-->D[Beta-Correlated <br> Binomial Distribution];
+            B-->E[COM-Poisson Binomial <br> Distribution];
+            B-->F[Correlated Binomial <br> Distribution];
+            B-->G[Multiplicative Binomial <br> Distribution];",width=800,height=400
+)
+```
+
+### Additive Binomial Distribution
+
+Johnson, N. L., Kemp, A. W., & Kotz, S. (2005). Univariate discrete distributions (Vol. 444). Hoboken, NJ: Wiley-Interscience.
+
+L. L. Kupper, J.K.H., 1978. The Use of a Correlated Binomial Model for the Analysis of Certain Toxicological Experiments.
+Biometrics, 34(1), pp.69-76.
+
+Paul, S.R., 1985. A three-parameter generalization of the binomial distribution. Communications in Statistics - Theory and
+Methods, 14(6), pp.1497-1506.
+
+### Beta-Correlated Binomial Distribution
+
+Paul, S.R., 1985. A three-parameter generalization of the binomial distribution. Communications in Statistics - Theory 
+and Methods, 14(6), pp.1497-1506.
+
+### COM-Poisson Binomial Distribution
+
+Borges, P., Rodrigues, J., Balakrishnan, N. and Bazan, J., 2014. A COM-Poisson type generalization of the binomial 
+distribution and its properties and applications. Statistics & Probability Letters, 87, pp.158-166.
+
+### Correlated Binomial Distribution
+
+Johnson, N. L., Kemp, A. W., & Kotz, S. (2005). Univariate discrete distributions (Vol. 444). Hoboken, NJ: Wiley-Interscience.
+
+L. L. Kupper, J.K.H., 1978. The Use of a Correlated Binomial Model for the Analysis of Certain Toxicological Experiments.
+Biometrics, 34(1), pp.69-76.
+
+Paul, S.R., 1985. A three-parameter generalization of the binomial distribution. Communications in Statistics - Theory 
+and Methods, 14(6), pp.1497-1506.
+
+Jorge G. Morel and Nagaraj K. Neerchal. Overdispersion Models in SAS. SAS Institute, 2012.
+
+### Multiplicative Binomial Distribution
+
+Johnson, N. L., Kemp, A. W., & Kotz, S. (2005). Univariate discrete distributions (Vol. 444). Hoboken, NJ: Wiley-Interscience.
+
+L. L. Kupper, J.K.H., 1978. The Use of a Correlated Binomial Model for the Analysis of Certain Toxicological Experiments.
+Biometrics, 34(1), pp.69-76.
+
+Paul, S.R., 1985. A three-parameter generalization of the binomial distribution. Communications in Statistics - Theory 
+and Methods, 14(6), pp.1497-1506.
+
+## Neyman Type A Distribution 
+
+```{r,eval=FALSE}
+#| label = "Neyman Type A Distribution"
+DiagrammeR("graph TB;
+            A[Binomial <br> Distribution]-->B[ Neyman Type A <br> Distribution];
+            B-->C[Poisson + Binomial +  Beta];
+            B-->D[Poisson + Poisson + Binomial + Beta <br> or Poisson + Binomial + Poisson + Beta];
+            B-->E[Poisson + Binomial + Poisson + Beta <br> or Binomial + Poisson + Poisson + Beta];",width=800,height=400
+)
+```
+
+### Poisson + Binomial + Beta
+
+$$Poisson(\phi) \bigvee Binomial(1,P) \bigwedge_P Beta(\alpha,\beta)$$
+
+### Poisson + Poisson + Binomial + Beta or Poisson + Binomial + Poisson + Beta
+
+$$ Poisson(\lambda) \bigvee [\{Poisson(\phi) \vee Binomial(1,P) \} \bigwedge_P Beta(\alpha,\beta)]$$
+or
+$$ Poisson(\lambda) \bigvee [\{Binomial(M,P) \bigvee_M Poisson(\phi) \} \bigwedge_P Beta(\alpha,\beta)]$$
+### Poisson + Binomial + Poisson + Beta or Binomial + Poisson + Poisson + Beta
+
+$$[\{ Poisson(\lambda) \bigvee Binomial(1,P)\} \bigvee Poisson(\phi)] \bigwedge_P Beta(a,b)$$
+or
+$$[\{ Binomial(N,P) \bigvee Poisson(\phi)\} \bigwedge_N Poisson(\lambda)] \bigwedge_P Beta(a,b)$$
+
+Gurland, J. (1958). A generalized class of contagious distributions, Biometrics, 14, 229-249.
+
+Feller, W. (1943). On a general class of "contagious" distributions, Annals of Mathematical Statistics, 14, 389-400.
+
+Neyman, J. (1939). On a new class of "contagious" distributions applicable in entomology and bacteriology, Annals of
+Mathematical Statistics, 10, 35-57. 
+
+Subrahmaniam, Kocherlakota (1966). On a general class of contagious distributions: The Pascal-Poisson distribution, Trabajos
+de Estadistica, 17, 109-127. 
+
+Subrahmaniam, Kathleen (1978). The Pascal-Poisson distribution revisited: Estimation and efficiency, Communications in
+Statistics-Theory and Methods, A7, 673-683.
+
+## Hermite Distribution
+
+```{r,eval=FALSE}
+#| label = "Hermite Distribution"
+DiagrammeR("graph TB;
+           A[Binomial <br> Distribution]-->B[Hermite <br> Distribution];
+           B-->C[Binomial + Poisson];
+           B-->D[Poisson + Binomial];",width=800,height=400
+)
+```
+
+### Binomial + Poisson
+
+$$Binomial(N,p) \bigwedge_{N/2} Poisson(\lambda)$$
+
+### Poisson + Binomial
+
+$$Poisson(\lambda) \bigvee Binomial(2,p)$$
+
+Skellam, J. G. (1952). Studies in statistical ecology I: Spatial pattern, Biometrika, 39, 346-362.
+
+McGuire, J. U., Brindley, T. A., and Bancroft, T. A. (1957). The distribution of European corn borer Pyrausta Nubilalis 
+(Hbn.) in field corn, Biometrics, 13, 65-78 [errata and extensions (1958) 14, 432-434]. 
+
+Kemp, C. D., and Kemp, A. W. (1965). Some properties of the "Hermite" distribution, Biometrika, 52, 381-394. 
+
+Fisher, R. A. (1951). Properties of the functions, (Part of introduction to) British Association Mathematical Tables 
+(third edition), Vol. 1, London: British Association. 
+
+## Binomial Parent 
+
+This is the sub group where Binomial distribution is the parent distribution. 
+By considering the distribution and its parameters we can use possible different 
+mixing distributions and generate new Binomial Mixture Distributions.
+
+### N/n , K and Y Mixtures
+
+The first mixtures with few distributions are mentioned below.
+
+```{r,eval=FALSE}
+#| label = "other Mixtures"
+DiagrammeR("graph TB;
+           A[Binomial <br> Distribution]-->B[Binomial <br> Parent];
+           B-->C[Mixing Parameter];
+           C-->D[N/n <br> Binomial];
+           D-->DA[Poisson];
+           D-->DB[Binomial];
+           D-->DC[Negative Binomial];
+           D-->DD[Logarithmic];
+           C-->E[K <br> Binomial];
+           E-->EA[Poisson];
+           C-->F[Y <br> Binomial];
+           F-->FA[Hypergeometric];",width=800,height=400
+)
+```
+
+#### Poisson Mix for N/n of Binomial distributon
+
+$$Binomial(N,p) \bigwedge_{N/n} Poisson(\lambda)$$
+
+#### Negative Binomial Mix for N/n of Binomial distributon
+
+$$Binomial(N,p) \bigwedge_{N/n} Negative Binomial(k,P`)$$
+
+#### Binomial Mix for N/n of Binomial distributon
+
+$$Binomial(N,p) \bigwedge_{N/n} Binomial(N`,p`)$$
+
+#### Logarithmic Mix for N/n of Binomial distribution
+
+$$Binomial(N,p) \bigwedge_{N/n} Logarithmic(\theta)$$
+
+#### Poisson Mix for K of Poisson distributon
+
+$$Binomial(nK,p) \bigwedge_K Poisson(\theta)$$
+
+#### Hypergeometric Mix for Y of Binomial distributon
+
+$$Binomial(m,\frac{Y}{n}) \bigwedge_{Y} Hypergeometric(n,Np,N)$$
+
+### p Transformed Binomial
+
+```{r,eval=FALSE}
+#| label = "Transformed Binomial"
+DiagrammeR("graph LR;
+           A[Binomial <br> Distribution]-->B[Binomial <br> Parent];
+           B-->C[Mixing Parameter];
+           C-->D[p transformed <br> Binomial];
+           D-->E[p = 1 - exp_-t_ ];
+           E-->EA[Binomial Exponential <br> Distribution];
+           E-->EB[Binomial Gamma 1 <br> Distribution];
+           E-->EC[Binomial Gamma 2 <br> Distribution];
+           E-->ED[Binomial Generalized <br> Exponential 1 Distribution];
+           E-->EE[Binomial Generalized <br> Exponential 2 Distribution];
+           D-->F[p = exp_-t_ ];
+           F-->FA[Binomial Exponential <br> Distribution];
+           F-->FB[Binomial Gamma 1 <br> Distribution];
+           F-->FC[Binomial Gamma 2 <br> Distribution];
+           F-->FD[Binomial Generalized <br> Exponential 1 Distribution];
+           F-->FE[Binomial Generalized <br> Exponential 2 Distribution];
+           F-->FF[Binomial Variated <br> Exponential Distribution];
+           F-->FG[Binomial Variated <br> Gamma 2,alpha Distribution];
+           F-->FH[Binomial Inverse <br> Gaussian Distribution];
+           D-->G[p = cy];
+           G-->GA[Binomial Generalized Beta 4 Distribution];",width=800,height=1000
+)
+```
+
+Bowman, K. O., Shenton, L. R., Kastenbaum, M. A., & Broman, K. (1992). Overdispersion: Notes on Discrete
+distributions. Oak Ridge Tennessee : Oak Ridge National Laboratory.
+
+Alanko, T., & Duffy, J. C. (1996). Compound Binomial distributions for modeling consumption data. Journal of the 
+Royal Statistical society, series D (The Statistician) Vol. 45, No. 3 ,269-286.
+
+Gerstenkorn, T. (2004). A compound of the Generalized Negative Binomial distribution with the Generalized 
+Beta distribution. Central European Science journals, CEJM 2 (4), 527-537. 
+
+### Log Inverse Distribution [0,1] Domain
+
+```{r,eval=FALSE}
+#| label = "Log Inverse Distribution 0,1 Domain"
+DiagrammeR("graph LR;
+           A[Binomial <br> Distribution]-->B[Binomial <br> Parent];
+           B-->C[Mixing Parameter];
+           C-->D[Log Inverse <br> Distribution <br> 0,1 Domain];
+           D-->DA[Binomial Type 1 <br> Log Inverse <br> Exponential Distribution];
+           D-->DB[Binomial Type 2 <br> Log Inverse <br> Exponential Distribution];
+           D-->DC[Binomial Type 1 <br> Log Inverse <br> Gamma 1 Distribution];
+           D-->DD[Binomial Type 2 <br> Log Inverse <br> Gamma 1 Distribution];
+           D-->DE[Binomial Type 1 <br> Log Inverse <br> Gamma 2 Distribution];
+           D-->DF[Binomial Type 2 <br> Log Inverse <br> Gamma 2 Distribution];
+           D-->DG[Binomial Type 1 <br> Log Inverse <br> Generalized <br> Exponential 1 <br> Distribution];
+           D-->DH[Binomial Type 2 <br> Log Inverse <br> Generalized <br> Exponential 1 <br> Distribution];
+           D-->DJ[Binomial Type 1 <br> Log Inverse <br> Generalized <br> Exponential 2 <br> Distribution];
+           D-->DK[Binomial Type 2 <br> Log Inverse <br> Generalized <br> Exponential 2 <br> Distribution];
+           D-->DL[Binomial Type 1 <br> Log Inverse <br> Gamma 3 <br> Distribution];",width=800,height=1000
+)
+```
+
+Grassia, A. (1977). On a family of distributions with argument between 0 and 1 obtained by transformations of 
+the Gamma and derived compound distributions. Australian journal of Statistics, 19 (2) 108-114.
+
+McDonald, J. B., & Yexiao, J. X. (1995). A generalization of the Beta distribution with applications. 
+Journal of Econometrics 66,133-152.
+
+### Cumulative Distribution Function
+
+```{r,eval=FALSE}
+#| label = "Cumulative Distribution Function"
+DiagrammeR("graph TB;
+            A[Binomial <br> Distribution]-->B[Binomial Parent];
+            B-->C[Mixing Parameter];
+            C-->D[Cumulative Distribution];
+            D-->DA[Beta Generated <br> Distribution];
+            DA-->DAA[Binomial <br> Beta Exponential <br> Distribution];
+            DA-->DAB[Binomial <br> Beta Generalized <br> Exponential Distribution];
+            DA-->DAC[Binomial <br> Beta Power <br> Distribution];
+            D-->DB[Kumaraswamy <br> Generated <br> Distribution];
+            DB-->DBA[Binomial <br> Kumaraswamy <br> Power Distribution];
+            DB-->DBB[Binomial <br> Kumaraswamy <br> Exponential <br> Distribution];",width=1000,height=750
+)
+```
+
+Eugene, N., Lee, C., & Famoye, F. (2002). Beta-normal distributions and its applications. Communications in 
+Statistics-Theory and Methods 31, 4 ,497-512.
+
+Nadarajah, S., & Kotz, S. (2006). The Beta Exponential distribution. Reliability engineering and system safety, 
+Vol. 91, Issue 6 ,689-697
+
+Barreto-Souza, W., Santos, A., & Cordeiro, G. M. (2009). The Beta Generalized Exponential distribution. 
+Journal of Statistical Computation and Simulation , 1-14.
+
+### p Binomial 
+
+```{r,eval=FALSE}
+#| label = "p Binomial"
+DiagrammeR("graph LR;
+           A[Binomial <br> Distribution]-->B[ Binomial <br> Parent];
+           B-->C[Mixing Parameter];
+           C-->D[p <br> Binomial];
+           D-->DA[Beyond Beta <br> Distribution];
+           DA-->DAA[Binomial Triangular <br> Distribution];
+           DA-->DAB[Binomial Kumaraswamy 2 <br> Distribution];
+           DA-->DAC[Binomial Kumaraswamy 1 <br> Distribution];
+           DA-->DAD[Binomial Truncated <br> Exponential Distribution];
+           DA-->DAE[Binomial Truncated <br> Gamma Distribution];
+           DA-->DAF[Binomial - MinusLog <br> Distribution];
+           DA-->DAG[Binomial Standard <br> Two Sied Power <br> Distribution];
+           DA-->DAH[Binomial Ogive <br> Distribution];
+           DA-->DAI[Binomial - Two Sided <br> Ogive Distribution];
+           D-->DB[Beta Distribution];
+           DB-->DBA[Beta - Binomial <br> Distribution];
+           DB-->DBB[McDonald Generalized <br> Beta - Binomial <br> Distribution];
+           DB-->DBC[Libby and Novick <br> Generalized Beta - Binomial <br> Distribution];
+           DB-->DBD[Gauss Hypergeometric <br> Binomial Distribution];
+           DB-->DBE[Confluent Hypergeometric <br> Binomial Distribution];
+           DB-->DBF[Binomial Uniform <br> Distribution];
+           DB-->DBG[Binomial Power <br> Function Distribution];
+           DB-->DBH[Binomial Truncated <br> Beta Distribution];
+           DB-->DBI[Binomial Arcsine <br> Distribution];",width=700,height=1200
+)
+```
+
+Karlis, D., & Xekalaki, E. (2006). The Polygonal distributions, ntemational Conference on Mathematical and Statistical
+modeling in honnor of Enrique Castillo. University of Castilla-La Mancha.
+
+Jones, M. C. (2009). Kumaraswamy's distribution: a beta-type distibution with some tractability advantages. Statistical Methodology Vol. 6, Issue 1 ,70-81.
+
+Jones, M. C. (2007). The Minimax distribution: A Beta type distribution with some tractability advantages. Retrieved from The 
+Open University: http://stats-www.open.ac.uk/TechnicalReports/minimax.pdf
+
+Kumaraswamy, P. (1980). Genralized probability density functions for double-bounded random processes. Journal of 
+hydrology, 79-88.
+
+Dorp, J. R., & Kotz, S. (2003). Generalizations f Two-Sided Power distributions and their Convolution. Communications 
+in Statistics-Theory and Methods, Vol. 32, Issue 9 ,1703-1723.
+
+Armero, S., & Bayarri, M. J. (1994). Prior assessments for prediction in queues. The Statistician 43,139- 153.
+
+Bhattacharya, S. K. (1968). Bayes approach to compound distributions arising from truncated mixing densities. Annals 
+of the institute of Statistical Mathematics, Vol 20, No. 1 ,375-381.
+
+Johnson, N. L., Kotz, S., & Kemp, A. (1992). Univariate Discrete distributions, Second Edition. New York: John Wiley and Sons.
+
+Libby, D. I., 8t Novick, M. R. (1982). Multivariate generalized beta-distributions with applicatons to utility assessment.
+Journal of Educational Statistics 9 ,163-175.
+
+Nadarajah, S., 8i Kotz, S. (2007). Multitude of Beta distributions with applications. Statistics: a journal of theoretical 
+and applied statistics, Vol. 41, No. 2 ,153-179.
+
+Sivaganesan, S., 8i Berger, J. (1993). Robust Bayesian analysis of the Binomial empirical Bayes problem. The Canadian 
+journal of Statistics, 21,107-119.
+
+# References 
+
+Fisher, R. A., and Mather, K. (1936). A linkage test with mice, Annals of Eugenics, London, 7, 265-280.
+
+Boswell, M. T., Ord, J. K., and Patil, G. P. (1979). Chance mechanisms underlying univariate distributions, Statistical
+Ecology, Vol. 4:Statistical Distributions in Ecological Work, J. K. Ord, G. P. Patil, and C. Taillie (editors), 1-156.
+Fairland, MD: International Co-operative Publishing House. 
+
+Kaplan, N., and Risko, K. (1982). A method for estimating rates of nucleotide substitution using DNA sequence data, 
+Theoretical Population Biology, 21, 318-328.
+
+Seber, G. A. F. (1982b). The Estimation of Animal Abundance (second edition), London: Griffin.

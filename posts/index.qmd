@@ -1,0 +1,54 @@
+---
+title: "Blog Posts"
+author: ""
+title-block-banner: true
+page-layout: full
+description-meta: "Welcome to my statistics related blog posts."
+
+listing:
+  - id: Subsampling
+    contents: 
+      - "Subsampling/index.qmd"
+    sort: "date desc"
+    categories: true
+  - id: Binomial_Distribution
+    contents: 
+      - "Tree_of_Binomial_Distribution/index.qmd"
+    sort: "date desc"
+    categories: true
+  - id: Developing
+    contents:
+      - "Developing/FindRpackage/index.qmd"
+      - "Developing/Newpackage/index.qmd"
+      - "Developing/OlympicRshiny/index.qmd"
+      - "Developing/PersonalWebsite/index.qmd"
+      - "Developing/SLelection/Presidential_Election/index.qmd"
+      - "Developing/YourOwnPackage/index.qmd"
+    sort: "date desc"
+    categories: true
+  - id: Development
+    contents:
+      - "Benchmarking/fitODBOD/index.qmd"
+      - "Benchmarking/maxLik/index.qmd"
+      - "Benchmarking/mleand2/index.qmd"
+      - "Benchmarking/optim/index.qmd"
+    sort: "date desc"
+    categories: true  
+toc-title: Year
+toc-location: right
+date-format: "MMMM D, YYYY"
+image: ""
+code-tools: false
+comments: false    
+---
+
+*Welcome to my statistics related blog posts.*
+
+:::{#Subsampling}
+:::
+
+:::{#Binomial_Distribution}
+:::
+
+:::{#Development}
+:::
