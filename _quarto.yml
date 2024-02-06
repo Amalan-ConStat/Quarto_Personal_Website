@@ -1,0 +1,86 @@
+# This file controls the settings for your Quarto template from www.marvinschmitt.com
+
+# website settings
+website:
+  title: "Amalan"  # Your name
+  description: "Amalan Mahendran is a applied statistician focusing on big data and experimental design"   # A brief slogan (optional)
+  image: img/my_image.jpg
+  
+  favicon: img/favicon.png
+  
+  # start of the navigation bar at the top of the website
+  navbar:
+    pinned: true
+    logo: /img/logo.png
+    
+    # your social media handles
+    right:
+      - text: "Publication"
+        href: publication/index.qmd
+      - text: "Blog Posts"
+        href: posts/index.qmd
+      - text: "#TidyTuesday"
+        href: tidytuesday/index.qmd
+      - text: "Interests"
+        href: interests/index.qmd
+      - text: "CV Web"
+        href: https://amalan-cv.netlify.com/  
+      - text: "CV"
+        href: cv/index.qmd
+      - text: Socials
+        menu:
+          - icon: twitter
+            text: Twitter
+            url: https://twitter.com/Amalan_Con_Stat
+          - icon: github
+            text: GitHub
+            url: https://github.com/Amalan-ConStat
+          - icon: linkedin
+            text: LinkedIn
+            url: https://www.linkedin.com/in/amalan-mahendran-72b86b37/
+          - icon: r-square-fill
+            text: Researchgate
+            url: https://www.researchgate.net/profile/Amalan_Mahendran
+          - icon: box-fill
+            text: R Universe
+            url: https://amalan-constat.r-universe.dev/builds
+          - icon: mailbox
+            text: Email Me
+            href: "mailto:mail.amalan0595@gmail.com"  
+  
+# Don't touch unless you know what you are doing :) ------------
+  search: 
+    location: navbar
+    type: textbox
+  page-footer: 
+    left: |
+      <span class="faux-block">&#169; 2023 Amalan CC BY-SA 4.0</span>
+    right: |
+      <span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span>
+
+project:
+  type: website
+  output-dir: docs
+
+  preview: 
+    port: 22222
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+execute:
+  freeze: true
+      
+
+format:
+  html:
+    fontsize: 1.1em
+    theme: 
+      light: [flatly, html/styles_light.scss]
+      dark: [darkly, html/styles_dark.scss]
+    toc: false
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true

@@ -1,0 +1,21 @@
+---
+title: "OlympicRshiny: 'Shiny' Application for Olympic Data."
+date: "2023-02-02"
+categories: 
+  - package
+  - R
+  - Rshiny
+  - Olympic
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+'Shiny' Application to visualize Olympic Data. From 1896 to 2016. Even Winter Olympics events are included. Data is from [Kaggle](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results).
+
+<a class="btn btn-outline-primary" href="https://cran.r-project.org/package=OlympicRshiny" role="button" style="padding: 5px 5px;">CRAN</a> &nbsp;&nbsp;&nbsp; <a class="btn btn-outline-primary" href="https://amalan-con-stat.shinyapps.io/OlympicRshiny/" role="button" style="padding: 5px 5px;">Rshiny Application</a> 

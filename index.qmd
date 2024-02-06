@@ -1,0 +1,65 @@
+---
+title: About Amalan Mahendran
+about:
+  template: solana
+  id: about-block
+  image: "img/my_image.jpg"
+  image-width: 10em
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/Amalan_Con_Stat
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/amalan-mahendran-72b86b37/
+    - icon: box-fill
+      text: R Universe
+      href: https://amalan-constat.r-universe.dev/builds  
+    - icon: mailbox
+      text: Email
+      href: "mailto:mail.amalan0595@gmail.com"  
+---
+
+::: {#about-block}
+
+I am a PhD student at the School of Mathematical Sciences, Queensland University of Technology working on "New methods of experimental design for subsampling under big data" and expecting to graduate in 2024. 
+
+I completed my Bachelor of Science (Statistics Special) on the subjects Statistics, Mathematics and Computer Science from the University of Peradeniya, Sri Lanka. 
+
+I am interested in applying statistical methods efficiently and effectively through the R statistical programming language. 
+Conducting complex computations, writing reports and publishing them through R is my special skill over 7 years of experience.
+Yes, I am proficient in R related tools base, tidyverse, Rshiny, golem, bookdown, rmarkdown and quarto.  
+
+I have developed the below listed R packages and Shiny apps:
+
+::: columns
+
+::: {.column width="80%"}
+1. [fitODBOD](https://cran.r-project.org/package=fitODBOD): Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD
+:::
+
+::: {.column width="20%"}
+![](img/logo_fitODBOD.png){width=20%,height=25%}
+:::
+
+::: {.column width="80%"}
+2. [OlympicRshiny](https://cran.r-project.org/package=OlympicRshiny): 'Shiny' Application for Olympic Data
+:::
+
+::: {.column width="20%"}
+![](img/logo_OlympicRshiny.png){width=20%,height=25%}
+:::
+
+::: {.column width="80%"}
+3. [SLPresElection](https://cran.r-project.org/package=SLPresElection): Presidential Election Data of "Sri Lanka" from 1982 to 2015.
+:::
+
+::: {.column width="20%"}
+![](img/logo_SLPresElection.png){width=20%,height=25%}
+:::
+
+On this website, I offer a glimpse into my vast body of knowledge, ongoing research, publications, conference posters and my interests.
+If you are interested in my work and have any questions or would like to discuss do not hesitate to [contact me](mailto:mail.amalan_0595@gmail.com)
+:::
+
+:::

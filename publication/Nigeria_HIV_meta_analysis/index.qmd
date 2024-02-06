@@ -1,0 +1,30 @@
+---
+title: "Prevalence of human immunodeficiency virus (HIV) among pregnant women in Nigeria: a systematic review and meta-analysis."
+date: "2021-12-31"
+categories: 
+  - package
+  - R
+  - meta
+  - metafor
+  - meta-analysis
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+## Abstract
+
+**Objective** - To estimate prevalence of HIV infection in Nigeria and to examine variations by geopolitical zones and study characteristics to inform policy, practice and research.
+
+**Methods** - We conducted a comprehensive search of bibliographic databases including PubMed, CINAHL, PsycINFO, Global Health, Academic Search Elite and Allied and Complementary Medicine Database (AMED) and grey sources for studies published between 1 January 2008 and 31 December 2019. Studies reporting prevalence estimates of HIV among pregnant women in Nigeria using a diagnostic test were included. Primary outcome was proportion (%) of pregnant women living with HIV infection. A review protocol was developed and registered (PROSPERO 2019 CRD42019107037).
+
+**Results** - Twenty-three studies involving 72728 pregnant women were included. Ten studies were of high quality and the remaining were of moderate quality. Twenty-one studies used two or more diagnostic tests to identify women living with HIV. Overall pooled prevalence of HIV among pregnant women was 7.22% (95% CI 5.64 to 9.21). Studies showed high degree of heterogeneity (I^2=97.2%) and evidence of publication bias (p=0.728). Pooled prevalence for most individual geopolitical zones showed substantial variations compared with overall prevalence. North-Central (6.84%, 95% CI 4.73 to 9.79) and South-West zones (6.27%, 95% CI 4.75 to 8.24) had lower prevalence whereas South-East zone (17.04%, 95% CI 9.01 to 29.86) had higher prevalence.
+
+**Conclusions** - While robust national prevalence studies are sparse in Nigeria, our findings suggest 7 in every 100 pregnant women are likely to have HIV infection. These figures are consistent with reported prevalence rates in sub-Saharan African region. WHO has indicated much higher prevalence in Nigeria compared with our findings. This discrepancy could potentially be attributed to varied methodological approaches and regional focus of studies included in our review. The magnitude of the issue highlights the need for targeted efforts from local, national and international stakeholders for prevention, diagnosis, management and treatment.
+
+<a class="btn btn-outline-primary" href="https://bmjopen.bmj.com/content/13/3/e050164" role="button" style="padding: 5px 5px;">View the Article</a> 

@@ -1,0 +1,35 @@
+---
+title: "Publication"
+author: ""
+title-block-banner: true
+page-layout: full
+description-meta: "Welcome to my publications list, this contains brief summaries for publications and conference posters. Have a read through and let me know your thoughts."
+
+listing:
+  - id: articles
+    contents: 
+      - "southasia_antenatal_depression/index.qmd"
+      - "Nigeria_HIV_meta_analysis/index.qmd"
+      - "fitODBOD/index.qmd"
+      - "Model_Average/index.qmd"
+    sort: "date desc"
+    categories: true
+  - id: Rpackages
+    contents:
+      - "OlympicRshiny/index.qmd"
+      - "Presidential_Election/index.qmd"  
+toc-title: Year
+toc-location: right
+date-format: "MMMM D, YYYY"
+image: ""
+code-tools: false
+comments: false    
+---
+
+*Welcome to my publications list, this contains brief summaries for publications and conference posters. Have a read through and let me know your thoughts.*
+
+:::{#articles}
+:::
+
+:::{#Rpackages}
+:::

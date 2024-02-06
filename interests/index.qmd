@@ -1,0 +1,707 @@
+---
+title: "Interests"
+---
+
+Purely for entertainment purposes except for the books
+
+::: {.panel-tabset}
+
+## Books
+
+![](featured_books.jpg)
+
+I started reading books from month of April, 2018. Which is very useful for my life as a believer of self-learning. I hope to share these books with you so that it will be useful. There is no meaning in numbers except that they are just for ordering from 1 to further in no hierarchy. Genre specificity is not my thing therefore these books are not divided into groups.
+
+### April 2018 - December 2018
+
+1. [Rise the Dark by Michael Koryta](https://www.amazon.com/gp/product/0316293865/ref=dbs_a_def_rwt_hsch_vapi_taft_p1_i1)
+2. [The Bourne Enigma by Eric Van LustBader](https://www.amazon.com/Robert-Ludlums-Bourne-Enigma-Jason/dp/1455597953)
+3. [Jack Reacher thriller, A Wanted Man by Lee Child](https://www.amazon.com/gp/product/0440246318/ref=dbs_a_def_rwt_bibl_vppi_i26)
+4. [Digital Fortress by Dan Brown](https://www.amazon.com/gp/product/0739441671/ref=dbs_a_def_rwt_hsch_vapi_thcv_p1_i9)
+5. [The Selfish Gene by Richard Dawkins](https://www.amazon.com/gp/product/0198788606/ref=dbs_a_def_rwt_bibl_vppi_i0)
+6. [How Democracies Die by Steven Levitsky and Daniel Ziblatt](https://www.amazon.com/gp/product/1524762938/ref=dbs_a_def_rwt_bibl_vppi_i0)
+7. [Elon Musk by Ashlee Vance](https://www.amazon.com/gp/product/0062301233/ref=dbs_a_def_rwt_bibl_vppi_i0)
+8. [Roll of Thunder Hear My Cry by Mildred Taylor](https://www.amazon.com/gp/product/0142401129/ref=dbs_a_def_rwt_bibl_vppi_i0)
+9. [Boy by Roald Dohl](https://www.amazon.com/gp/product/014241381X/ref=dbs_a_def_rwt_hsch_vapi_tpbk_p1_i10)
+10. [Animal Farm by George Orwell](https://www.amazon.com/gp/product/0451526341/ref=dbs_a_def_rwt_hsch_vapi_tpbk_p1_i1)
+11. [The power of Habit by Charles Duhigg](https://www.amazon.com/gp/product/081298160X/ref=dbs_a_def_rwt_bibl_vppi_i0)
+
+### October 2019 
+
+1. [The Lost Symbol by Dan Brown](https://www.amazon.com/Lost-Symbol-Robert-Langdon/dp/0307950689/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=)
+2. [Jack Reacher thriller, Die Trying by Lee Child ](https://www.amazon.com/Die-Trying-Lee-Child/dp/0857500058/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=)
+3. [Like a Virgin by Richard Branson](https://www.amazon.com/Like-Virgin-Secrets-Business-School/dp/1591845688/ref=sr_1_1?crid=2B5WHCF9D6HGQ&keywords=like+a+virgin+richard+branson&qid=1571767270&s=books&sprefix=Like+a+virgin+richard%2Cstripbooks-intl-ship%2C349&sr=1-1)
+4. [Crash Bang Wallop](https://www.amazon.com/Crash-Bang-Wallop-Financial-Revolution/dp/B01JM8JW0E)
+
+### November 2019 
+
+1. [The Gambler by Fyodor Dostoevsky](https://www.amazon.com/gp/product/1728713706/ref=dbs_a_def_rwt_bibl_vppi_i37)
+
+### Books Related to R, Data Science and Statistics
+
+1. [Big Book of R](https://www.bigbookofr.com/index.html)
+
+*THANK YOU*
+
+## Movies
+
+![](featured_movies.jpg)
+
+Watching movies since 2012 with much interest in the story line and characters. I have 
+watched more than 500 movies, but the below mentioned are in my mind. They are from different decades as well, 
+however do not hesitate to watch. If you like go through the IMDB link for more information.
+
+**last updated on 17/06/2023**
+
+# 0 to 9
+
+1. [12 Angry Men](https://www.imdb.com/title/tt0050083/)
+2. [13 Hours The Secret Soldiers of Benghazi](https://www.imdb.com/title/tt4172430/)
+3. [2012](https://www.imdb.com/title/tt1190080/)
+
+# A
+
+1. [A History of Violence](https://www.imdb.com/title/tt0399146/)
+2. [A Private War](https://www.imdb.com/title/tt2368254/)
+3. [American Gangster](https://www.imdb.com/title/tt0765429/)
+4. [Ant man](https://www.imdb.com/title/tt0478970/)
+5. [Ant man and the wasp](https://www.imdb.com/title/tt5095030)
+6. [Ant man and the wasp quantumania](https://www.imdb.com/title/tt10954600/)
+7. [Argo](https://www.imdb.com/title/tt1024648/)
+8. [Armageddon](https://www.imdb.com/title/tt0120591/)
+9. [Arrival](https://www.imdb.com/title/tt2543164/)
+10. [Asterix and Obelix Mansion of Gods](https://www.imdb.com/title/tt3759416/)
+11. [Asterix and Obelix The Secret of The Magic Potion](https://www.imdb.com/title/tt8001346/)
+12. [Avatar the way of water](https://www.imdb.com/title/tt1630029/)
+13. [The Avengers](https://www.imdb.com/title/tt0848228/)
+14. [Avengers Age of Ultron](https://www.imdb.com/title/tt2395427/)
+15. [Avengers Infinity War](https://www.imdb.com/title/tt4154756/)
+16. [Avengers Endgame](https://www.imdb.com/title/tt4154796/)
+
+# B
+
+1. [Bad Boys](https://www.imdb.com/title/tt0112442/)
+2. [Bad Boys II](https://www.imdb.com/title/tt0172156/)
+3. [Bad Boys for Life](https://www.imdb.com/title/tt1502397/)
+4. [Batman Begins](https://www.imdb.com/title/tt1345836/)
+5. [The Dark Knight](https://www.imdb.com/title/tt0468569/)
+6. [The Dark Knight Rises](https://www.imdb.com/title/tt1345836/)
+7. [Between Two Ferns The Movie](https://www.imdb.com/title/tt9398640/)
+8. [Black Hawk Down](https://www.imdb.com/title/tt0265086/)
+9. [Black Panther](https://www.imdb.com/title/tt1825683/)
+10. [Black Panther Wakanda Forever](https://www.imdb.com/title/tt9114286/)
+11. [Black Widow](https://www.imdb.com/title/tt3480822/)
+12. [BlacKkKlansman](https://www.imdb.com/title/tt7349662/)
+13. [Bohemian Rhaspody](https://www.imdb.com/title/tt1727824/)
+14. [Borat](https://www.imdb.com/title/tt0443453/)
+15. [Borat Subsequent Moviefilm](https://www.imdb.com/title/tt13143964/)
+16. [Bridge of Spies](https://www.imdb.com/title/tt3682448/)
+17. [Broken City](https://www.imdb.com/title/tt1235522/)
+18. [Bruce Almighty](https://www.imdb.com/title/tt0315327/)
+
+# C
+
+1. [Captain America The First Avenger](https://www.imdb.com/title/tt0458339/)
+2. [Captain American The Winter Soldier](https://www.imdb.com/title/tt1843866/)
+3. [Captain American Civil War](https://www.imdb.com/title/tt3498820/)
+4. [Captain Marvel](https://www.imdb.com/title/tt4154664/)
+5. [Captive State](https://www.imdb.com/title/tt5968394/)
+6. [Casino](https://www.imdb.com/title/tt0112641/)
+7. [Chaos](https://www.imdb.com/title/tt0402910/)
+8. [Charlie Brown](https://www.imdb.com/title/tt0059026/)
+9. [Charlie Chaplin Modern Times](https://www.imdb.com/title/tt0027977/)
+10. [Charlie Wilsons War](https://www.imdb.com/title/tt0472062/)
+11. [Constantine](https://www.imdb.com/title/tt0360486/)
+12. [Coup 53](https://www.imdb.com/title/tt1984135/)
+
+1. [Casablanca](https://www.imdb.com/title/tt0034583/)
+2. [Cast Away](https://www.imdb.com/title/tt0162222/)
+
+# D
+
+1. [The Da Vinci Code](https://www.imdb.com/title/tt0382625/)
+2. [Angels and Demons](https://www.imdb.com/title/tt0808151/)
+3. [Inferno](https://www.imdb.com/title/tt3062096/)
+4. [Dave Chappelle The closer](https://www.imdb.com/title/tt15523010/)
+5. [Aquaman](https://www.imdb.com/title/tt1477834/)
+6. [Batman vs Superman Dawn of Justice](https://www.imdb.com/title/tt2975590/)
+7. [Birds of Prey](https://www.imdb.com/title/tt7713068/)
+8. [Black Adam](https://www.imdb.com/title/tt6443346/)
+9. [Joker](https://www.imdb.com/title/tt7286456/)
+10. [Justic League](https://www.imdb.com/title/tt0974015/)
+11. [Man of Steel](https://www.imdb.com/title/tt0770828/)
+12. [Shazam](https://www.imdb.com/title/tt0448115/)
+13. [Suicide Squad](https://www.imdb.com/title/tt1386697/)
+14. [The Batman](https://www.imdb.com/title/tt1877830/)
+15. [The Suicide Squad](https://www.imdb.com/title/tt6334354/)
+16. [Wonder Woman](https://www.imdb.com/title/tt0451279/)
+17. [Zack snyders Justice League](https://www.imdb.com/title/tt18689424/)
+18. [Shazam Fury of Gods](https://www.imdb.com/title/tt10151854/)
+19. [Deadpool](https://www.imdb.com/title/tt1431045/)
+20. [Deadpool 2](https://www.imdb.com/title/tt5463162/)
+21. [Deep Impact](https://www.imdb.com/title/tt0120647/)
+22. [Deja Vu](https://www.imdb.com/title/tt0453467/)
+23. [Die Hard 1](https://www.imdb.com/title/tt0095016/) 
+24. [Die Hard 2](https://www.imdb.com/title/tt0099423/) 
+25. [Die Hard with a Vengeance](https://www.imdb.com/title/tt0112864/) 
+26. [A Good Day to Die Hard](https://www.imdb.com/title/tt1606378/) 
+27. [Dilruk jayasinha Bundle of Joy](https://www.imdb.com/title/tt13514452/)
+28. [Doctor Strange](https://www.imdb.com/title/tt1211837/)
+29. [Doctor Strange in the Multiverse of Madness](https://www.imdb.com/title/tt9419884/)
+30. [Dune Part 1](https://www.imdb.com/title/tt1160419/)
+31. [Dunkirk](https://www.imdb.com/title/tt5013056/)
+ 
+1. [Dead Poets Society](https://www.imdb.com/title/tt0097165/)
+2. [Dr. Strangelove](https://www.imdb.com/title/tt0057012/)
+3. [Despicable Me Collection](https://www.imdb.com/title/tt1323594/) 
+
+# E
+
+1. [Enola Holmes](https://www.imdb.com/title/tt7846844/)
+2. [Enola Holmes 2](https://www.imdb.com/title/tt14641788/)
+2. [Entourage](https://www.imdb.com/title/tt1674771/)
+3. [Eternals](https://www.imdb.com/title/tt9032400/)
+
+# F
+
+1. [Fargo](https://www.imdb.com/title/tt0116282/)
+2. [Fast Furious Collection](https://www.imdb.com/title/tt0232500/)
+3. [Fight Club](https://www.imdb.com/title/tt0137523/)
+4. [Ford v Ferrari](https://www.imdb.com/title/tt1950186/)
+5. [Fury](https://www.imdb.com/title/tt2713180/)
+
+1. [Forrest Gump](https://www.imdb.com/title/tt0109830/)
+
+# G
+
+1. [G. I. Joe Collection](https://www.imdb.com/title/tt1046173/)
+2. [Glass](https://www.imdb.com/title/tt6823368/)
+3. [Godfather Trilogy](https://www.imdb.com/title/tt0068646/) 
+4. [Godzilla Collection](https://www.imdb.com/title/tt0831387/)
+5. [Godzilla vs. Kong](https://www.imdb.com/title/tt5034838/)
+6. [Gone Baby Gone](https://www.imdb.com/title/tt0452623/)
+7. [Good Will Hunting](https://www.imdb.com/title/tt0119217/)
+8. [Green Book](https://www.imdb.com/title/tt6966692/)
+9. [Guardians of Galaxy Vol 1](https://www.imdb.com/title/tt2015381/)
+10. [Guardians of Galaxy Vol 2](https://www.imdb.com/title/tt3896198/)
+11. [Guardians of Galaxy Vol 3](https://www.imdb.com/title/tt6791350/)
+
+1. [Gladiator](https://www.imdb.com/title/tt0172495/)
+
+#   H
+1. [Harry Potter Saga](https://www.imdb.com/title/tt0241527/)
+2. [Heat](https://www.imdb.com/title/tt0113277/)
+3. [Hot Fuzz](https://www.imdb.com/title/tt0425112/)
+4. [How to train your dragon](https://www.imdb.com/title/tt0892769/)
+
+#   I    
+1. [Inception](https://www.imdb.com/title/tt1375666/)
+2. [Independence Day Dualogy](https://www.imdb.com/title/tt0116629/)
+3. [Indiana Jones Quadrapology](https://www.imdb.com/title/tt0097576/)
+4. [Internal Affairs](https://www.imdb.com/title/tt0338564/)
+5. [Inglorious Bastards](https://www.imdb.com/title/tt0361748/)
+6. [Inside Man](https://www.imdb.com/title/tt0454848/)
+7. [Insomnia](https://www.imdb.com/title/tt0278504/)
+8. [Interstellar](https://www.imdb.com/title/tt0816692/)
+9. [Ip man](https://www.imdb.com/title/tt1220719/) 
+10. [Iron Man Trilogy](https://www.imdb.com/title/tt0371746/)
+
+1. [II Testimone Invisible](https://www.imdb.com/title/tt7735502/)
+
+#   J
+1. [Jack Reacher Dualogy](https://www.imdb.com/title/tt0790724/)
+2. [Jack Ryan Collection](https://www.imdb.com/title/tt1205537/)
+3. [Jackie Brown](https://www.imdb.com/title/tt0119396/)
+4. [James Bond 007 Collection](https://www.imdb.com/title/tt2379713/)
+5. [John Wick Trilogy](https://www.imdb.com/title/tt6146586/)
+6. [JoJo Rabbit](https://www.imdb.com/title/tt2584384/)
+
+#   K
+1. [Kill Bill Dualogy](https://www.imdb.com/title/tt0266697/)
+2. [Killer Elite](https://www.imdb.com/title/tt1448755/)
+3. [Knight and Day](https://www.imdb.com/title/tt1013743/)
+4. [Kungfu Panda](https://www.imdb.com/title/tt0441773/)
+
+#   L 
+1. [L.A. Confidential](https://www.imdb.com/title/tt0119488/)
+2. [Law abiding Citizen](https://www.imdb.com/title/tt1197624/)
+3. [Lawrence of Arabia](https://www.imdb.com/title/tt0056172/)
+4. [Liar Liar](https://www.imdb.com/title/tt0119528/)
+5. [Limitless](https://www.imdb.com/title/tt1219289/)
+6. [Lock, Stock and Two Smoking Barrels](https://www.imdb.com/title/tt0120735/)
+7. [Looper](https://www.imdb.com/title/tt1276104/)
+8. [Lord of War](https://www.imdb.com/title/tt0399295/)
+9. [Lucky Number Slevin](https://www.imdb.com/title/tt0425210/)
+
+#   M
+1. [Madagascar](https://www.imdb.com/title/tt0351283/)
+2. [Margin Call](https://www.imdb.com/title/tt1615147/)
+3. [Men in Black Trilogy](https://www.imdb.com/title/tt0119654/)
+4. [Minions](https://www.imdb.com/title/tt2293640/)
+5. [Mirage](https://www.imdb.com/title/tt6908274/)
+6. [Mission Impossible Collection](https://www.imdb.com/title/tt0117060/)
+7. [Moneyball](https://www.imdb.com/title/tt1210166/)
+8. [Morbius](https://www.imdb.com/title/tt5108870/)
+9. [Mortal Kombat](https://www.imdb.com/title/tt0293429/)
+10. [Mr and Mrs Smith](https://www.imdb.com/title/tt0356910/) 
+11. [Murder on the Orient Express Dualogy](https://www.imdb.com/title/tt0071877/)
+
+1. [Memento](https://www.imdb.com/title/tt0209144/)
+2. [Million Dollar Baby](https://www.imdb.com/title/tt0405159/)
+
+#   N
+1. [No Country for Old Men](https://www.imdb.com/title/tt0477348/)
+2. [Nobody](https://www.imdb.com/title/tt7888964/)
+3. [Now You See Me Collection](https://www.imdb.com/title/tt1670345/)
+
+#   O
+1. [Oceans Collection](https://www.imdb.com/title/tt0240772/)
+2. [On the Basis Of Sex](https://www.imdb.com/title/tt4669788/)
+3. [Once upon a time...in Hollywood](https://www.imdb.com/title/tt7131622/)
+4. [Once upon a Time in the West](https://www.imdb.com/title/tt0064116/)
+5. [Our Brand is Crisis](https://www.imdb.com/title/tt1018765/)
+
+1. [One flew over the cuckoos nest](https://www.imdb.com/title/tt0073486/)
+
+#   P
+1. [Paddington](https://www.imdb.com/title/tt1109624/)
+2. [Pain and Gain](https://www.imdb.com/title/tt1980209/)
+3. [Parasite](https://www.imdb.com/title/tt6751668/)
+4. [Paycheck](https://www.imdb.com/title/tt0338337/)
+5. [Pirates of the Caribbean Collection](https://www.imdb.com/title/tt0325980/)
+
+1. [Pokemon Detective Pikachu](https://www.imdb.com/title/tt5884052/)
+2. [Pulp Fiction](https://www.imdb.com/title/tt0110912/)
+
+#   Q
+1. [Quiz Show](https://www.imdb.com/title/tt0110932/)
+
+#   R
+1. [Rambo Movie Collection](https://www.imdb.com/title/tt0462499/)
+2. [Rear Window](https://www.imdb.com/title/tt0047396/)
+3. [Reservior Dogs](https://www.imdb.com/title/tt0105236/)
+4. [Rock n Rolla](https://www.imdb.com/title/tt1032755/)
+5. [Ronin](https://www.imdb.com/title/tt0122690/)
+
+#   S
+1. [Safe House](https://www.imdb.com/title/tt1599348/)
+2. [Salt](https://www.imdb.com/title/tt0944835/)
+3. [Saving Private Ryan](https://www.imdb.com/title/tt0120815/)
+4. [Schindlers List](https://www.imdb.com/title/tt0108052/) 
+5. [Seven Psychopaths](https://www.imdb.com/title/tt1931533/)
+6. [Shaft Dualogy](https://www.imdb.com/title/tt4463894/)
+7. [Shang Chi and the legend of the ten rings](https://www.imdb.com/title/tt9376612/)
+8. [Shaun of The Dead](https://www.imdb.com/title/tt0365748/)
+9. [Sicario](https://www.imdb.com/title/tt3397884/)
+10. [Sicario Day of the Soldado](https://www.imdb.com/title/tt5052474/)
+11. [Snatch](https://www.imdb.com/title/tt0208092/)
+12. [Spider Man Collection](https://www.imdb.com/title/tt6320628/)
+13. [Split](https://www.imdb.com/title/tt4972582/)
+14. [Spy Game](https://www.imdb.com/title/tt0266987/)
+15. [Star Wars Collection](https://www.imdb.com/title/tt0076759/)
+16. [Stargate](https://www.imdb.com/title/tt0111282/)
+17. [Swordfish](https://www.imdb.com/title/tt0244244/)
+
+1. [Se7en](https://www.imdb.com/title/tt0114369/)
+2. [Shutter Island](https://www.imdb.com/title/tt1130884/)
+
+# Tamil Movies
+
+#   T
+1. [Taken Trilogy](https://www.imdb.com/title/tt0936501/)
+2. [Ted Dualogy](https://www.imdb.com/title/tt1637725/)
+3. [Tenet](https://www.imdb.com/title/tt6723592/)
+4. [The A Team](https://www.imdb.com/title/tt0429493/)
+5. [The Accountant](https://www.imdb.com/title/tt2140479/)
+6. [The Addams Family](https://www.imdb.com/title/tt1620981/)
+7. [The Addams Family 2](https://www.imdb.com/title/tt11125620/)
+8. [The Bank Job](https://www.imdb.com/title/tt0200465/)
+9. [The Big Short](https://www.imdb.com/title/tt1596363/)
+10. [The Body](https://www.imdb.com/title/tt1937149/)
+11. [The Bone Collector](https://www.imdb.com/title/tt0145681/)
+12. [The Book of Eli](https://www.imdb.com/title/tt1037705/)
+13. [The Bourne Collection](https://www.imdb.com/title/tt4196776/) 
+14. [The Bridge to the River Kwai](https://www.imdb.com/title/tt0050212/)
+15. [The Dark Tower](https://www.imdb.com/title/tt1648190/)
+16. [The Day After](https://www.imdb.com/title/tt0085404/)
+17. [The Departed](https://www.imdb.com/title/tt0407887/)
+18. [The Drop](https://www.imdb.com/title/tt1600196/)
+19. [The Expendables Collection](https://www.imdb.com/title/tt1320253/)
+20. [The Girl With Collection](https://www.imdb.com/title/tt1568346/)
+21. [The Good The Bad and The Ugly](https://www.imdb.com/title/tt0060196/)
+22. [The Great Escape](https://www.imdb.com/title/tt0057115/)
+23. [The Gunman](https://www.imdb.com/title/tt2515034/)
+24. [The Highwaymen](https://www.imdb.com/title/tt1860242/)
+25. [The Hobbit Collection](https://www.imdb.com/title/tt2310332/) 
+26. [The Hurt Locker](https://www.imdb.com/title/tt0887912/)
+27. [The Intouchables](https://www.imdb.com/title/tt1675434/)
+28. [The Invisible Guest](https://www.imdb.com/title/tt4857264/)
+29. [The Italian Job](https://www.imdb.com/title/tt0317740/)
+30. [The Killing Fields](https://www.imdb.com/title/tt0087553/)
+31. [The King of Comedy](https://www.imdb.com/title/tt0085794/)
+32. [The Kingdom](https://www.imdb.com/title/tt0431197/)
+33. [The Lego Movie](https://www.imdb.com/title/tt1490017/)
+34. [The Lives of Others](https://www.imdb.com/title/tt0405094/)
+35. [The Lord of The Rings Collection](https://www.imdb.com/title/tt0167260/) 
+36. [The Martian](https://www.imdb.com/title/tt3659388/)
+37. [The Mask](https://www.imdb.com/title/tt0110475/)
+38. [The Matrix Trilogy](https://www.imdb.com/title/tt0133093/)
+39. [The Mechanic](https://www.imdb.com/title/tt0472399/)
+40. [The Monuments Men](https://www.imdb.com/title/tt2177771/)
+41. [The Peacemaker](https://www.imdb.com/title/tt0119874/)
+42. [The Raid](https://www.imdb.com/title/tt2265171/) 
+43. [The Revenant](https://www.imdb.com/title/tt1663202/)
+44. [The Secret Life of Pets](https://www.imdb.com/title/tt5113040/)
+45. [The Silence of the Lambs](https://www.imdb.com/title/tt0102926/)
+46. [The Sting](https://www.imdb.com/title/tt0070735/)
+47. [The Terminator Collection](https://www.imdb.com/title/tt0088247/)
+48. [The Tourist](https://www.imdb.com/title/tt1243957/)
+49. [The Untouchables](https://www.imdb.com/title/tt0094226/)
+50. [The Usual Suspects](https://www.imdb.com/title/tt0114814/)
+51. [The Irishman](https://www.imdb.com/title/tt1302006/)
+52. [Things to Come](https://www.imdb.com/title/tt0028358/)
+53. [Thor](https://www.imdb.com/title/tt3501632/)
+54. [Tinker Tailor Soldier Spy](https://www.imdb.com/title/tt1340800/)
+55. [Toy Story](https://www.imdb.com/title/tt1979376/)
+56. [Train to Busan 1](https://www.imdb.com/title/tt5700672/)
+57. [Train to Busan Presents: Peninsula](https://www.imdb.com/title/tt8850222/)
+58. [Training Day](https://www.imdb.com/title/tt0139654/)
+59. [Triple Frontier](https://www.imdb.com/title/tt1488606/)
+
+1. [Taxi Driver](https://www.imdb.com/title/tt0075314/)
+2. [The Prestige](https://www.imdb.com/title/tt0482571/)
+3. [The Shawshank Redemption](https://www.imdb.com/title/tt0111161/)
+4. [The Shining](https://www.imdb.com/title/tt0081505/)
+5. [The Terminal](https://www.imdb.com/title/tt0362227/)
+6. [The Truman Show](https://www.imdb.com/title/tt0120382/)
+7. [Titanic](https://www.imdb.com/title/tt0120338/)
+8. [Tropic Thunder](https://www.imdb.com/title/tt0942385/)
+
+#   U
+1. [Unforgiven](https://www.imdb.com/title/tt0105695/)
+2. [Unknown](https://www.imdb.com/title/tt1401152/)
+3. [Up](https://www.imdb.com/title/tt1049413/)
+
+1. [Unbreakable](https://www.imdb.com/title/tt0217869/)
+
+#   V
+1. [Vantage Point](https://www.imdb.com/title/tt0443274/)
+2. [Venom](https://www.imdb.com/title/tt1270797/)
+3. [Venom Let there be carnage]()
+4. [Vice](https://www.imdb.com/title/tt6266538/)
+
+1. [V for Vendetta](https://www.imdb.com/title/tt0434409/)
+
+#   W
+1. [Wall-E](https://www.imdb.com/title/tt0910970/)
+2. [Wanted](https://www.imdb.com/title/tt0493464/)
+3. [Watchmen](https://www.imdb.com/title/tt0409459/)
+4. [World War Z](https://www.imdb.com/title/tt0816711/)
+
+# X
+1. [X-Men Collection](https://www.imdb.com/title/tt0120903/)
+
+# Y 
+1. [Yes Man](https://www.imdb.com/title/tt1068680/)
+
+#  Z
+1. [Zero Dark Thirty](https://www.imdb.com/title/tt1790885/)
+2. [Zombieland Dualogy](https://www.imdb.com/title/tt1156398/)
+
+*THANK YOU*
+
+## Tv shows
+
+![](featured_tvseries.jpg)
+More than 100 TV shows are on my list and I have watched all of them. There are a lot of shows in this list
+where all would agree to be great and enticing. There is no specific genre of my interest and I do not mind 
+re-watching these TV shows again.
+
+**last updated on 17/06/2023**
+  
+#   0 to 9  
+
+1. [1983](https://www.imdb.com/title/tt7371666/)
+2. [24](https://www.imdb.com/title/tt0285331/)
+
+#   A    
+
+1. [A bit of Fry and Laurie](https://www.imdb.com/title/tt0101049/)
+2. [A Perfect Planet](https://www.imdb.com/title/tt10219322/)
+3. [After life](https://www.imdb.com/title/tt8398600/)
+4. [Agents of Chaos](https://www.imdb.com/title/tt12967950/)
+5. [Altered Carbon](https://www.imdb.com/title/tt2261227/)
+6. [American Dad](https://www.imdb.com/title/tt0397306/)
+7. [Ansatsu Kyoushitsu](https://www.imdb.com/title/tt3837246/)
+8. [Archer](https://www.imdb.com/title/tt1486217/)
+9. [Asian Provocateur](https://www.imdb.com/title/tt5060048/)
+10. [Asur](https://www.imdb.com/title/tt11912196/)
+11. [Attack on Titan](https://www.imdb.com/title/tt2560140/)
+
+#   B   
+
+1. [Band of Brothers](https://www.imdb.com/title/tt0185906/)
+2. [Banshee](https://www.imdb.com/title/tt2017109/)
+3. [Barry](https://www.imdb.com/title/tt5348176/)
+4. [Beelzebub](https://www.imdb.com/title/tt1882240/)
+5. [Behind Her Eyes](https://www.imdb.com/title/tt9698442/)
+6. [Big Train](https://www.imdb.com/title/tt0178126/)
+7. [Black Mirror](https://www.imdb.com/title/tt2085059/)
+8. [Blood of Zeus](https://www.imdb.com/title/tt10009170/)
+9. [Blue Planet I,II](https://www.imdb.com/title/tt6769208/)
+10. [BodyGuard](https://www.imdb.com/title/tt7493974/)
+11. [Boston Legal](https://www.imdb.com/title/tt0402711/)
+12. [Breaking Bad](https://www.imdb.com/title/tt0903747/)
+13. [Bridgerton](https://www.imdb.com/title/tt8740790/)
+14. [BroadChurch](https://www.imdb.com/title/tt2249364/)
+15. [Brooklynn Nine Nine](https://www.imdb.com/title/tt2467372/)
+
+#  C
+
+1. [Castle](https://www.imdb.com/title/tt1219024/)
+2. [Chance](https://www.imdb.com/title/tt5620076/)
+3. [Cheers](https://www.imdb.com/title/tt0083399/)
+4. [Chernobyl](https://www.imdb.com/title/tt7366338/)
+5. [Clarksons Farm](https://www.imdb.com/title/tt10541088/)
+6. [Collateral](https://www.imdb.com/title/tt6729080/)
+7. [Community](https://www.imdb.com/title/tt1439629/)
+8. [Condor](https://www.imdb.com/title/tt6510950/)
+9. [Cosmos A space time odyssey](https://www.imdb.com/title/tt2395695/)
+10. [Cricket Fever MI](https://www.imdb.com/title/tt8531592/)
+11. [Criminal Minds](https://www.imdb.com/title/tt0452046/)
+12. [Criminal : UK](https://www.imdb.com/title/tt9348692/)
+
+#   D
+
+1. [Dark Desire](https://www.imdb.com/title/tt12540080/)
+2. [Death Note](https://www.imdb.com/title/tt0877057)
+3. [Derry Girls](https://www.imdb.com/title/tt7120662/)
+4. [Des](https://www.imdb.com/title/tt11656892/)
+5. [Dexter](https://www.imdb.com/title/tt0773262/)
+6. [Dom](https://www.imdb.com/title/tt13354188/)
+7. [DOTA: Dragon's Blood](https://www.imdb.com/title/tt14069590/)
+8. [Ducktales](https://www.imdb.com/title/tt5531466/)
+9. [Dynasties](https://www.imdb.com/title/tt9130692/)
+
+#   E
+
+1. [Entourage](https://www.imdb.com/title/tt0387199/)
+2. [Episodes](https://www.imdb.com/title/tt1582350/)
+3. [Extras](https://www.imdb.com/title/tt0445114/)
+
+#   F    
+
+1. [Family Guy](https://www.imdb.com/title/tt0182576/)
+2. [Fawlty Towers](https://www.imdb.com/title/tt0072500/)
+3. [Fleabag](https://www.imdb.com/title/tt5687612/)
+4. [Frasier](https://www.imdb.com/title/tt0106004/)
+5. [Friends](https://www.imdb.com/title/tt0108778/)
+
+#   G
+
+1. [Gadget Man](https://www.imdb.com/title/tt2533174/)
+2. [Game of Thrones](https://www.imdb.com/title/tt0944947/)
+3. [Good Omens](https://www.imdb.com/title/tt1869454/)
+4. [Goodness Gracious Me](https://www.imdb.com/title/tt0137305/)
+
+#   H
+
+1. [Harley Quinn](https://www.imdb.com/title/tt7658402/)
+2. [Hawkeye](https://www.imdb.com/title/tt10160804/)
+3. [Hellbound](https://www.imdb.com/title/tt12235718/)
+4. [Honour](https://www.imdb.com/title/tt10535076/)
+5. [House](https://www.imdb.com/title/tt0412142/)
+6. [House of Cards US](https://www.imdb.com/title/tt1856010/)
+7. [House of Cards UK](https://www.imdb.com/title/tt0098825/)
+8. [House of the Dragon](https://www.imdb.com/title/tt11198330/)
+9. [How I Met Your Mother](https://www.imdb.com/title/tt0460649/)
+10. [How to Become a Tyrant](https://www.imdb.com/title/tt14832996/)
+
+#   I
+
+1. [I am Groot](https://www.imdb.com/title/tt13623148/)
+2. [Industry](https://www.imdb.com/title/tt7671070/)
+3. [Informer](https://www.imdb.com/title/tt7161312/)
+4. [Inside Edge](https://www.imdb.com/title/tt6112414/)
+5. [Invincible](https://www.imdb.com/title/tt6741278/)
+
+#   J
+
+1. [Jeeves and Wooster](https://www.imdb.com/title/tt0098833/)
+2. [Jeffrey Epstein Filthy Rich]()
+3. [Jessica Jones](https://www.imdb.com/title/tt2357547/)
+4. [Johnny Bravo](https://www.imdb.com/title/tt0118360/)
+
+#   K
+
+1. [Keeping Up Appearances](https://www.imdb.com/title/tt0098837/)
+2. [Key and Peele](https://www.imdb.com/title/tt1981558/)
+3. [Killing Eve](https://www.imdb.com/title/tt7016936/)
+4. [Koombiyo](https://www.imdb.com/title/tt7450814/)
+
+#   L
+
+1. [Line of Duty](https://www.imdb.com/title/tt2303687/)
+2. [Loki](https://www.imdb.com/title/tt9140554/)
+3. [Love, Death and Robots](https://www.imdb.com/title/tt9561862/)
+4. [Lucifer](https://www.imdb.com/title/tt4052886/)
+5. [Lupin](https://www.imdb.com/title/tt2531336/)
+6. [Luther](https://www.imdb.com/title/tt1474684/)
+
+#   M
+
+1. [Malcolm in the middle](https://www.imdb.com/title/tt0212671/)
+2. [Manhunt](https://www.imdb.com/title/tt7801964/)
+3. [Marvels Hit Monkey](https://www.imdb.com/title/tt9811316/)
+4. [Master of None](https://www.imdb.com/title/tt4635276/)
+5. [Mayor of Kingstown](https://www.imdb.com/title/tt11712058/)
+6. [McCartney 321](https://www.imdb.com/title/tt13679628/)
+7. [Mind Your Language](https://www.imdb.com/title/tt0075537/)
+8. [Mindhunter](https://www.imdb.com/title/tt5290382/)
+9. [Miss Marvel](https://www.imdb.com/title/tt10857164/)
+10. [Modern Family](https://www.imdb.com/title/tt1442437/)
+11. [Money Heist](https://www.imdb.com/title/tt6468322/)
+12. [Monk](https://www.imdb.com/title/tt0312172/)
+13. [Monty Python The Flying Circus](https://www.imdb.com/title/tt0063929/)
+14. [Mr. Robot](https://www.imdb.com/title/tt4158110/)
+15. [My Hero Academia](https://www.imdb.com/title/tt5626028/)
+
+#   N
+
+1. [Narcos](https://www.imdb.com/title/tt2707408/)
+2. [Never have i ever](https://www.imdb.com/title/tt10062292/)
+3. [New Girl](https://www.imdb.com/title/tt1826940/)
+4. [Not the Nine O'Clock News](https://www.imdb.com/title/tt0080253/)
+
+#   O
+
+1. [Obi Wan Kenobi](https://www.imdb.com/title/tt8466564/)
+2. [Obsession](https://www.imdb.com/title/tt18831118/)
+3. [One Punch Man](https://www.imdb.com/title/tt4508902/)
+4. [Only Murders in the Building](https://www.imdb.com/title/tt12851524/)
+5. [Ozark](https://www.imdb.com/title/tt5071412/)
+
+#   P
+
+1. [Parks and Recreation](https://www.imdb.com/title/tt1266020/)
+2. [Patrick Melrose](https://www.imdb.com/title/tt6586318/)
+3. [Peaky Blinders](https://www.imdb.com/title/tt2442560/)
+4. [Person of Interest](https://www.imdb.com/title/tt1839578/)
+5. [Planet Earth I,II](https://www.imdb.com/title/tt5491994/)
+6. [Preacher](https://www.imdb.com/title/tt5016504/)
+7. [Press](https://www.imdb.com/title/tt7547518/)
+
+#   Q
+
+1. [Quiz](https://www.imdb.com/title/tt10228230/)
+
+#   R
+
+1. [Ragnarok](https://www.imdb.com/title/tt9251798/)
+2. [Reacher](https://www.imdb.com/title/tt9288030/)
+3. [Rick and Morty](https://www.imdb.com/title/tt2861424/)
+4. [Ricky Gervais](https://www.imdb.com/title/tt19885626/)
+
+#   S
+
+1. [Sahodaraya](https://www.imdb.com/title/tt7690588/)
+2. [Seinfeld](https://www.imdb.com/title/tt0098904/)
+3. [Sex Education](https://www.imdb.com/title/tt7767422/)
+4. [She Hulk](https://www.imdb.com/title/tt10857160/)
+5. [Sherlock](https://www.imdb.com/title/tt1475582/)
+6. [Southpark](https://www.imdb.com/title/tt0121955/)
+7. [Space Force](https://www.imdb.com/title/tt9612516/)
+8. [Squid Game](https://www.imdb.com/title/tt10919420/)
+9. [Stranger Things](https://www.imdb.com/title/tt4574334/)
+10. [Succession](https://www.imdb.com/title/tt7660850/)
+11. [Suits](https://www.imdb.com/title/tt1632701/)
+12. [Super Crooks](https://www.imdb.com/title/tt14272628/)
+13. [Supernatural](https://www.imdb.com/title/tt0460681/)
+14. [Suzhal](https://www.imdb.com/title/tt20873118/)
+
+#   T
+
+1. [Ted Lasso](https://www.imdb.com/title/tt10986410/)
+2. [Thanamalvila Kollek](https://www.imdb.com/title/tt12187604/)
+3. [That 70's Show](https://www.imdb.com/title/tt0165598/)
+4. [The ABC Murders](https://www.imdb.com/title/tt8463714/)
+5. [The Big Bang Theory](https://www.imdb.com/title/tt0898266/)
+6. [The Blacklist](https://www.imdb.com/title/tt2741602/)
+7. [The Book of Boba fett](https://www.imdb.com/title/tt13668894/)
+8. [The Boys](https://www.imdb.com/title/tt1190634/)
+9. [The Catherine Tate Show](https://www.imdb.com/title/tt0441051/)
+10. [The Crown](https://www.imdb.com/title/tt4786824/)
+11. [The Falcon and the Winter Soldier](https://www.imdb.com/title/tt9208876/)
+12. [The Following](https://www.imdb.com/title/tt2071645/)
+13. [The Fresh Prince of Bel-Air](https://www.imdb.com/title/tt0098800/)
+14. [The Good Place](https://www.imdb.com/title/tt4955642/)
+15. [The Grand Tour](https://www.imdb.com/title/tt5712554/)
+16. [The IT Crowd](https://www.imdb.com/title/tt0487831/)
+17. [The Killing](https://www.imdb.com/title/tt1637727/)
+18. [The Last Dance](https://www.imdb.com/title/tt8420184/)
+19. [The last of Us](https://www.imdb.com/title/tt3581920/)
+20. [The Legend of Korra](https://www.imdb.com/title/tt1695360/)
+21. [The Lord of the Rings : The rings of the power](https://www.imdb.com/title/tt7631058/)
+22. [The Mandalorian](https://www.imdb.com/title/tt8111088/)
+23. [The Mentalist](https://www.imdb.com/title/tt1196946/)
+24. [The Missing](https://www.imdb.com/title/tt3877200/)
+25. [The Morring Show](https://www.imdb.com/title/tt7203552/)
+26. [The Newsroom](https://www.imdb.com/title/tt1870479/)
+27. [The Night Manager](https://www.imdb.com/title/tt1399664/)
+28. [The Night of](https://www.imdb.com/title/tt2401256/)
+29. [The Office US](https://www.imdb.com/title/tt0386676/)
+30. [The peacemaker](https://www.imdb.com/title/tt13146488/)
+31. [The Punisher](https://www.imdb.com/title/tt5675620/)
+32. [The Serpent](https://www.imdb.com/title/tt7985576/)
+33. [The Silent Sea](https://www.imdb.com/title/tt11570202/)
+34. [The Sopranos](https://www.imdb.com/title/tt0141842/)
+35. [The Spy](https://www.imdb.com/title/tt5952634/)
+36. [The Stranger](https://www.imdb.com/title/tt9698480/)
+37. [The Thin Blue Line](https://www.imdb.com/title/tt0112194/)
+38. [The Two Ronnies](https://www.imdb.com/title/tt0066721/)
+39. [The West Wing](https://www.imdb.com/title/tt0200276/)
+40. [The Wire](https://www.imdb.com/title/tt0306414/)
+41. [The Witcher](https://www.imdb.com/title/tt5180504/)
+42. [The Night Agent](https://www.imdb.com/title/tt13918776/)
+43. [The Sandman](https://www.imdb.com/title/tt1751634/)
+44. [The Undeclared War](https://www.imdb.com/title/tt7939800)
+45. [Thick of It](https://www.imdb.com/title/tt0459159/)
+46. [This is Going to Hurt](https://www.imdb.com/title/tt8681148/)
+47. [Tiger King](https://www.imdb.com/title/tt11823076/)
+48. [Tom Clancys Jack Ryan](https://www.imdb.com/title/tt5057054/)
+49. [Top Gear](https://www.imdb.com/title/tt1628033/)
+50. [Travel man](https://www.imdb.com/title/tt4719744/)
+51. [True Detective](https://www.imdb.com/title/tt2356777/)
+52. [Twin peaks](https://www.imdb.com/title/tt0098936/)
+53. [Two and a Half Men](https://www.imdb.com/title/tt0369179/)
+
+#   U
+
+1. [Unforgotten](https://www.imdb.com/title/tt4192812/)
+
+#   V
+
+1. [Veep](https://www.imdb.com/title/tt1759761/)
+
+#   W
+
+1. [Wandavision](https://www.imdb.com/title/tt9140560/)
+2. [Watchmen](https://www.imdb.com/title/tt7049682/)
+3. [We own this city](https://www.imdb.com/title/tt14192504/)
+4. [Wednesday](https://www.imdb.com/title/tt13443470/)
+5. [Westworld](https://www.imdb.com/title/tt0475784/)
+6. [What If](https://www.imdb.com/title/tt10168312/)
+7. [White Collar](https://www.imdb.com/title/tt1358522/)
+8. [Worlds Most wanted](https://www.imdb.com/title/tt12753698/)
+9. [Wu Assassins](https://www.imdb.com/title/tt8652642/)
+
+#   Y
+
+1. [Years and Years](https://www.imdb.com/title/tt8694364/)
+2. [Yes Minister](https://www.imdb.com/title/tt0080306/)
+3. [Yes, Prime Minister](https://www.imdb.com/title/tt0086831/)
+4. [You](https://www.imdb.com/title/tt7335184/)
+5. [Young Sheldon](https://www.imdb.com/title/tt6226232/)
+
+*THANK YOU*
+:::

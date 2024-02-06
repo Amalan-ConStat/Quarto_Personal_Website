@@ -1,0 +1,26 @@
+---
+title: "fitODBOD: An R Package to Model Binomial Outcome Data using Binomial Mixture and Alternate Binomial Distributions."
+date: "2019-04-22"
+categories: 
+  - package
+  - R
+  - CRAN
+  - fitODBOD
+  - JOSS
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+## Abstract
+
+The R package fitODBOD can be used to identify the best-fitting model for Over-dispersed Binomial Outcome Data (BOD). The Triangular Binomial (TriBin), Beta-Binomial (BetaBin), Kumaraswamy Binomial (KumBin), Gaussian Hypergeometric Generalized Beta-Binomial (GHGBB), Gamma Binomial (GammaBin), Grassia II Binomial (GrassiaIIBin) and McDonald Generalized Beta-Binomial (McGBB) distributions in the Family of Binomial Mixture Distributions (FBMD) are considered for model fitting in this package. 
+Alternate Binomial Distributions such as Additive Binomial (AddBin), Beta-Correlated Binomial (BetaCorrBin), COM Poisson Binomial (COMPBin), Correlated Binomial (CorrBin), Lovinson Multiplicative Binomial (LMBin) and Multiplicative Binomial (MultiBin) distributions are used as well, replacing the traditional binomial distribution. 
+Further, Probability Mass Function (PMF), Cumulative Probability Mass Function (CPMF), Negative Log Likelihood, Over-dispersion and parameter estimation (shape and distribution distinct parameters) can be explored for each fitted model with the fitODBOD package.
+
+<a class="btn btn-outline-primary" href="https://doi.org/10.21105/joss.01505" role="button" style="padding: 5px 5px;">View the Article</a> &nbsp;&nbsp;&nbsp; <a class="btn btn-outline-primary" href="https://cran.r-project.org/package=fitODBOD" role="button" style="padding: 5px 5px;">CRAN</a> &nbsp;&nbsp;&nbsp; <a class="btn btn-outline-primary" href="https://amalan-constat.github.io/fitODBOD/index.html" role="button" style="padding: 5px 5px;">Website</a>

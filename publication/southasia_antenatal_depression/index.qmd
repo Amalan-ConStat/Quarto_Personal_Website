@@ -1,0 +1,30 @@
+---
+title: "Prevalence of antenatal depression in South Asia: a systematic review and meta-analysis."
+date: "2019-04-22"
+categories: 
+  - package
+  - R
+  - meta
+  - metafor
+  - meta-analysis
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+## Abstract
+
+**Objective** - To estimate the prevalence of antenatal depression in South Asia and to examine variations by country and study characteristics to inform policy, practice and future research.
+
+**Methods** - We conducted a comprehensive search of 13 databases including international databases and databases covering scientific literature from South Asian countries in addition to Google Scholar and grey sources from 1 January 2007 to 31 May 2018. Studies reporting prevalence estimates of antenatal depression using a validated diagnostic/screening tool were identified, screened, selected and appraised. Primary outcome was proportion (%) of pregnant women identified as having antenatal depression.
+
+**Results** - Thirty-three studies involving 13087 pregnant women were included in the meta-analysis. Twelve studies were rated as high quality and 21 studies were of moderate quality. Overall pooled prevalence of antenatal depression was 24.3 % (95% Confidence Interval (CI) 19.03 to 30.47). Studies showed a high degree of heterogeneity (I2=97.66%) and evidence of publication bias (p=0.668). Prevalence rates for India (17.74%, 95% CI 11.19 to 26.96) and Sri Lanka (12.95%, 95% CI 8.29 to 19.68) were lower compared with the overall prevalence, whereas prevalence rates for Pakistan (32.2%, 95% CI 23.11 to 42.87) and Nepal (50%, 95% CI 35.64 to 64.36) were higher.
+
+**Conclusions** - While robust prevalence studies are sparse in most South Asian countries, available data suggest one in four pregnant women is likely to experience antenatal depression in the region. Findings highlight the need for recognition of the issue in health policy and practice and for resource allocation for capacity building at regional and national levels for prevention, diagnosis and treatment.
+
+<a class="btn btn-outline-primary" href="https://jech.bmj.com/content/73/8/768" role="button" style="padding: 5px 5px;">View the Article</a> 

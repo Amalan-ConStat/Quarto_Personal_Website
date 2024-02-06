@@ -1,0 +1,30 @@
+---
+title: "A model robust subsampling approach for Generalised Linear Models in big data settings."
+date: "2023-05-27"
+categories: 
+  - Large data set
+  - Model averaging
+  - Optimal subsampling
+  - Experimental design
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+## Abstract
+
+In today’s modern era of big data, computationally efficient and scalable methods are needed to support timely insights and informed decision making. 
+One such method is subsampling, where a subset of the big data is analysed and used as the basis for inference rather than considering the whole data set. 
+A key question when applying subsampling approaches is how to select an informative subset based on the questions being asked of the data. 
+A recent approach for this has been proposed based on determining subsampling probabilities for each data point, but a limitation of this approach is that the appropriate subsampling probabilities rely on an assumed model for the big data. 
+In this article, to overcome this limitation, we propose a model robust approach where a set of models is considered, and the subsampling probabilities are evaluated based on the weighted average of probabilities that would be obtained if each model was considered singularly. 
+Theoretical results are derived to inform such an approach. 
+Our model robust subsampling approach is applied in a simulation study and in two real-world applications where performance is compared to current subsampling practices. 
+The results show that our model robust approach outperforms alternative methods.
+
+<a class="btn btn-outline-primary" href="https://doi.org/10.1007/s00362-023-01446-9" role="button" style="padding: 5px 5px;">View the Article</a> 

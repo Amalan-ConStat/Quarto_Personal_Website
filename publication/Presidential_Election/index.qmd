@@ -1,0 +1,22 @@
+---
+title: "SLPresElection: Presidential Election Data of Sri Lanka from 1982 to 2015."
+date: "2023-01-17"
+categories: 
+  - package
+  - R
+  - Data
+  - Sri Lanka
+  - Election
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+Presidential Election data of "Sri Lanka"" is stored in Pdf files, through Pdf scraping they are converted into data-frames and stored in this R package.
+
+<a class="btn btn-outline-primary" href="https://cran.r-project.org/package=SLPresElection" role="button" style="padding: 5px 5px;">CRAN</a> &nbsp;&nbsp;&nbsp; <a class="btn btn-outline-primary" href="https://amalan-constat.github.io/SLPresElection/index.html" role="button" style="padding: 5px 5px;">Website</a> 
