@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="">
+<meta name="description" content="Welcome to my statistics related blog posts.">
+
+<title>Amalan - Blog Posts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Subsampling .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Subsampling'] = new List('listing-Subsampling', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Binomial_Distribution .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Binomial_Distribution'] = new List('listing-Binomial_Distribution', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Developing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Developing'] = new List('listing-Developing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Development .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Development'] = new List('listing-Development', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Amalan</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../publication/index.html" rel="" target="">
+ <span class="menu-text">Publication</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../posts/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Blog Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tidytuesday/index.html" rel="" target="">
+ <span class="menu-text">#TidyTuesday</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../interests/index.html" rel="" target="">
+ <span class="menu-text">Interests</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://amalan-cv.netlify.com/" rel="" target="">
+ <span class="menu-text">CV Web</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cv/index.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Socials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">    
+        <li>
+    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="dropdown-text">Twitter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/Amalan-ConStat" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="dropdown-text">GitHub</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="dropdown-text">LinkedIn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran" rel="" target=""><i class="bi bi-r-square-fill" role="img">
+</i> 
+ <span class="dropdown-text">Researchgate</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds" rel="" target=""><i class="bi bi-box-fill" role="img">
+</i> 
+ <span class="dropdown-text">R Universe</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com" rel="" target=""><i class="bi bi-mailbox" role="img">
+</i> 
+ <span class="dropdown-text">Email Me</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Blog Posts</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Beta-Binomial">Beta-Binomial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="BetaBinomial">BetaBinomial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Big data">Big data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Binomial">Binomial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Blog">Blog <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Presidential Election">Presidential Election <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Rshiny">Rshiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SL Election">SL Election <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Subsampling">Subsampling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Website">Website <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bbmle">bbmle <span class="quarto-category-count">(2)</span></div><div class="category" data-category="fitODBOD">fitODBOD <span class="quarto-category-count">(6)</span></div><div class="category" data-category="maxLik">maxLik <span class="quarto-category-count">(2)</span></div><div class="category" data-category="mle">mle <span class="quarto-category-count">(2)</span></div><div class="category" data-category="mle2">mle2 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="nlm">nlm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="nlminb">nlminb <span class="quarto-category-count">(1)</span></div><div class="category" data-category="optim">optim <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ucminf">ucminf <span class="quarto-category-count">(1)</span></div></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+<p><em>Welcome to my statistics related blog posts.</em></p>
+<div id="listing-Subsampling" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Blog,Subsampling,Big data" data-listing-date-sort="1675519200000" data-listing-file-modified-sort="1707217142977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="thumbnail">
+<p><a href="../posts/Subsampling/index.html"> <p class="card-img-top"><img src="Subsampling\index_files\figure-html\Subsampling without replacement-1.png"  class="thumbnail-image card-img"/></p> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Subsampling/index.html">
+<h3 class="no-anchor listing-title">
+Number of subsamples, that is sampling
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Blog'); return false;">
+Blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Subsampling'); return false;">
+Subsampling
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Big data'); return false;">
+Big data
+</div>
+</div>
+<a href="../posts/Subsampling/index.html">
+<div class="listing-description">
+Analysing big data is computationally intensive and to resolve this scalable methods are developed, for example subsampling. Obtaining a subset of the big data based on a…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Subsampling/index.html">
+<div class="listing-date">
+February 5, 2023
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<div id="listing-Binomial_Distribution" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Binomial,Blog,fitODBOD" data-listing-date-sort="1550066400000" data-listing-file-modified-sort="1687070694310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25">
+<div class="thumbnail">
+<p><a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html"> <img src="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html">
+<h3 class="no-anchor listing-title">
+Tree of Binomial Distribution
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Binomial'); return false;">
+Binomial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Blog'); return false;">
+Blog
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
+fitODBOD
+</div>
+</div>
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html">
+<div class="listing-description">
+The binomial distribution can be defined, using the binomial expansion
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html">
+<div class="listing-date">
+February 14, 2019
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<div id="listing-Development" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="bbmle,fitODBOD,mle,mle2,R" data-listing-date-sort="1546005600000" data-listing-file-modified-sort="1687070283266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../posts/Benchmarking/mleand2/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Benchmarking/mleand2/index.html">
+<h3 class="no-anchor listing-title">
+Benchmarking the mle and mle2 function
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bbmle'); return false;">
+bbmle
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
+fitODBOD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mle'); return false;">
+mle
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mle2'); return false;">
+mle2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="../posts/Benchmarking/mleand2/index.html">
+<div class="listing-description">
+<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Benchmarking/mleand2/index.html">
+<div class="listing-date">
+December 29, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="BetaBinomial,fitODBOD,maxLik" data-listing-date-sort="1545228000000" data-listing-file-modified-sort="1687069940993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
+<div class="thumbnail">
+<p><a href="../posts/Benchmarking/maxLik/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Benchmarking/maxLik/index.html">
+<h3 class="no-anchor listing-title">
+Benchmarking the maxLik function
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('BetaBinomial'); return false;">
+BetaBinomial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
+fitODBOD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('maxLik'); return false;">
+maxLik
+</div>
+</div>
+<a href="../posts/Benchmarking/maxLik/index.html">
+<div class="listing-description">
+<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Benchmarking/maxLik/index.html">
+<div class="listing-date">
+December 20, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="fitODBOD,optim,R" data-listing-date-sort="1544709600000" data-listing-file-modified-sort="1687070271646" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="thumbnail">
+<p><a href="../posts/Benchmarking/optim/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Benchmarking/optim/index.html">
+<h3 class="no-anchor listing-title">
+Benchmarking the optim function
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
+fitODBOD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('optim'); return false;">
+optim
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="../posts/Benchmarking/optim/index.html">
+<div class="listing-description">
+<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Benchmarking/optim/index.html">
+<div class="listing-date">
+December 14, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="bbmle,Beta-Binomial,fitODBOD,maxLik,mle,mle2,nlm,nlminb,optim,ucminf" data-listing-date-sort="1543845600000" data-listing-file-modified-sort="1687070406730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19">
+<div class="thumbnail">
+<p><a href="../posts/Benchmarking/fitODBOD/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Benchmarking/fitODBOD/index.html">
+<h3 class="no-anchor listing-title">
+Benchmarking optimization functions in R
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bbmle'); return false;">
+bbmle
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Beta-Binomial'); return false;">
+Beta-Binomial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
+fitODBOD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('maxLik'); return false;">
+maxLik
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mle'); return false;">
+mle
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mle2'); return false;">
+mle2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('nlm'); return false;">
+nlm
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('nlminb'); return false;">
+nlminb
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('optim'); return false;">
+optim
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ucminf'); return false;">
+ucminf
+</div>
+</div>
+<a href="../posts/Benchmarking/fitODBOD/index.html">
+<div class="listing-description">
+<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Benchmarking/fitODBOD/index.html">
+<div class="listing-date">
+December 4, 2018
+</div>
+<div class="listing-author">
+M.Amalan
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-Developing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="SL Election,Presidential Election" data-listing-date-sort="1563026400000" data-listing-file-modified-sort="1687065942387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15">
+<div class="thumbnail">
+<p><a href="../posts/Developing/SLelection/Presidential_Election/index.html"> <img src="../posts/Developing/SLelection/Presidential_Election/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html">
+<h3 class="no-anchor listing-title">
+Extract Presidential Election Data of 2015 from the Pdf file
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('SL Election'); return false;">
+SL Election
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Presidential Election'); return false;">
+Presidential Election
+</div>
+</div>
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html">
+<div class="listing-description">
+Sri Lanka will face…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html">
+<div class="listing-date">
+July 14, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="R,Website,Blog" data-listing-date-sort="1548597600000" data-listing-file-modified-sort="1687056636809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="thumbnail">
+<p><a href="../posts/Developing/PersonalWebsite/index.html"> <img src="../posts/Developing/PersonalWebsite/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Developing/PersonalWebsite/index.html">
+<h3 class="no-anchor listing-title">
+Build Your Own Website or Blog Using R, RStudio and R Packages.
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Website'); return false;">
+Website
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Blog'); return false;">
+Blog
+</div>
+</div>
+<a href="../posts/Developing/PersonalWebsite/index.html">
+<div class="listing-description">
+R enthusiasts are focused on developing packages and websites to promote their profile and share their knowledge to the world. Recently released packages such as hugo…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Developing/PersonalWebsite/index.html">
+<div class="listing-date">
+January 28, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Rshiny,R" data-listing-date-sort="1548252000000" data-listing-file-modified-sort="1687065785792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../posts/Developing/OlympicRshiny/index.html"> <img src="../posts/Developing/OlympicRshiny/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Developing/OlympicRshiny/index.html">
+<h3 class="no-anchor listing-title">
+Olympic : Rshiny Approach
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Rshiny'); return false;">
+Rshiny
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="../posts/Developing/OlympicRshiny/index.html">
+<div class="listing-description">
+Rshiny is very popular in the rstats community. The glamourous interface and functionality has helped for this level of popularity. In perspective of…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Developing/OlympicRshiny/index.html">
+<div class="listing-date">
+January 24, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="fitODBOD,R" data-listing-date-sort="1547042400000" data-listing-file-modified-sort="1687066128736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="thumbnail">
+<p><a href="../posts/Developing/YourOwnPackage/index.html"> <img src="../posts/Developing/YourOwnPackage/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Developing/YourOwnPackage/index.html">
+<h3 class="no-anchor listing-title">
+Developing an R package
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
+fitODBOD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="../posts/Developing/YourOwnPackage/index.html">
+<div class="listing-description">
+R package development is no longer as it was before 2010 because now most of the work can be done by just a simple mouse-click or with the use of a function. My intention of…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Developing/YourOwnPackage/index.html">
+<div class="listing-date">
+January 10, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="R" data-listing-date-sort="1545487200000" data-listing-file-modified-sort="1687065528074" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="../posts/Developing/Newpackage/index.html"> <img src="../posts/Developing/Newpackage/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Developing/Newpackage/index.html">
+<h3 class="no-anchor listing-title">
+Build a New Package with Existing R packages
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="../posts/Developing/Newpackage/index.html">
+<div class="listing-description">
+Package development is a sense of accomplishment for any statistical programmer who needs self satisfaction. I developed the R package fitODBOD for the purpose of fitting Over dispersed Binomial Outcome Data using Binomial Mixture Distributions and Alternate Binomial Distributions. It was a an amazing journey…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Developing/Newpackage/index.html">
+<div class="listing-date">
+December 23, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="R" data-listing-date-sort="1545400800000" data-listing-file-modified-sort="1687065550868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="../posts/Developing/FindRpackage/index.html"> <img src="../posts/Developing/FindRpackage/featured.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../posts/Developing/FindRpackage/index.html">
+<h3 class="no-anchor listing-title">
+How To Find Your R package ?
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="../posts/Developing/FindRpackage/index.html">
+<div class="listing-description">
+How to find your…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../posts/Developing/FindRpackage/index.html">
+<div class="listing-date">
+December 22, 2018
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left"><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></div>
+  </div>
+</footer>
+
+
+
+</body></html>

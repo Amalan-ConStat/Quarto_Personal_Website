@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="dcterms.date" content="2018-12-14">
+<title>Amalan - Benchmarking the optim function</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Amalan</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../../publication/index.html" rel="" target="">
+ <span class="menu-text">Publication</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts/index.html" rel="" target="">
+ <span class="menu-text">Blog Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tidytuesday/index.html" rel="" target="">
+ <span class="menu-text">#TidyTuesday</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../interests/index.html" rel="" target="">
+ <span class="menu-text">Interests</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://amalan-cv.netlify.com/" rel="" target="">
+ <span class="menu-text">CV Web</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/index.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Socials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">
+<li>
+    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="dropdown-text">Twitter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/Amalan-ConStat" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="dropdown-text">GitHub</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="dropdown-text">LinkedIn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran" rel="" target=""><i class="bi bi-r-square-fill" role="img">
+</i> 
+ <span class="dropdown-text">Researchgate</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds" rel="" target=""><i class="bi bi-box-fill" role="img">
+</i> 
+ <span class="dropdown-text">R Universe</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com" rel="" target=""><i class="bi bi-mailbox" role="img">
+</i> 
+ <span class="dropdown-text">Email Me</span></a>
+  </li>  
+    </ul>
+</li>
+</ul>
+<div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Benchmarking the optim function</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">fitODBOD</div>
+    <div class="quarto-category">optim</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 14, 2018</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header><p><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></p>
+<section id="estimating-the-shape-parameters-of-beta-binomial-distribution" class="level1"><h1>Estimating the shape parameters of Beta-Binomial Distribution</h1>
+</section><section id="introduction" class="level1"><h1>Introduction</h1>
+<p>I wrote a <a href="https://amalan-con-stat.netlify.com/post/fitodbod_1/benchmarking-maximum-liklihood-functions-from-r/">blog post</a> earlier this month to understand the optimization functions in R and compare them. Here I am taking my time to go through one function at a time, only when there are more than one analytical method to use.</p>
+<p>Today I will scrutinize the optim function which has six analytical methods. Setting the stage, we have the Beta-Binomial distribution and Binomial Outcome data, and we need to estimate proper shape parameters which would minimize the Negative Log Likelihood value or Maximize the Log Likelihood value of the Beta-Binomial distribution for the above Binomial Outcome data. In this case Alcohol Consumption data from the <a href="https://cran.r-project.org/package=fitODBOD">fitODBOD</a> package will be used.</p>
+<p>In this blog post we focus on the process time to optimization, estimated shape parameters, minimized Negative Log Likelihood value, expected frequencies, p-value and Over-dispersion in tables.</p>
+<p>Below are the six analytical methods in concern</p>
+<ol type="1">
+<li>Nelder Mead</li>
+<li>BFGS</li>
+<li>CG</li>
+<li>L-BFGS-B</li>
+<li>SANN</li>
+<li>Brent</li>
+</ol>
+<p>Alcohol Consumption data has two sets of frequency values but only values from week 1 will be used. Below is the the Alcohol Consumption data, where number of observations is 399 and the Binomial Random variable is a vector of values from zero to seven.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Amalan-ConStat/R-fitODBOD">fitODBOD</a></span><span class="op">)</span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">Alcohol_data</span>,<span class="st">"html"</span>,align<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">kable_styling</span><span class="op">(</span>bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span><span class="op">)</span>,font_size <span class="op">=</span> <span class="fl">14</span>,full_width <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">row_spec</span><span class="op">(</span><span class="fl">0</span>,color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">column_spec</span><span class="op">(</span><span class="fl">1</span>,color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead><tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Days</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">week1</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">week2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">0</td>
+<td style="text-align: center;">47</td>
+<td style="text-align: center;">42</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">1</td>
+<td style="text-align: center;">54</td>
+<td style="text-align: center;">47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">2</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">54</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">3</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">4</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">49</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">5</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">6</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">7</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">84</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="brief-of-optim-function" class="level2"><h2 class="anchored" data-anchor-id="brief-of-optim-function">Brief of optim Function</h2>
+<p>Reading through the optim function <a href="https://amalan-con-stat.netlify.com/post/fitodbod_1/benchmarking-maximum-liklihood-functions-from-r/#optim-function">brief</a> from the previous post it will help the reader regarding operational questions of the function.</p>
+<p>So for the initial parameters of a=0.1 and b=0.2 we will be finding estimated parameters from different analytical methods which would minimize the Negative Log Likelihood value of the Beta-Binomial distribution.</p>
+<p>First we are transforming the given EstMLEBetaBin function to satisfy the optim function conditions.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># new function to facilitate optim criteria</span></span>
+<span><span class="co"># only one input but has two elements</span></span>
+<span><span class="va">foroptim</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/fitODBOD/man/EstMLEBetaBin.html">EstMLEBetaBin</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>, freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,b<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>So the foroptim function can be used as above and parameters are estimated for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> (or a, b) for the Alcohol Consumption data week 1. Further the optim function can be scrutinized as below.</p>
+<ul>
+<li>package : stats</li>
+<li>No of Inputs: 7</li>
+<li>Minimum required Inputs : 2</li>
+<li>Class of output : list</li>
+<li>No of outputs: 5</li>
+<li>No of Analytical Methods : 6</li>
+<li>Default Method : Nelder-Mead</li>
+</ul></section><section id="nelder-and-mead-method" class="level2"><h2 class="anchored" data-anchor-id="nelder-and-mead-method">Nelder and Mead method</h2>
+<p>Default analytical method is Nelder and Mead method. According to the documentation it uses only function values and is robust but relatively slow. It will work reasonably well for non-differential functions.</p>
+<p>Reference : Nelder, J.A. and Mead, R., 1965. A simplex method for function minimization. The computer journal, 7(4), pp.308-313.</p>
+<p>Below is the code of using optim function with Nelder and Mead analytical method.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using default analytical method or Nelder and Mead</span></span>
+<span><span class="va">NM_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">foroptim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">counts</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/fitODBOD/man/fitBetaBin.html">fitBetaBin</a></span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,<span class="va">NM_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">NM_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="bfgs-method" class="level2"><h2 class="anchored" data-anchor-id="bfgs-method">BFGS method</h2>
+<p>The documentation indicates that BFGS is a Quasi-Newton method (also known as a variable metric algorithm), specifically that published simultaneously in 1970 by Broyden, Fletcher, Goldfarb and Shanno. This uses function values and gradients to build up a picture of the surface to be optimized.</p>
+<p>Reference : Broyden, C.G., 1967. Quasi-Newton methods and their application to function minimization. Mathematics of Computation, 21(99), pp.368-381.</p>
+<p>Below is the code for using optim function with BFGS analytical method</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using BFGS inputs</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"BFGS"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">counts</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/fitODBOD/man/fitBetaBin.html">fitBetaBin</a></span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">BFGS_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">BFGS_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="cg-method" class="level2"><h2 class="anchored" data-anchor-id="cg-method">CG method</h2>
+<p>The documentation indicates the Method CG is a conjugate gradients method based on that by Fletcher and Reeves (1964) (but with the option of Polak–Ribiere or Beale–Sorenson updates). Conjugate gradient methods will generally be more fragile than the BFGS method, but as they do not store a matrix they may be successful in much larger optimization problems.</p>
+<p>Reference : Fletcher, R. and Reeves, C.M., 1964. Function minimization by conjugate gradients. The computer journal, 7(2), pp.149-154.</p>
+<p>Using CG method with optim function is explained below</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using CG inputs</span></span>
+<span><span class="va">CG_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"CG"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">counts</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/fitODBOD/man/fitBetaBin.html">fitBetaBin</a></span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,<span class="va">CG_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">CG_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="l-bfgs-b-method" class="level2"><h2 class="anchored" data-anchor-id="l-bfgs-b-method">L-BFGS-B method</h2>
+<p>Method L-BFGS-B is that of Byrd et. al.&nbsp;(1995) which allows box constraints, that is each variable can be given a lower and/or upper bound. The initial value must satisfy the constraints. This uses a limited-memory modification of the BFGS quasi-Newton method. If non-trivial bounds are supplied, this method will be selected, with a warning.</p>
+<p>Reference : Byrd, R.H., Lu, P., Nocedal, J. and Zhu, C., 1995. A limited memory algorithm for bound constrained optimization. SIAM Journal on Scientific Computing, 16(5), pp.1190-1208.</p>
+<p>Refer the below code chunk to under the L-BFGS-B method from optim function</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using L-BFGS-B inputs</span></span>
+<span><span class="va">L_BFGS_B_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"L-BFGS-B"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">counts</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/fitODBOD/man/fitBetaBin.html">fitBetaBin</a></span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">L_BFGS_B_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="sann-method" class="level2"><h2 class="anchored" data-anchor-id="sann-method">SANN method</h2>
+<p>Method SANN is by default a variant of simulated annealing given in Belisle (1992). Simulated-annealing belongs to the class of stochastic global optimization methods. It uses only function values but is relatively slow. It will also work for non-differential functions. This implementation uses the Metropolis function for the acceptance probability.</p>
+<p>By default the next candidate point is generated from a Gaussian Markov kernel with scale proportional to the actual temperature. If a function to generate a new candidate point is given, method SANN can also be used to solve combinatorial optimization problems. Temperatures are decreased according to the logarithmic cooling schedule as given in Belisle (1992, p.890); specifically, the temperature is set to <span class="math inline">\(temp / log(((t-1) %/% tmax)*tmax + exp(1))\)</span>, where <span class="math inline">\(t\)</span> is the current iteration step and temp and tmax are specifiable via control.</p>
+<p>Note that the SANN method depends critically on the settings of the control parameters. It is not a general-purpose method but can be very useful in getting to a good value on a very rough surface.</p>
+<p>Reference : Belisle, C.J., 1992. Convergence theorems for a class of simulated annealing algorithms on R d.&nbsp;Journal of Applied Probability, 29(4), pp.885-895.</p>
+<p>Below mentioned code chunk is simply using SANN method for optim function</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using default inputs</span></span>
+<span><span class="va">SANN_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"SANN"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">counts</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/fitODBOD/man/fitBetaBin.html">fitBetaBin</a></span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">SANN_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">SANN_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="brent-method" class="level2"><h2 class="anchored" data-anchor-id="brent-method">Brent method</h2>
+<p>Brent Method is for one-dimensional problems only, using optimize(). It can be useful in cases where optim() is used inside other functions where only method can be specified, such as in mle from package stats4. Brent method does not work for our situation.</p>
+<p>Reference : Brent, R.P., 2013. Algorithms for minimization without derivatives. Courier Corporation.</p>
+</section></section><section id="summary-of-time-evaluation-for-different-analytical-methods-of-optim-function" class="level1"><h1>Summary of Time evaluation for different Analytical methods of optim function</h1>
+<p>Below considered table will compare the system process time for different analytical methods. In order to do this time comparison it is necessary to use the <a href="https://www.rdocumentation.org/packages/rbenchmark/versions/1.0.0/topics/benchmark">benchmark</a> function of <a href="https://cran.r-project.org/package=rbenchmark">rbenchmark</a> package. Below written code chunk provides the output in a table form which includes the analytical methods and their respective time values. The estimation process of the parameters where each method has been replicated 1000 times to receive a more accurate table for time values.</p>
+<p>The table is in accordance to the elapsed time value column in the ascending order. According to this we can see that least time takes to the Nelder and Mead method and most time is taken to the SANN method. These times completely depends on the Negative Log Likelihood function you need to minimize, the data you provided, the number of estimators that needs to be estimated, the complexity of the function and finally computer’s processing power.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://rbenchmark.googlecode.com">rbenchmark</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Results1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/rbenchmark/man/benchmark.html">benchmark</a></span><span class="op">(</span></span>
+<span>          <span class="st">"NelderMead"</span><span class="op">=</span><span class="op">{</span> <span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"BFGS"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"BFGS"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"CG"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"CG"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"L-BFGS-B"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"L-BFGS-B"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"SANN"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span>,method <span class="op">=</span> <span class="st">"SANN"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          replications <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>          columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"test"</span>,<span class="st">"replications"</span>,<span class="st">"elapsed"</span>,</span>
+<span>                      <span class="st">"relative"</span>,<span class="st">"user.self"</span>,<span class="st">"sys.self"</span><span class="op">)</span>,</span>
+<span>          order <span class="op">=</span> <span class="st">'elapsed'</span></span>
+<span>          <span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">Results1</span>,<span class="st">"html"</span>,align <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">kable_styling</span><span class="op">(</span>full_width <span class="op">=</span> <span class="cn">T</span>,bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span><span class="op">)</span>,font_size <span class="op">=</span> <span class="fl">14</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">row_spec</span><span class="op">(</span><span class="fl">0</span>,color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">column_spec</span><span class="op">(</span><span class="fl">1</span>,color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead><tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">test</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">replications</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">elapsed</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">relative</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">user.self</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">sys.self</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: red !important;">1</td>
+<td style="text-align: center;">NelderMead</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; color: red !important;">4</td>
+<td style="text-align: center;">L-BFGS-B</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">1.02</td>
+<td style="text-align: center;">1.085</td>
+<td style="text-align: center;">1.01</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; color: red !important;">2</td>
+<td style="text-align: center;">BFGS</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">1.64</td>
+<td style="text-align: center;">1.745</td>
+<td style="text-align: center;">1.63</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; color: red !important;">3</td>
+<td style="text-align: center;">CG</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">3.33</td>
+<td style="text-align: center;">3.543</td>
+<td style="text-align: center;">3.33</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; color: red !important;">5</td>
+<td style="text-align: center;">SANN</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">147.63</td>
+<td style="text-align: center;">157.053</td>
+<td style="text-align: center;">147.29</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="summary-of-results-after-using-the-optim-function-for-different-analytical-methods" class="level1"><h1>Summary of results after using the optim function for different analytical methods</h1>
+<p>After using the methods Nelder Mead, BFGS, CG, L-BFGS-B and SANN to estimate the shape parameters a, b we can use the estimated parameters in the function fitBetaBin. Using this function we can find expected frequencies for each of these analytical methods and compare p-values and over-dispersion. Further, understand if using different analytical methods had any effect on them.</p>
+<p>According to the below table there is no significant changes between the expected frequencies, except while using SANN method. All five methods generate different Over-dispersion values after the first three decimal places. Negative Log Likelihood values and p values are same for all 5 methods until first three decimal places. This is a clear indication of it does not matter what analytical method we use the estimation will occur effectively but only efficiency will be affected.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead><tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">BinomialRandomVariable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Frequency</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">NelderMead</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">BFGS</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">CG</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">LBFGSB</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">SANN</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">0</td>
+<td style="text-align: center;">47</td>
+<td style="text-align: center;">54.61</td>
+<td style="text-align: center;">54.62</td>
+<td style="text-align: center;">54.62</td>
+<td style="text-align: center;">54.62</td>
+<td style="text-align: center;">54.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">1</td>
+<td style="text-align: center;">54</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">42.02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">2</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">38.91</td>
+<td style="text-align: center;">38.9</td>
+<td style="text-align: center;">38.9</td>
+<td style="text-align: center;">38.9</td>
+<td style="text-align: center;">38.89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">3</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">38.54</td>
+<td style="text-align: center;">38.54</td>
+<td style="text-align: center;">38.54</td>
+<td style="text-align: center;">38.54</td>
+<td style="text-align: center;">38.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">4</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">40.07</td>
+<td style="text-align: center;">40.07</td>
+<td style="text-align: center;">40.07</td>
+<td style="text-align: center;">40.07</td>
+<td style="text-align: center;">40.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">5</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">43.99</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">43.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">6</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">53.09</td>
+<td style="text-align: center;">53.09</td>
+<td style="text-align: center;">53.09</td>
+<td style="text-align: center;">53.09</td>
+<td style="text-align: center;">53.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">7</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">87.77</td>
+<td style="text-align: center;">87.8</td>
+<td style="text-align: center;">87.78</td>
+<td style="text-align: center;">87.78</td>
+<td style="text-align: center;">87.78</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">Total No of Observations</td>
+<td style="text-align: center;">399</td>
+<td style="text-align: center;">398.99</td>
+<td style="text-align: center;">399.01</td>
+<td style="text-align: center;">399</td>
+<td style="text-align: center;">399</td>
+<td style="text-align: center;">399.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">p-value</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.0902</td>
+<td style="text-align: center;">0.0903</td>
+<td style="text-align: center;">0.0901</td>
+<td style="text-align: center;">0.0901</td>
+<td style="text-align: center;">0.0901</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">Estimated a and b</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">a=0.7230707 b=0.5809894</td>
+<td style="text-align: center;">a=0.7228930 b=0.5807279</td>
+<td style="text-align: center;">a=0.7229414 b=0.5808477</td>
+<td style="text-align: center;">a=0.7229432 b=0.5808496</td>
+<td style="text-align: center;">a=0.7215669 b=0.5802982</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: red !important;">Negative Log Likelihood</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">813.4571</td>
+<td style="text-align: center;">813.4571</td>
+<td style="text-align: center;">813.4571</td>
+<td style="text-align: center;">813.4571</td>
+<td style="text-align: center;">813.4573</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; color: red !important;">Over Dispersion</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.4340165</td>
+<td style="text-align: center;">0.4340992</td>
+<td style="text-align: center;">0.4340675</td>
+<td style="text-align: center;">0.4340668</td>
+<td style="text-align: center;">0.4344303</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="final-conclusion" class="level1"><h1>Final Conclusion</h1>
+<p>We had 6 methods to compare but choosing one over the other is completely harmless to the final result of estimation as seen by our tables. And our situation forces us to not use the Brent method. The only issue is time, therefore I would recommend choose the best analytical method from the optim function based on your needs of output and research objective.</p>
+<p><em>THANK YOU</em></p>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left"><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></div>
+  </div>
+</footer>
+
+
+</body></html>

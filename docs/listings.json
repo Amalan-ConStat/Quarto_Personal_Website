@@ -1,0 +1,67 @@
+[
+  {
+    "listing": "/tidytuesday/index.html",
+    "items": [
+      "/tidytuesday/2018/Week_38/index.html",
+      "/tidytuesday/2018/Week_37/index.html",
+      "/tidytuesday/2018/Week_36/index.html",
+      "/tidytuesday/2018/Week_35/index.html",
+      "/tidytuesday/2018/Week_34/index.html",
+      "/tidytuesday/2018/Week_33/index.html",
+      "/tidytuesday/2018/Week_31/index.html",
+      "/tidytuesday/2018/Week_30/index.html",
+      "/tidytuesday/2019/Week_43/index.html",
+      "/tidytuesday/2019/Week_34/index.html",
+      "/tidytuesday/2019/Week_33/index.html",
+      "/tidytuesday/2019/Week_29/index.html",
+      "/tidytuesday/2019/Week_28/index.html",
+      "/tidytuesday/2019/Week_27/index.html",
+      "/tidytuesday/2019/Week_26/index.html",
+      "/tidytuesday/2019/Week_25/index.html",
+      "/tidytuesday/2019/Week_24/index.html",
+      "/tidytuesday/2019/Week_23/index.html",
+      "/tidytuesday/2019/Week_15/index.html",
+      "/tidytuesday/2019/Week_14/index.html",
+      "/tidytuesday/2019/Week_13/index.html",
+      "/tidytuesday/2019/Week_11/index.html",
+      "/tidytuesday/2019/Week_10/index.html",
+      "/tidytuesday/2019/Week_9/index.html",
+      "/tidytuesday/2019/Week_8/index.html",
+      "/tidytuesday/2019/Week_7/index.html",
+      "/tidytuesday/2019/Week_6/index.html",
+      "/tidytuesday/2019/Week_5/index.html",
+      "/tidytuesday/2019/Week_4/index.html",
+      "/tidytuesday/2019/Week_3/index.html",
+      "/tidytuesday/2019/Week_2/index.html",
+      "/tidytuesday/2019/Week_1/index.html"
+    ]
+  },
+  {
+    "listing": "/publication/index.html",
+    "items": [
+      "/publication/Model_Average/index.html",
+      "/publication/Nigeria_HIV_meta_analysis/index.html",
+      "/publication/southasia_antenatal_depression/index.html",
+      "/publication/fitODBOD/index.html",
+      "/publication/OlympicRshiny/index.html",
+      "/publication/Presidential_Election/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/Subsampling/index.html",
+      "/posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html",
+      "/posts/Developing/SLelection/Presidential_Election/index.html",
+      "/posts/Developing/PersonalWebsite/index.html",
+      "/posts/Developing/OlympicRshiny/index.html",
+      "/posts/Developing/YourOwnPackage/index.html",
+      "/posts/Developing/Newpackage/index.html",
+      "/posts/Developing/FindRpackage/index.html",
+      "/posts/Benchmarking/mleand2/index.html",
+      "/posts/Benchmarking/maxLik/index.html",
+      "/posts/Benchmarking/optim/index.html",
+      "/posts/Benchmarking/fitODBOD/index.html"
+    ]
+  }
+]

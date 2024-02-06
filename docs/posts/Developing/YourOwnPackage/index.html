@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="dcterms.date" content="2019-01-10">
+<title>Amalan - Developing an R package</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+</head>
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Amalan</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../../publication/index.html" rel="" target="">
+ <span class="menu-text">Publication</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts/index.html" rel="" target="">
+ <span class="menu-text">Blog Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tidytuesday/index.html" rel="" target="">
+ <span class="menu-text">#TidyTuesday</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../interests/index.html" rel="" target="">
+ <span class="menu-text">Interests</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://amalan-cv.netlify.com/" rel="" target="">
+ <span class="menu-text">CV Web</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/index.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Socials</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">
+<li>
+    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="dropdown-text">Twitter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/Amalan-ConStat" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="dropdown-text">GitHub</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="dropdown-text">LinkedIn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran" rel="" target=""><i class="bi bi-r-square-fill" role="img">
+</i> 
+ <span class="dropdown-text">Researchgate</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds" rel="" target=""><i class="bi bi-box-fill" role="img">
+</i> 
+ <span class="dropdown-text">R Universe</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com" rel="" target=""><i class="bi bi-mailbox" role="img">
+</i> 
+ <span class="dropdown-text">Email Me</span></a>
+  </li>  
+    </ul>
+</li>
+</ul>
+<div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Developing an R package</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">fitODBOD</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 10, 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header><section id="introduction" class="level1"><h1>Introduction</h1>
+<p>R package development is no longer as it was before 2010 because now most of the work can be done by just a simple mouse-click or with the use of a function. My intention of writing this blog post is not to give a thorough demonstration of how to develop your own R package. But it will briefly explain the process with the most important steps, and will include valuable blog posts and websites which helped me to develop my own R package <a href="https://cran.r-project.org/package=fitODBOD">fitODBOD.</a></p>
+</section><section id="credit-to-people-of-r-community" class="level1"><h1>Credit to People of R Community</h1>
+<p>I would definitely recommend to read all of these books and start your package development. Or at least make step by step progress in your work while reading them. If you have a basic knowledge regarding R, R studio, CRAN and writing programs, they are more than enough for you to start.</p>
+<ul>
+<li>
+<p><a href="http://r-pkgs.had.co.nz/">R packages by Hadley Wickam</a></p>
+<p>This website contains everything that is in the book. The basic things related to an R package development process are structured properly here. It is very useful to read this book/website. The package structure, the type of files necessary, how should the writing be in these files and further, what kind of ways can we use to achieve the final outputs. The book is mainly focused on producing an R package which can be updated with the highest standards using reproducing ability. Such as CRAN standards and GitHub releases.</p>
+</li>
+<li>
+<p><a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html">Writing R Extensions</a></p>
+<p>Everything related to package development is included here with clear instructions. This document is provided by the CRAN project to make package development more friendlier. It includes the official standards for files and naming conventions related to R package development.</p>
+</li>
+<li>
+<p><a href="https://cran.r-project.org/doc/contrib/Leisch-CreatingPackages.pdf">Creating R packages: A Tutorial by Friedrich Leish</a></p>
+<p>A brief article explaining about writing functions, classes and methods for R package development. This is very abstract and useful in package development specially as it is focusing on object oriented programming and S formulas.</p>
+</li>
+<li>
+<p><a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">R for Beginners by Emmanuel Paradis</a></p>
+<p>A book explaining R and its ability in detail, for example regarding functions, data, abilities and limitations of R. There is also a section for R packages, which has valuable information. Writing functions is very crucial in R package development therefore going through this document is worth. Several packages also include data-sets in them. While you develop functions similarly we can develop data-sets as well. There are sections which includes information regarding data-sets as well.</p>
+</li>
+<li>
+<p><a href="http://diytranscriptomics.com/Reading/files/The%20Art%20of%20R%20Programming.pdf">The Art of R Programming by Norman Matloff</a></p>
+<p>Another book that will be useful in understanding how R functions and data-sets can be used in R package development.</p>
+</li>
+<li>
+<p><a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">The R Inferno by Patrick Burns</a></p>
+<p>Useful book related to object oriented programming, functions and data objects related to R. Very thorough and scrutinized information with valuable explanation which makes things more clearer.</p>
+</li>
+<li>
+<p><a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheets</a></p>
+<p>Easy implementation of packages mentioned in these cheatsheets. Very essential for someone who is interested in doing R related stuff efficient and eloquent.</p>
+</li>
+<li>
+<p><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide by Yihui Xie, J. J. Allaire, Garrett Grolemund</a></p>
+<p>Notes related to RMarkdown, very useful for vignette building.</p>
+</li>
+<li>
+<p><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR by Jenny Bryan, the STAT 545 TAs, Jim Hester</a></p>
+<p>Using GitHub for package development is very useful, specially when it comes to sharing and version control. This book explains it all with simplicity.</p>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rich-iannone/DiagrammeR">DiagrammeR</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/DiagrammeR/man/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<span><span class="st">           A(Code with Standards and comment)--&gt;C(Create R package);</span></span>
+<span><span class="st">           C--&gt;D(R package &lt;br&gt; Structure);</span></span>
+<span><span class="st">           D--&gt;E(DESCRIPTION file);</span></span>
+<span><span class="st">           D--&gt;F(README file);</span></span>
+<span><span class="st">           D--&gt;G(/R directory);</span></span>
+<span><span class="st">           D--&gt;H(/data directory);</span></span>
+<span><span class="st">           D--&gt;I(/tests directory);</span></span>
+<span><span class="st">           D--&gt;J(/man directory);</span></span>
+<span><span class="st">           D--&gt;K(NAMESPACE file);</span></span>
+<span><span class="st">           D--&gt;L(/vignettes &lt;br&gt; directory);</span></span>
+<span><span class="st">           D--&gt;M(NEWS.md file);</span></span>
+<span><span class="st">           E--&gt;O(Build &lt;br&gt; the package);</span></span>
+<span><span class="st">           O--&gt;N(Source,Bundle,Binary,Installed,In Memory);</span></span>
+<span><span class="st">           F--&gt;O; G--&gt;O; H--&gt;O; I--&gt;O; J--&gt;O; K--&gt;O;  L--&gt;O; M--&gt;O;"</span>,width<span class="op">=</span><span class="fl">900</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="coding-standards-coding-to-understand" class="level2"><h2 class="anchored" data-anchor-id="coding-standards-coding-to-understand">1) Coding Standards (Coding to Understand)</h2>
+<ul>
+<li>Focus on naming conventions.</li>
+<li>Focus on input parameters and outputs.</li>
+<li>Focus on indentation.</li>
+<li>Comment regularly to make sense of the functions.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="screenshot/codingstandards/figure1.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Sample Code</figcaption></figure>
+</div>
+</section><section id="package-structure" class="level2"><h2 class="anchored" data-anchor-id="package-structure">2) Package Structure</h2>
+<ul>
+<li>Very Important.</li>
+<li>Initially few files will be originated in the designated project folder.</li>
+<li>Over time we might add folders or create files manually.</li>
+<li>Example - tests directory, README.Rmd, …</li>
+</ul>
+<p><img src="screenshot/directory/figure1.PNG" class="img-fluid"> Package structure inside your project folder.</p>
+</section><section id="description-file" class="level2"><h2 class="anchored" data-anchor-id="description-file">3) DESCRIPTION file</h2>
+<ul>
+<li>File explaining basic things related to your package.</li>
+<li>Example - package name, other packages needed, authors name, …</li>
+<li>Can edit manually or use specific R package.</li>
+</ul>
+<p><img src="screenshot/otherfiles/figure1.PNG" class="img-fluid"> After changes the DESCRIPTION file</p>
+</section><section id="readme-file" class="level2"><h2 class="anchored" data-anchor-id="readme-file">4) README file</h2>
+<ul>
+<li>Very much optional.</li>
+<li>Only used in related to GitHub submission.</li>
+<li>Using Rmarkdown to generate a GitHub output document.</li>
+</ul>
+<p><img src="screenshot/readme/figure1.PNG" class="img-fluid"> Rmarkdown document</p>
+<p><img src="screenshot/readme/figure2.PNG" class="img-fluid"> GitHub document</p>
+<p><img src="screenshot/readme/figure3.PNG" class="img-fluid"> Preview of GitHub document</p>
+</section><section id="r-directory" class="level2"><h2 class="anchored" data-anchor-id="r-directory">5) /R directory</h2>
+<ul>
+<li>Most important directory.</li>
+<li>The place where all your R code is written by you.</li>
+<li>Best to have separate R script files for each function.</li>
+<li>Need to have a R script file for Data as well.</li>
+<li>R scripts can be modified further in order to create RDocumentation files(Rd files).</li>
+<li>These RDocumentation files will explain about the function.</li>
+<li>Processed R script files will automatically generate Rd files in the man directory.</li>
+</ul>
+<p><img src="screenshot/codingstandards/figure2.PNG" class="img-fluid"><img src="screenshot/codingstandards/figure3.PNG" class="img-fluid"> R script file with necessary roxygen tags to develop RDocumentation files.</p>
+</section><section id="data-directory" class="level2"><h2 class="anchored" data-anchor-id="data-directory">6) /data directory</h2>
+<ul>
+<li>Not compulsory.</li>
+<li>Easy to use your own data therefore its worth it.</li>
+<li>This directory will include the data-sets.</li>
+<li>R directory can have an R script to generate Rd files for these data-sets.</li>
+</ul>
+<p><img src="screenshot/directory/figure3.PNG" class="img-fluid"> data directory which includes data-sets.</p>
+<p><img src="screenshot/data/figure1.PNG" class="img-fluid"> Rscript file which includes necessary roxygen tags to generate Rd files.</p>
+</section><section id="tests-directory" class="level2"><h2 class="anchored" data-anchor-id="tests-directory">7) /tests directory</h2>
+<ul>
+<li>If your package is going to be in CRAN or going to be in a platform with large range of users this would be useful.</li>
+<li>Unit tests to check if functions are working properly.</li>
+<li>Testing if the data sets are in proper form.</li>
+</ul>
+<p><img src="screenshot/directory/figure4.PNG" class="img-fluid"> tests directory and files in side that directory.</p>
+<p><img src="screenshot/directory/figure5.PNG" class="img-fluid"> sub directory testthat which includes test R scripts for all functions and data sets.</p>
+<p><img src="screenshot/checktest/figure1.PNG" class="img-fluid"> R script to test a function.</p>
+<p><img src="screenshot/checktest/figure2.PNG" class="img-fluid"> R script to test a data set.</p>
+</section><section id="man-directory" class="level2"><h2 class="anchored" data-anchor-id="man-directory">8) /man directory</h2>
+<ul>
+<li>This directory will include the Rd files for all functions and data sets.</li>
+<li>If you use roxygen tags there is no need to manually type them.</li>
+</ul>
+<p><img src="screenshot/codingstandards/figure6.PNG" class="img-fluid"><img src="screenshot/codingstandards/figure7.PNG" class="img-fluid"> With the help of R script files these RDocumentation files will be generated for each function and will be in the man directory.</p>
+<p><img src="screenshot/codingstandards/figure4.PNG" class="img-fluid"><img src="screenshot/codingstandards/figure5.PNG" class="img-fluid"> The RDocumentation files can be processed into html outputs or into a pdf manual.</p>
+<p><img src=".png" class="img-fluid"> Rd file of a data-set which is created with the help of data R script.</p>
+<p><img src="screenshot/data/figure2.PNG" class="img-fluid"> Html file which is generated with the help of Rd file for the data-set.</p>
+</section><section id="namsespace-file" class="level2"><h2 class="anchored" data-anchor-id="namsespace-file">9) NAMSESPACE file</h2>
+<ul>
+<li>A file which will have all the functions that you created for your package.</li>
+<li>If a function is exported then it will be in this file.</li>
+</ul>
+<p><img src="screenshot/otherfiles/figure2.PNG" class="img-fluid"> NAMESPACE file and its components.</p>
+</section><section id="rbuildignore-file" class="level2"><h2 class="anchored" data-anchor-id="rbuildignore-file">10) .Rbuildignore file</h2>
+<ul>
+<li>A document which includes what kind of files should not be used when building the package.</li>
+<li>Extensions of a file or partial or full name of the file can be added into this document.</li>
+</ul>
+<p><img src="screenshot/otherfiles/figure3.PNG" class="img-fluid"> .Rbuildignore file of fitODBOD package.</p>
+</section><section id="gitignore-file" class="level2"><h2 class="anchored" data-anchor-id="gitignore-file">11) .gitignore file</h2>
+<ul>
+<li>A document which includes what kind of files should not be pushed to the GitHub repository.</li>
+<li>Extensions of a file or partial or full name of the file can be added into this document.</li>
+</ul>
+<p><img src="screenshot/otherfiles/figure4.PNG" class="img-fluid"> .gitignore file of fitODBOD package.</p>
+</section></section><section id="building-the-package" class="level1"><h1>Building the Package</h1>
+<p>All the files should be in their respective directories and names should not be changed for files or folders manually if they are created automatically. After checking all of this we can proceed to building the package. This process has 9 steps and below is a diagram to show how it works.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rich-iannone/DiagrammeR">DiagrammeR</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/DiagrammeR/man/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph LR;</span></span>
+<span><span class="st">           A(Document &lt;br&gt; Generation)--&gt;C(Clean and &lt;br&gt; Rebuild);</span></span>
+<span><span class="st">           C--&gt;D(Spellcheck &lt;br&gt; Rd files);</span></span>
+<span><span class="st">           D--&gt;B((Check for &lt;br&gt; issues));</span></span>
+<span><span class="st">           B--&gt;Z((Make Necessary &lt;br&gt; Changes)); Z--&gt;A;</span></span>
+<span><span class="st">           D--&gt;E(Test &lt;br&gt; the Package); E--&gt;B;</span></span>
+<span><span class="st">           E--&gt;F(Check &lt;br&gt; for Errors); F--&gt;B;</span></span>
+<span><span class="st">           F--&gt;G(Build &lt;br&gt; Source Package);</span></span>
+<span><span class="st">           G--&gt;H(Build &lt;br&gt; Binary Package);</span></span>
+<span><span class="st">           H--&gt;I(Generate &lt;br&gt; Manual pdf);</span></span>
+<span><span class="st">           I--&gt;J(Check Errors &lt;br&gt; on Source Package); J--&gt;B"</span>,height<span class="op">=</span><span class="fl">300</span>,width<span class="op">=</span><span class="fl">1000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This process is explained through a small presentation <a href="screenshot/BuildYourOwnPackage.html">here</a>. This presentation also can be used when you need to update your package version.</p>
+</section><section id="distributing-the-package" class="level1"><h1>Distributing the Package</h1>
+<p>There are several ways of distributing your package. They are mainly</p>
+<ol type="1">
+<li>tar.qz version.</li>
+<li>zip version.</li>
+<li>GitHub Repository.</li>
+<li>The project folder which includes the package.</li>
+<li>Submit to CRAN or Bioconductor.</li>
+</ol>
+<p>I have written two posts related to R packages as well. One is <a href="https://amalan-con-stat.netlify.com/post/findrpackage/how-to-find-your-r-package/">How to find your R package</a> and Second is <a href="https://amalan-con-stat.netlify.com/post/newpackage/build-a-new-package-with-existing-r-packages/">Using R packages to develop your own package</a>. These two posts will be very useful as well.</p>
+<p><em>THANK YOU</em></p>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left"><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></div>
+  </div>
+</footer>
+
+
+</body></html>

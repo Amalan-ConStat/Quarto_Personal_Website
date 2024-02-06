@@ -1,0 +1,63 @@
+---
+title: "#TidyTuesday"
+author: ""
+title-block-banner: true
+page-layout: full
+description-meta: "Welcome to #Tidytuesday related blog posts."
+
+listing:
+  - id: Tidytuesday_2018
+    contents: 
+      - "2018/Week_30/index.qmd"
+      - "2018/Week_31/index.qmd"
+      - "2018/Week_33/index.qmd"
+      - "2018/Week_34/index.qmd"
+      - "2018/Week_35/index.qmd"
+      - "2018/Week_36/index.qmd"
+      - "2018/Week_37/index.qmd"
+      - "2018/Week_38/index.qmd"
+    sort: "date desc"
+    categories: true
+  - id: TidyTuesday_2019
+    contents:
+      - "2019/Week_1/index.qmd"
+      - "2019/Week_2/index.qmd"
+      - "2019/Week_3/index.qmd"
+      - "2019/Week_4/index.qmd"
+      - "2019/Week_5/index.qmd"
+      - "2019/Week_6/index.qmd"
+      - "2019/Week_7/index.qmd"
+      - "2019/Week_8/index.qmd"
+      - "2019/Week_9/index.qmd"
+      - "2019/Week_10/index.qmd"
+      - "2019/Week_11/index.qmd"
+      - "2019/Week_13/index.qmd"
+      - "2019/Week_14/index.qmd"
+      - "2019/Week_15/index.qmd"
+      - "2019/Week_23/index.qmd"
+      - "2019/Week_24/index.qmd"
+      - "2019/Week_25/index.qmd"
+      - "2019/Week_26/index.qmd"
+      - "2019/Week_27/index.qmd"
+      - "2019/Week_28/index.qmd"
+      - "2019/Week_29/index.qmd"
+      - "2019/Week_33/index.qmd"
+      - "2019/Week_34/index.qmd"
+      - "2019/Week_43/index.qmd"
+    sort: "date desc"
+    categories: true
+toc-title: Year
+toc-location: right
+date-format: "MMMM D, YYYY"
+image: ""
+code-tools: false
+comments: false    
+---
+
+*Welcome to #Tidytuesday related blog posts.*
+
+:::{#TidyTuesday_2018}
+:::
+
+:::{#TidyTuesday_2019}
+:::
