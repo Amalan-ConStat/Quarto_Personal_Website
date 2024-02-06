@@ -1,13 +1,9 @@
-# Quarto Template for the Tutorial
+# My-Personal-Website
+I am using the quarto and theme by marvin schmitt to develop my own website with the help of R and Rstudio.
 
-This repository contains the template for the website tutorial at <https://www.marvinschmitt.com/blog/website-tutorial-quarto/>.
+[Link to my Website](https://amalan-mahendran.com/) and [theme by marvin schmitt](https://www.marvinschmitt.com/blog/website-tutorial-quarto/)
 
-<p align="center">
-  <img src="img/website_template_screenshot_1.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="img/website_template_screenshot_2.png" width="45%">
-<br/><br/>
-  <img src="img/website_template_screenshot_3.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="img/website_template_screenshot_4.png" width="45%">
-</p>
+Developing your own website is now more flexible if you are using quarto. 
+Using RStudio  will make your life easier in this process. 
+Additionally I am using the **renv** package to protect local environments.
+Mostly this blog is about my Phd work, statistics, R programming, TidyTuesday. 
