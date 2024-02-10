@@ -6,17 +6,29 @@ about:
   image: "img/my_image.jpg"
   image-width: 10em
   links:
-    - icon: twitter
+    - icon: hash
       text: Twitter
-      href: https://twitter.com/Amalan_Con_Stat
+      url: https://twitter.com/Amalan_Con_Stat
+    - icon: twitter
+      text: BlueSky
+      url: https://bsky.app/profile/amalanconstat.bsky.social
+    - icon: github
+      text: GitHub
+      url: https://github.com/Amalan-ConStat
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/amalan-mahendran-72b86b37/
+      url: https://www.linkedin.com/in/amalan-mahendran-72b86b37/
+    - icon: google
+      text: Google Scholar
+      url: https://scholar.google.com/citations?user=fj4E-GMAAAAJ&hl=en
+    - icon: r-square-fill
+      text: Researchgate
+      url: https://www.researchgate.net/profile/Amalan_Mahendran
     - icon: box-fill
       text: R Universe
-      href: https://amalan-constat.r-universe.dev/builds  
+      url: https://amalan-constat.r-universe.dev/builds
     - icon: mailbox
-      text: Email
+      text: Email Me
       href: "mailto:mail.amalan0595@gmail.com"  
 ---
 
@@ -35,7 +47,7 @@ I have developed the below listed R packages and Shiny apps:
 ::: columns
 
 ::: {.column width="80%"}
-1. [fitODBOD](https://cran.r-project.org/package=fitODBOD): Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD
+1. [fitODBOD](https://cran.r-project.org/package=fitODBOD) and [fitODBODRshiny](https://cran.r-project.org/package=fitODBODRshiny): Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD
 :::
 
 ::: {.column width="20%"}

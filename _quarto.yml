@@ -23,21 +23,25 @@ website:
         href: tidytuesday/index.qmd
       - text: "Interests"
         href: interests/index.qmd
-      - text: "CV Web"
-        href: https://amalan-cv.netlify.com/
       - text: "CV"
         href: cv/index.qmd
       - text: Socials
         menu:
-          - icon: twitter
+          - icon: hash
             text: Twitter
             url: https://twitter.com/Amalan_Con_Stat
+          - icon: twitter
+            text: BlueSky
+            url: https://bsky.app/profile/amalanconstat.bsky.social
           - icon: github
             text: GitHub
             url: https://github.com/Amalan-ConStat
           - icon: linkedin
             text: LinkedIn
             url: https://www.linkedin.com/in/amalan-mahendran-72b86b37/
+          - icon: google
+            text: Google Scholar
+            url: https://scholar.google.com/citations?user=fj4E-GMAAAAJ&hl=en
           - icon: r-square-fill
             text: Researchgate
             url: https://www.researchgate.net/profile/Amalan_Mahendran
