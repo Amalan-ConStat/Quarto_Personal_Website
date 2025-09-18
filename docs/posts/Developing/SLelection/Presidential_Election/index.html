@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.45">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="dcterms.date" content="2019-07-14">
-<title>Amalan - Extract Presidential Election Data of 2015 from the Pdf file</title>
+
+<title>Extract Presidential Election Data of 2015 from the Pdf file – Amalan Mahendran</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -31,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -54,6 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -71,13 +75,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -86,108 +96,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../../img/logo.png" alt="" class="navbar-logo"></a>
+    <img src="../../../../img/logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../../../index.html">
-    <span class="navbar-title">Amalan</span>
+    <span class="navbar-title">Amalan Mahendran</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
-    <a class="nav-link" href="../../../../publication/index.html" rel="" target="">
- <span class="menu-text">Publication</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../publication/index.html"> 
+<span class="menu-text">Publication and Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../posts/index.html" rel="" target="">
- <span class="menu-text">Blog Posts</span></a>
+    <a class="nav-link" href="../../../../posts/index.html"> 
+<span class="menu-text">Blog Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../tidytuesday/index.html" rel="" target="">
- <span class="menu-text">#TidyTuesday</span></a>
+    <a class="nav-link" href="../../../../tidytuesday/index.html"> 
+<span class="menu-text">#TidyTuesday</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../interests/index.html" rel="" target="">
- <span class="menu-text">Interests</span></a>
+    <a class="nav-link" href="../../../../interests/index.html"> 
+<span class="menu-text">Interests</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../cv/index.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../../../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Socials</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">
-<li>
-    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat" rel="" target=""><i class="bi bi-hash" role="img">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">    
+        <li>
+    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat"><i class="bi bi-hash" role="img">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="dropdown-text">BlueSky</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/Amalan-ConStat" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="dropdown-item" href="https://github.com/Amalan-ConStat"><i class="bi bi-github" role="img">
 </i> 
  <span class="dropdown-text">GitHub</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/"><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="dropdown-text">LinkedIn</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://scholar.google.com/citations?user=fj4E-GMAAAAJ&amp;hl=en" rel="" target=""><i class="bi bi-google" role="img">
+    <a class="dropdown-item" href="https://scholar.google.com/citations?user=fj4E-GMAAAAJ&amp;hl=en"><i class="bi bi-google" role="img">
 </i> 
  <span class="dropdown-text">Google Scholar</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran" rel="" target=""><i class="bi bi-r-square-fill" role="img">
+    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran"><i class="bi bi-r-square-fill" role="img">
 </i> 
  <span class="dropdown-text">Researchgate</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds" rel="" target=""><i class="bi bi-box-fill" role="img">
+    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds"><i class="bi bi-box-fill" role="img">
 </i> 
  <span class="dropdown-text">R Universe</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com" rel="" target=""><i class="bi bi-mailbox" role="img">
+    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com"><i class="bi bi-mailbox" role="img">
 </i> 
  <span class="dropdown-text">Email Me</span></a>
   </li>  
     </ul>
-</li>
+  </li>
 </ul>
-<div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">Extract Presidential Election Data of 2015 from the Pdf file</h1>
   <div class="quarto-categories">
     <div class="quarto-category">SL Election</div>
@@ -211,94 +234,126 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-</header><section id="what-i-am-going-to-do-and-why" class="level1"><h1>What I am going to do and Why ?</h1>
+
+</header>
+
+
+<section id="what-i-am-going-to-do-and-why" class="level1">
+<h1>What I am going to do and Why ?</h1>
 <p>Sri Lanka will face a presidential election by the end of this year, but in order to understand how people have voted so far in previous elections we need data. I was hoping this data could be in <a href="http://www.data.gov.lk/search/type/dataset?query=election">opendata</a> initiative website, unfortunately I was not happy with the results. Only one set of data was presented here, which was for District Registered Electors from 2007 - 2017.</p>
-<section id="where-is-the-data" class="level2"><h2 class="anchored" data-anchor-id="where-is-the-data">Where is the data !</h2>
+<section id="where-is-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="where-is-the-data">Where is the data !</h2>
 <p>Well I did not give up, because there is the Elections Commission website. Hopefully, I found the data which was needed under the title <a href="https://elections.gov.lk/web/en/elections/elections-results/presidential-elections-results/">Presidential Election Results.</a> Still there is an issue where all the election results are in pdf files. Each pdf file had data of each presidential election. After skimming through these six election results in pdf files it was clear that not all of them have the same format or pattern in representing the data. But this will not be an issue if we had the data in a csv or excel file which could be useful for researchers or investigative journalists.</p>
 <p>So my knowledge as an R programmer will come in handy for extracting tables from these pdfs. Also this blog post is about extracting data from the pdf file of Presidential Election results in 2015. I will be using the packages <em>pdftools</em>, <em>stringr</em>, <em>data.table</em> and <em>splitstackshape</em>.</p>
-</section></section><section id="simplifying-and-solving" class="level1"><h1>Simplifying and Solving</h1>
+</section>
+</section>
+<section id="simplifying-and-solving" class="level1">
+<h1>Simplifying and Solving</h1>
 <p><em>pdftools</em> to extract information from pdf files, <em>stringr</em> for string manipulation such as identify, remove or match patterns, <em>data.table</em> to create the data-set, finally <em>splitstackshape</em> for critical column and row manipulation using patterns in text. These packages are much useful in creating one strong data-set of Presidential Election results from year 2015.</p>
 <p>In a presidential election all contestants are voted from all electorates through out the country, therefore in all tables the information looks the same. This same type of information is the contestants names, valid votes, rejected votes, total polled and registered electors. So extracting data is much more easier in a presidential election than a parliament election. This year 2015 presidential election pdf file of 111 pages can be classified in-to three groups based on pages.</p>
 <p>First group includes pages 1 and 111 where no data needs to be extracted. Second group is for pages which has only one table, Final group is with pages which have two tables per page(which is a lot). Small note is that a new district result begins in a new page that is why we have pages with one table. Main heading is district name but only on top of the page, secondary heading is Electorate name for each table, but this is not the case for all tables. There are three types of tables, which are tables for electorate votes, district postal votes and final district results. Below are figures of proof.</p>
-<section id="page-types" class="level2"><h2 class="anchored" data-anchor-id="page-types">Page types</h2>
+<section id="page-types" class="level2">
+<h2 class="anchored" data-anchor-id="page-types">Page types</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/PT1.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">No Info</figcaption></figure>
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/PT1.JPG" class="img-fluid figure-img"></p>
+<figcaption>No Info</figcaption>
+</figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/PT2.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Two Tables</figcaption></figure>
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/PT2.JPG" class="img-fluid figure-img"></p>
+<figcaption>Two Tables</figcaption>
+</figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/PT3.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">One Table</figcaption></figure>
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/PT3.JPG" class="img-fluid figure-img"></p>
+<figcaption>One Table</figcaption>
+</figure>
 </div>
-</section><section id="table-types" class="level2"><h2 class="anchored" data-anchor-id="table-types">Table types</h2>
+</section>
+<section id="table-types" class="level2">
+<h2 class="anchored" data-anchor-id="table-types">Table types</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/TT1.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Two Electorate Results</figcaption></figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/TT2.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">One Electorate and Postal Votes</figcaption></figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/TT3.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Postal Votes and Final District Results</figcaption></figure>
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/TT1.JPG" class="img-fluid figure-img"></p>
+<figcaption>Two Electorate Results</figcaption>
+</figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="SLelection/Presidential_Election/screenshots/TT4.JPG" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Final District Results only</figcaption></figure>
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/TT2.JPG" class="img-fluid figure-img"></p>
+<figcaption>One Electorate and Postal Votes</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/TT3.JPG" class="img-fluid figure-img"></p>
+<figcaption>Postal Votes and Final District Results</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SLelection/Presidential_Election/screenshots/TT4.JPG" class="img-fluid figure-img"></p>
+<figcaption>Final District Results only</figcaption>
+</figure>
 </div>
 <p>So from these tables only we need to extract information and create one large data-set.</p>
-</section></section><section id="programming-part" class="level1"><h1>Programming Part</h1>
+</section>
+</section>
+<section id="programming-part" class="level1">
+<h1>Programming Part</h1>
 <p>I shall divide the data extraction in-to two parts, first extract data from two table pages and next extract data from one table pages. For these two situations I will develop two functions. Both functions are similar except for the part with number of tables.</p>
 <p>I shall only discuss the two table situation here(but will include code for one table extraction).</p>
-<section id="step-1" class="level2"><h2 class="anchored" data-anchor-id="step-1">Step 1</h2>
+<section id="step-1" class="level2">
+<h2 class="anchored" data-anchor-id="step-1">Step 1</h2>
 <p>Using the pdf_text function on the pdf file we will produce a character class output where each page is represented by a list(so 111 lists in this one output). Now consider one list which represents a page but it is still one line character. Convert this one line character into a multiple row list using str_split function and *pattern. So for the first table the information is from row 4 to 26 and second table data is from row 29 to 51.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load the packages </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/pdftools/">pdftools</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the packages </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Using poppler version 22.04.0</code></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://stringr.tidyverse.org">stringr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://github.com/mrdwab/splitstackshape">splitstackshape</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># load the file </span></span>
-<span><span class="va">SL_PE_2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://docs.ropensci.org/pdftools/reference/pdftools.html">pdf_text</a></span><span class="op">(</span><span class="st">"PresidentialElections2015.pdf"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">page</span><span class="op">&lt;-</span><span class="fl">2</span></span>
-<span></span>
-<span><span class="co"># split the one large list into a data frame of lines and separate them into two tables</span></span>
-<span><span class="va">table1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">26</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">table2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">29</span><span class="op">:</span><span class="fl">51</span><span class="op">]</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># name the only column in these two data tables</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">table1</span><span class="op">)</span><span class="op">&lt;-</span><span class="st">"hello"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">table2</span><span class="op">)</span><span class="op">&lt;-</span><span class="st">"hello"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(splitstackshape)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load the file </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>SL_PE_2015<span class="ot">&lt;-</span><span class="fu">pdf_text</span>(<span class="st">"PresidentialElections2015.pdf"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>page<span class="ot">&lt;-</span><span class="dv">2</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># split the one large list into a data frame of lines and separate them into two tables</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">4</span><span class="sc">:</span><span class="dv">26</span>])</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>table2<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">29</span><span class="sc">:</span><span class="dv">51</span>])</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># name the only column in these two data tables</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table1)<span class="ot">&lt;-</span><span class="st">"hello"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table2)<span class="ot">&lt;-</span><span class="st">"hello"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="SLelection/Presidential_Election/screenshots/Step1.JPG" class="img-fluid"></p>
 <p>Now we have two one column data-frames with exact rows as the page of the pdf file we are extracting.</p>
-</section><section id="step-2" class="level2"><h2 class="anchored" data-anchor-id="step-2">Step 2</h2>
+</section>
+<section id="step-2" class="level2">
+<h2 class="anchored" data-anchor-id="step-2">Step 2</h2>
 <p>Beginning information in these two tables contain the same information as mentioned earlier. So after removing this information we will be limited to another one column data-table but now only with votes and percentage values. This one column table can be separated by column splitting based on the pattern ” “.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># creating the list with same type of information</span></span>
-<span><span class="va">Names</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aithurus Mohamed Illias"</span>,<span class="st">"Ibrahim Miflar"</span>,<span class="st">"Prasanna Priyankara"</span>,</span>
-<span>        <span class="st">"Wimal Geeganage"</span>,<span class="st">"Sirithunga Jayasuriya"</span>,<span class="st">"M. B. Theminimulla"</span>,</span>
-<span>        <span class="st">"Pani Wijesiriwardane"</span>,<span class="st">"Duminda Nagamuwa"</span>,</span>
-<span>        <span class="st">"Panagoda Don Prince Soloman Anura Liyanage"</span>,</span>
-<span>        <span class="st">"Maithripala Sirisena"</span>,<span class="st">"Ruwanthilaka Peduru Arachchi"</span>,</span>
-<span>        <span class="st">"Anuruddha Polgampala"</span>,<span class="st">"Baththaramulle Seelarathana Thero"</span>,</span>
-<span>        <span class="st">"Sarath Manamendra"</span>,<span class="st">"Arachchige Rathnayaka Sirisena"</span>,</span>
-<span>        <span class="st">"Mahinda Rajapaksa"</span>,<span class="st">"Namal Rajapaksa"</span>,<span class="st">"Sundaram Mahendran"</span>,</span>
-<span>        <span class="st">"Jayantha Kulathunga"</span>,<span class="st">"Valid Votes"</span>,<span class="st">"Rejected Votes"</span>,</span>
-<span>        <span class="st">"Total Polled"</span>,<span class="st">"Regis.Electors"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># first using the above list remove the first column info</span></span>
-<span><span class="co"># then split all rows of one column into two columns based on " " pattern</span></span>
-<span><span class="va">Top</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/splitstackshape/man/cSplit.html">cSplit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">table1</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">Names</span><span class="op">)</span><span class="op">)</span>,<span class="st">"hello"</span>,<span class="st">" "</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the list with same type of information</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Names<span class="ot">=</span><span class="fu">c</span>(<span class="st">"Aithurus Mohamed Illias"</span>,<span class="st">"Ibrahim Miflar"</span>,<span class="st">"Prasanna Priyankara"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Wimal Geeganage"</span>,<span class="st">"Sirithunga Jayasuriya"</span>,<span class="st">"M. B. Theminimulla"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Pani Wijesiriwardane"</span>,<span class="st">"Duminda Nagamuwa"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Panagoda Don Prince Soloman Anura Liyanage"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Maithripala Sirisena"</span>,<span class="st">"Ruwanthilaka Peduru Arachchi"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Anuruddha Polgampala"</span>,<span class="st">"Baththaramulle Seelarathana Thero"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sarath Manamendra"</span>,<span class="st">"Arachchige Rathnayaka Sirisena"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Mahinda Rajapaksa"</span>,<span class="st">"Namal Rajapaksa"</span>,<span class="st">"Sundaram Mahendran"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Jayantha Kulathunga"</span>,<span class="st">"Valid Votes"</span>,<span class="st">"Rejected Votes"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Total Polled"</span>,<span class="st">"Regis.Electors"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># first using the above list remove the first column info</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># then split all rows of one column into two columns based on " " pattern</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>Top<span class="ot">&lt;-</span><span class="fu">cSplit</span>(<span class="fu">lapply</span>(table1, <span class="cf">function</span>(x) <span class="fu">str_remove</span>(x,Names)),<span class="st">"hello"</span>,<span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in type.convert.default(X[[i]], ...): 'as.is' should be specified by
 the caller; using TRUE
@@ -312,7 +367,7 @@ the caller; using TRUE
 Warning in type.convert.default(X[[i]], ...): 'as.is' should be specified by
 the caller; using TRUE</code></pre>
 </div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">Bottom</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/splitstackshape/man/cSplit.html">cSplit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">table2</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">Names</span><span class="op">)</span><span class="op">)</span>,<span class="st">"hello"</span>,<span class="st">" "</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Bottom<span class="ot">&lt;-</span><span class="fu">cSplit</span>(<span class="fu">lapply</span>(table2, <span class="cf">function</span>(x) <span class="fu">str_remove</span>(x,Names)),<span class="st">"hello"</span>,<span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in type.convert.default(X[[i]], ...): 'as.is' should be specified by
 the caller; using TRUE
@@ -338,185 +393,194 @@ the caller; using TRUE
 Warning in type.convert.default(X[[i]], ...): 'as.is' should be specified by
 the caller; using TRUE</code></pre>
 </div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extract the information of sub heading above each table by removing the pattern "\r"</span></span>
-<span><span class="va">Name1</span><span class="op">&lt;-</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="st">"\r"</span><span class="op">)</span></span>
-<span><span class="va">Name2</span><span class="op">&lt;-</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">27</span><span class="op">]</span>,<span class="st">"\r"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the information of sub heading above each table by removing the pattern "\r"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Name1<span class="ot">&lt;-</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">2</span>],<span class="st">"</span><span class="sc">\r</span><span class="st">"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Name2<span class="ot">&lt;-</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">27</span>],<span class="st">"</span><span class="sc">\r</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="SLelection/Presidential_Election/screenshots/Step2.JPG" class="img-fluid"></p>
-</section><section id="step-3" class="level2"><h2 class="anchored" data-anchor-id="step-3">Step 3</h2>
+</section>
+<section id="step-3" class="level2">
+<h2 class="anchored" data-anchor-id="step-3">Step 3</h2>
 <p>Now create a proper table with three columns which has that same type of information, votes(with commas) and percentages (with percentage sign). Well by creating these Top1 and Bottom1 tables we will remove the percentage sign. Then we will remove the commas(,) in votes columns and convert them into numeric class. Further, even though the percentage column looks numeric it is not. To resolve it we shall convert these values also from factor to character and then finally to numeric.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># creating the new dataset with three columns without percentage sign</span></span>
-<span><span class="va">Top1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"ColumnNames"</span><span class="op">=</span><span class="va">Names</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Top</span><span class="op">$</span><span class="va">hello_1</span>,<span class="st">"Percentage"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">Top</span><span class="op">$</span><span class="va">hello_2</span>,<span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">Bottom1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"ColumnNames"</span><span class="op">=</span><span class="va">Names</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Bottom</span><span class="op">$</span><span class="va">hello_1</span>,<span class="st">"Percentage"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">Bottom</span><span class="op">$</span><span class="va">hello_2</span>,<span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># remove the commas from votes columns and convert them to numeric class</span></span>
-<span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="va">x</span>,<span class="st">","</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the new dataset with three columns without percentage sign</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Top1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"ColumnNames"</span><span class="ot">=</span>Names,<span class="st">"Votes"</span><span class="ot">=</span>Top<span class="sc">$</span>hello_1,<span class="st">"Percentage"</span><span class="ot">=</span><span class="fu">str_remove</span>(Top<span class="sc">$</span>hello_2,<span class="st">"%"</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Bottom1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"ColumnNames"</span><span class="ot">=</span>Names,<span class="st">"Votes"</span><span class="ot">=</span>Bottom<span class="sc">$</span>hello_1,<span class="st">"Percentage"</span><span class="ot">=</span><span class="fu">str_remove</span>(Bottom<span class="sc">$</span>hello_2,<span class="st">"%"</span>))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the commas from votes columns and convert them to numeric class</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>Top1[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Top1[,<span class="dv">2</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(<span class="fu">str_remove_all</span>(x,<span class="st">","</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in FUN(X[[i]], ...): NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="va">x</span>,<span class="st">","</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Bottom1[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Bottom1[,<span class="dv">2</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(<span class="fu">str_remove_all</span>(x,<span class="st">","</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in FUN(X[[i]], ...): NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># convert the percentage values to numeric class</span></span>
-<span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the percentage values to numeric class</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Top1[,<span class="dv">3</span>]<span class="ot">&lt;-</span><span class="fu">lapply</span>(Top1[,<span class="dv">3</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in FUN(X[[i]], ...): NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Bottom1[,<span class="dv">3</span>]<span class="ot">&lt;-</span><span class="fu">lapply</span>(Bottom1[,<span class="dv">3</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in FUN(X[[i]], ...): NAs introduced by coercion</code></pre>
 </div>
 </div>
 <p><img src="SLelection/Presidential_Election/screenshots/Step3.JPG" class="img-fluid"></p>
-</section><section id="step-4" class="level2"><h2 class="anchored" data-anchor-id="step-4">Step 4</h2>
+</section>
+<section id="step-4" class="level2">
+<h2 class="anchored" data-anchor-id="step-4">Step 4</h2>
 <p>Now our final tables are prepared. We shall name the columns. First column is for year, second column is for district name, third column is for that same type of information, fourth column is for number of votes and final column is for the percentage values.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">Electorate1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">=</span><span class="fl">2015</span>,</span>
-<span>                        <span class="st">"District"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
-<span>                                                          <span class="st">" Districts Results\r"</span><span class="op">)</span>, </span>
-<span>                        <span class="st">"Electorate"</span><span class="op">=</span><span class="va">Name1</span>,<span class="st">"ColNames"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">ColumnNames</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">Votes</span>,</span>
-<span>                        <span class="st">"Percentage"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">Percentage</span><span class="op">)</span></span>
-<span><span class="va">Electorate2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">=</span><span class="fl">2015</span>,</span>
-<span>                        <span class="st">"District"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
-<span>                                                          <span class="st">" Districts Results\r"</span><span class="op">)</span>,</span>
-<span>                        <span class="st">"Electorate"</span><span class="op">=</span><span class="va">Name2</span>,<span class="st">"ColNames"</span><span class="op">=</span><span class="va">Bottom1</span><span class="op">$</span><span class="va">ColumnNames</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Bottom1</span><span class="op">$</span><span class="va">Votes</span>,</span>
-<span>                        <span class="st">"Percentage"</span><span class="op">=</span><span class="va">Bottom1</span><span class="op">$</span><span class="va">Percentage</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Electorate1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"Year"</span><span class="ot">=</span><span class="dv">2015</span>,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"District"</span><span class="ot">=</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>],</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                                                          <span class="st">" Districts Results</span><span class="sc">\r</span><span class="st">"</span>), </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Electorate"</span><span class="ot">=</span>Name1,<span class="st">"ColNames"</span><span class="ot">=</span>Top1<span class="sc">$</span>ColumnNames,<span class="st">"Votes"</span><span class="ot">=</span>Top1<span class="sc">$</span>Votes,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Percentage"</span><span class="ot">=</span>Top1<span class="sc">$</span>Percentage)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>Electorate2<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"Year"</span><span class="ot">=</span><span class="dv">2015</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"District"</span><span class="ot">=</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>],</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                                                          <span class="st">" Districts Results</span><span class="sc">\r</span><span class="st">"</span>),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Electorate"</span><span class="ot">=</span>Name2,<span class="st">"ColNames"</span><span class="ot">=</span>Bottom1<span class="sc">$</span>ColumnNames,<span class="st">"Votes"</span><span class="ot">=</span>Bottom1<span class="sc">$</span>Votes,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Percentage"</span><span class="ot">=</span>Bottom1<span class="sc">$</span>Percentage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we have extracted two clear tables under the name Electorate1 and Electorate2. First three table types mentioned above can be extracted now.</p>
 <p><img src="SLelection/Presidential_Election/screenshots/Step4.JPG" class="img-fluid"></p>
-</section></section><section id="one-complete-function" class="level1"><h1>One Complete Function</h1>
+</section>
+</section>
+<section id="one-complete-function" class="level1">
+<h1>One Complete Function</h1>
 <p>Combining the above 4 steps we can create one function where the input is page number and the resultant will be a data-table of one page information but of two tables in the pdf file.</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">Extract_twotable</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">page</span><span class="op">)</span></span>
-<span><span class="op">{</span></span>
-<span><span class="va">table1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">26</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">table2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">29</span><span class="op">:</span><span class="fl">51</span><span class="op">]</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">table1</span><span class="op">)</span><span class="op">&lt;-</span><span class="st">"hello"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">table2</span><span class="op">)</span><span class="op">&lt;-</span><span class="st">"hello"</span></span>
-<span></span>
-<span><span class="va">Names</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aithurus Mohamed Illias"</span>,<span class="st">"Ibrahim Miflar"</span>,<span class="st">"Prasanna Priyankara"</span>,</span>
-<span>        <span class="st">"Wimal Geeganage"</span>,<span class="st">"Sirithunga Jayasuriya"</span>,<span class="st">"M. B. Theminimulla"</span>,</span>
-<span>        <span class="st">"Pani Wijesiriwardane"</span>,<span class="st">"Duminda Nagamuwa"</span>,</span>
-<span>        <span class="st">"Panagoda Don Prince Soloman Anura Liyanage"</span>,</span>
-<span>        <span class="st">"Maithripala Sirisena"</span>,<span class="st">"Ruwanthilaka Peduru Arachchi"</span>,</span>
-<span>        <span class="st">"Anuruddha Polgampala"</span>,<span class="st">"Baththaramulle Seelarathana Thero"</span>,</span>
-<span>        <span class="st">"Sarath Manamendra"</span>,<span class="st">"Arachchige Rathnayaka Sirisena"</span>,</span>
-<span>        <span class="st">"Mahinda Rajapaksa"</span>,<span class="st">"Namal Rajapaksa"</span>,<span class="st">"Sundaram Mahendran"</span>,</span>
-<span>        <span class="st">"Jayantha Kulathunga"</span>,<span class="st">"Valid Votes"</span>,<span class="st">"Rejected Votes"</span>,</span>
-<span>        <span class="st">"Total Polled"</span>,<span class="st">"Regis.Electors"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/splitstackshape/man/cSplit.html">cSplit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">table1</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">Names</span><span class="op">)</span><span class="op">)</span>,<span class="st">"hello"</span>,<span class="st">" "</span><span class="op">)</span></span>
-<span><span class="va">Bottom</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/splitstackshape/man/cSplit.html">cSplit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">table2</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">Names</span><span class="op">)</span><span class="op">)</span>,<span class="st">"hello"</span>,<span class="st">" "</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Name1</span><span class="op">&lt;-</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="st">"\r"</span><span class="op">)</span></span>
-<span><span class="va">Name2</span><span class="op">&lt;-</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">27</span><span class="op">]</span>,<span class="st">"\r"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"ColumnNames"</span><span class="op">=</span><span class="va">Names</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Top</span><span class="op">$</span><span class="va">hello_1</span>,<span class="st">"Percentage"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">Top</span><span class="op">$</span><span class="va">hello_2</span>,<span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">Bottom1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"ColumnNames"</span><span class="op">=</span><span class="va">Names</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Bottom</span><span class="op">$</span><span class="va">hello_1</span>,<span class="st">"Percentage"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">Bottom</span><span class="op">$</span><span class="va">hello_2</span>,<span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="va">x</span>,<span class="st">","</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="va">x</span>,<span class="st">","</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Bottom1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Electorate1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">=</span><span class="fl">2015</span>,</span>
-<span>                        <span class="st">"District"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
-<span>                                                          <span class="st">" Districts Results\r"</span><span class="op">)</span>, </span>
-<span>                        <span class="st">"Electorate"</span><span class="op">=</span><span class="va">Name1</span>,<span class="st">"ColNames"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">ColumnNames</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">Votes</span>,</span>
-<span>                        <span class="st">"Percentage"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">Percentage</span><span class="op">)</span></span>
-<span><span class="va">Electorate2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">=</span><span class="fl">2015</span>,</span>
-<span>                        <span class="st">"District"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
-<span>                                                          <span class="st">" Districts Results\r"</span><span class="op">)</span>,</span>
-<span>                        <span class="st">"Electorate"</span><span class="op">=</span><span class="va">Name2</span>,<span class="st">"ColNames"</span><span class="op">=</span><span class="va">Bottom1</span><span class="op">$</span><span class="va">ColumnNames</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Bottom1</span><span class="op">$</span><span class="va">Votes</span>,</span>
-<span>                        <span class="st">"Percentage"</span><span class="op">=</span><span class="va">Bottom1</span><span class="op">$</span><span class="va">Percentage</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">output</span><span class="op">&lt;-</span><span class="fu">rbind2</span><span class="op">(</span><span class="va">Electorate1</span>,<span class="va">Electorate2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Extract_twotable<span class="ot">&lt;-</span><span class="cf">function</span>(page)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">4</span><span class="sc">:</span><span class="dv">26</span>])</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>table2<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">29</span><span class="sc">:</span><span class="dv">51</span>])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table1)<span class="ot">&lt;-</span><span class="st">"hello"</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table2)<span class="ot">&lt;-</span><span class="st">"hello"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>Names<span class="ot">=</span><span class="fu">c</span>(<span class="st">"Aithurus Mohamed Illias"</span>,<span class="st">"Ibrahim Miflar"</span>,<span class="st">"Prasanna Priyankara"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Wimal Geeganage"</span>,<span class="st">"Sirithunga Jayasuriya"</span>,<span class="st">"M. B. Theminimulla"</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Pani Wijesiriwardane"</span>,<span class="st">"Duminda Nagamuwa"</span>,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Panagoda Don Prince Soloman Anura Liyanage"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Maithripala Sirisena"</span>,<span class="st">"Ruwanthilaka Peduru Arachchi"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Anuruddha Polgampala"</span>,<span class="st">"Baththaramulle Seelarathana Thero"</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sarath Manamendra"</span>,<span class="st">"Arachchige Rathnayaka Sirisena"</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Mahinda Rajapaksa"</span>,<span class="st">"Namal Rajapaksa"</span>,<span class="st">"Sundaram Mahendran"</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Jayantha Kulathunga"</span>,<span class="st">"Valid Votes"</span>,<span class="st">"Rejected Votes"</span>,</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Total Polled"</span>,<span class="st">"Regis.Electors"</span>)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>Top<span class="ot">&lt;-</span><span class="fu">cSplit</span>(<span class="fu">lapply</span>(table1, <span class="cf">function</span>(x) <span class="fu">str_remove</span>(x,Names)),<span class="st">"hello"</span>,<span class="st">" "</span>)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>Bottom<span class="ot">&lt;-</span><span class="fu">cSplit</span>(<span class="fu">lapply</span>(table2, <span class="cf">function</span>(x) <span class="fu">str_remove</span>(x,Names)),<span class="st">"hello"</span>,<span class="st">" "</span>)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>Name1<span class="ot">&lt;-</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">2</span>],<span class="st">"</span><span class="sc">\r</span><span class="st">"</span>)</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>Name2<span class="ot">&lt;-</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">27</span>],<span class="st">"</span><span class="sc">\r</span><span class="st">"</span>)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>Top1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"ColumnNames"</span><span class="ot">=</span>Names,<span class="st">"Votes"</span><span class="ot">=</span>Top<span class="sc">$</span>hello_1,<span class="st">"Percentage"</span><span class="ot">=</span><span class="fu">str_remove</span>(Top<span class="sc">$</span>hello_2,<span class="st">"%"</span>))</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>Bottom1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"ColumnNames"</span><span class="ot">=</span>Names,<span class="st">"Votes"</span><span class="ot">=</span>Bottom<span class="sc">$</span>hello_1,<span class="st">"Percentage"</span><span class="ot">=</span><span class="fu">str_remove</span>(Bottom<span class="sc">$</span>hello_2,<span class="st">"%"</span>))</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>Top1[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Top1[,<span class="dv">2</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(<span class="fu">str_remove_all</span>(x,<span class="st">","</span>))))</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>Bottom1[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Bottom1[,<span class="dv">2</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(<span class="fu">str_remove_all</span>(x,<span class="st">","</span>))))</span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>Top1[,<span class="dv">3</span>]<span class="ot">&lt;-</span><span class="fu">lapply</span>(Top1[,<span class="dv">3</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>Bottom1[,<span class="dv">3</span>]<span class="ot">&lt;-</span><span class="fu">lapply</span>(Bottom1[,<span class="dv">3</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>Electorate1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"Year"</span><span class="ot">=</span><span class="dv">2015</span>,</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"District"</span><span class="ot">=</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>],</span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>                                                          <span class="st">" Districts Results</span><span class="sc">\r</span><span class="st">"</span>), </span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Electorate"</span><span class="ot">=</span>Name1,<span class="st">"ColNames"</span><span class="ot">=</span>Top1<span class="sc">$</span>ColumnNames,<span class="st">"Votes"</span><span class="ot">=</span>Top1<span class="sc">$</span>Votes,</span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Percentage"</span><span class="ot">=</span>Top1<span class="sc">$</span>Percentage)</span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>Electorate2<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"Year"</span><span class="ot">=</span><span class="dv">2015</span>,</span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"District"</span><span class="ot">=</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>],</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>                                                          <span class="st">" Districts Results</span><span class="sc">\r</span><span class="st">"</span>),</span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Electorate"</span><span class="ot">=</span>Name2,<span class="st">"ColNames"</span><span class="ot">=</span>Bottom1<span class="sc">$</span>ColumnNames,<span class="st">"Votes"</span><span class="ot">=</span>Bottom1<span class="sc">$</span>Votes,</span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Percentage"</span><span class="ot">=</span>Bottom1<span class="sc">$</span>Percentage)</span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span><span class="fu">rbind2</span>(Electorate1,Electorate2)</span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(output)</span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After developing such a function and naming it as <em>Extract_twotable()</em>, it now possible to extract data from more than 90 pages in the Presidential election 2015 pdf file.</p>
-</section><section id="using-the-one-function-to-extract-data-from-multiple-pages" class="level1"><h1>Using the One Function to extract Data from Multiple pages</h1>
+</section>
+<section id="using-the-one-function-to-extract-data-from-multiple-pages" class="level1">
+<h1>Using the One Function to extract Data from Multiple pages</h1>
 <p>In order to do the above extraction first we have to identify the pages which have only one table and then deselect them. After this with the help of a for loop we can create a long list of elements. Where each element is a table, and that table from one page. Below is the code for that solution.</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># page numbers from 1 to 111</span></span>
-<span><span class="va">pages</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">111</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># removing pages with only one tables</span></span>
-<span><span class="va">pages</span><span class="op">&lt;-</span><span class="va">pages</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">10</span>,<span class="fl">18</span>,<span class="fl">31</span>,<span class="fl">48</span>,<span class="fl">58</span>,<span class="fl">61</span>,<span class="fl">64</span>,<span class="fl">70</span>,<span class="fl">82</span>,<span class="fl">87</span>,<span class="fl">90</span>,<span class="fl">96</span>,<span class="fl">99</span>,<span class="fl">110</span>,<span class="fl">111</span><span class="op">)</span><span class="op">]</span></span>
-<span></span>
-<span><span class="co"># creating an empty data-frame</span></span>
-<span><span class="va">datas</span><span class="op">&lt;-</span><span class="cn">NULL</span></span>
-<span></span>
-<span><span class="co"># creating the large data frame after extracting two tables </span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">pages</span><span class="op">)</span> </span>
-<span>        <span class="op">{</span></span>
-<span>        <span class="co"># two tables of each page is considered as a list element</span></span>
-<span>        <span class="va">datas</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu">Extract_twotable</span><span class="op">(</span><span class="va">i</span><span class="op">)</span>        </span>
-<span>        <span class="op">}</span></span>
-<span></span>
-<span><span class="co"># combining the multiple list data-frame as one data-frame</span></span>
-<span><span class="va">out1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="st">"rbind"</span>,<span class="va">datas</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># page numbers from 1 to 111</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pages<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">111</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># removing pages with only one tables</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>pages<span class="ot">&lt;-</span>pages[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">18</span>,<span class="dv">31</span>,<span class="dv">48</span>,<span class="dv">58</span>,<span class="dv">61</span>,<span class="dv">64</span>,<span class="dv">70</span>,<span class="dv">82</span>,<span class="dv">87</span>,<span class="dv">90</span>,<span class="dv">96</span>,<span class="dv">99</span>,<span class="dv">110</span>,<span class="dv">111</span>)]</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># creating an empty data-frame</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>datas<span class="ot">&lt;-</span><span class="cn">NULL</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the large data frame after extracting two tables </span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> pages) </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># two tables of each page is considered as a list element</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        datas[[i]]<span class="ot">&lt;-</span><span class="fu">Extract_twotable</span>(i)        </span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># combining the multiple list data-frame as one data-frame</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>out1<span class="ot">&lt;-</span><span class="fu">do.call</span>(<span class="st">"rbind"</span>,datas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="SLelection/Presidential_Election/screenshots/output1.JPG" class="img-fluid"></p>
 <p>After this large extraction similarly we have to write a function for one table pages also. Below is the code chunk for that. Here we create a function called <em>Extract_onetable()</em> similar as before where the input is page-number.</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">Extract_onetable</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">page</span><span class="op">)</span></span>
-<span><span class="op">{</span></span>
-<span><span class="va">table1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">26</span><span class="op">]</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">table1</span><span class="op">)</span><span class="op">&lt;-</span><span class="st">"hello"</span></span>
-<span></span>
-<span><span class="va">Names</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aithurus Mohamed Illias"</span>,<span class="st">"Ibrahim Miflar"</span>,<span class="st">"Prasanna Priyankara"</span>,</span>
-<span>        <span class="st">"Wimal Geeganage"</span>,<span class="st">"Sirithunga Jayasuriya"</span>,<span class="st">"M. B. Theminimulla"</span>,</span>
-<span>        <span class="st">"Pani Wijesiriwardane"</span>,<span class="st">"Duminda Nagamuwa"</span>,</span>
-<span>        <span class="st">"Panagoda Don Prince Soloman Anura Liyanage"</span>,</span>
-<span>        <span class="st">"Maithripala Sirisena"</span>,<span class="st">"Ruwanthilaka Peduru Arachchi"</span>,</span>
-<span>        <span class="st">"Anuruddha Polgampala"</span>,<span class="st">"Baththaramulle Seelarathana Thero"</span>,</span>
-<span>        <span class="st">"Sarath Manamendra"</span>,<span class="st">"Arachchige Rathnayaka Sirisena"</span>,</span>
-<span>        <span class="st">"Mahinda Rajapaksa"</span>,<span class="st">"Namal Rajapaksa"</span>,<span class="st">"Sundaram Mahendran"</span>,</span>
-<span>        <span class="st">"Jayantha Kulathunga"</span>,<span class="st">"Valid Votes"</span>,<span class="st">"Rejected Votes"</span>,</span>
-<span>        <span class="st">"Total Polled"</span>,<span class="st">"Regis.Electors"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/splitstackshape/man/cSplit.html">cSplit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">table1</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">Names</span><span class="op">)</span><span class="op">)</span>,<span class="st">"hello"</span>,<span class="st">" "</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Name1</span><span class="op">&lt;-</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="st">"\r"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"ColumnNames"</span><span class="op">=</span><span class="va">Names</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Top</span><span class="op">$</span><span class="va">hello_1</span>,<span class="st">"Percentage"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">Top</span><span class="op">$</span><span class="va">hello_2</span>,<span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="va">x</span>,<span class="st">","</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Top1</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Electorate1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">=</span><span class="fl">2015</span>,</span>
-<span>                        <span class="st">"District"</span><span class="op">=</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="va">SL_PE_2015</span><span class="op">[[</span><span class="va">page</span><span class="op">]</span><span class="op">]</span>,<span class="st">"\n"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
-<span>                                                          <span class="st">" Districts Results\r"</span><span class="op">)</span>, </span>
-<span>                        <span class="st">"Electorate"</span><span class="op">=</span><span class="va">Name1</span>,<span class="st">"ColNames"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">ColumnNames</span>,<span class="st">"Votes"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">Votes</span>,</span>
-<span>                        <span class="st">"Percentage"</span><span class="op">=</span><span class="va">Top1</span><span class="op">$</span><span class="va">Percentage</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">output</span><span class="op">&lt;-</span><span class="va">Electorate1</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Extract_onetable<span class="ot">&lt;-</span><span class="cf">function</span>(page)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>table1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">4</span><span class="sc">:</span><span class="dv">26</span>])</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table1)<span class="ot">&lt;-</span><span class="st">"hello"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>Names<span class="ot">=</span><span class="fu">c</span>(<span class="st">"Aithurus Mohamed Illias"</span>,<span class="st">"Ibrahim Miflar"</span>,<span class="st">"Prasanna Priyankara"</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Wimal Geeganage"</span>,<span class="st">"Sirithunga Jayasuriya"</span>,<span class="st">"M. B. Theminimulla"</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Pani Wijesiriwardane"</span>,<span class="st">"Duminda Nagamuwa"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Panagoda Don Prince Soloman Anura Liyanage"</span>,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Maithripala Sirisena"</span>,<span class="st">"Ruwanthilaka Peduru Arachchi"</span>,</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Anuruddha Polgampala"</span>,<span class="st">"Baththaramulle Seelarathana Thero"</span>,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sarath Manamendra"</span>,<span class="st">"Arachchige Rathnayaka Sirisena"</span>,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Mahinda Rajapaksa"</span>,<span class="st">"Namal Rajapaksa"</span>,<span class="st">"Sundaram Mahendran"</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Jayantha Kulathunga"</span>,<span class="st">"Valid Votes"</span>,<span class="st">"Rejected Votes"</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Total Polled"</span>,<span class="st">"Regis.Electors"</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>Top<span class="ot">&lt;-</span><span class="fu">cSplit</span>(<span class="fu">lapply</span>(table1, <span class="cf">function</span>(x) <span class="fu">str_remove</span>(x,Names)),<span class="st">"hello"</span>,<span class="st">" "</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>Name1<span class="ot">&lt;-</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">2</span>],<span class="st">"</span><span class="sc">\r</span><span class="st">"</span>)</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>Top1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"ColumnNames"</span><span class="ot">=</span>Names,<span class="st">"Votes"</span><span class="ot">=</span>Top<span class="sc">$</span>hello_1,<span class="st">"Percentage"</span><span class="ot">=</span><span class="fu">str_remove</span>(Top<span class="sc">$</span>hello_2,<span class="st">"%"</span>))</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>Top1[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Top1[,<span class="dv">2</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(<span class="fu">str_remove_all</span>(x,<span class="st">","</span>))))</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>Top1[,<span class="dv">3</span>]<span class="ot">&lt;-</span><span class="fu">lapply</span>(Top1[,<span class="dv">3</span>], <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>Electorate1<span class="ot">&lt;-</span><span class="fu">data.table</span>(<span class="st">"Year"</span><span class="ot">=</span><span class="dv">2015</span>,</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"District"</span><span class="ot">=</span><span class="fu">str_remove</span>(<span class="fu">str_split</span>(SL_PE_2015[[page]],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]][<span class="dv">1</span>],</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>                                                          <span class="st">" Districts Results</span><span class="sc">\r</span><span class="st">"</span>), </span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Electorate"</span><span class="ot">=</span>Name1,<span class="st">"ColNames"</span><span class="ot">=</span>Top1<span class="sc">$</span>ColumnNames,<span class="st">"Votes"</span><span class="ot">=</span>Top1<span class="sc">$</span>Votes,</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Percentage"</span><span class="ot">=</span>Top1<span class="sc">$</span>Percentage)</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>Electorate1</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(output)</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After creating this function we focus only on the pages with one tables. Below is how we extract information from such pages and create a large data-frame.</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># list of pages with only one tables</span></span>
-<span><span class="va">pages</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">18</span>,<span class="fl">31</span>,<span class="fl">48</span>,<span class="fl">58</span>,<span class="fl">61</span>,<span class="fl">64</span>,<span class="fl">70</span>,<span class="fl">82</span>,<span class="fl">87</span>,<span class="fl">90</span>,<span class="fl">96</span>,<span class="fl">99</span>,<span class="fl">110</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># creating an empty data-frame</span></span>
-<span><span class="va">datas1</span><span class="op">&lt;-</span><span class="cn">NULL</span></span>
-<span></span>
-<span><span class="co"># creating the large data frame after extracting one table </span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">pages</span><span class="op">)</span> </span>
-<span>        <span class="op">{</span></span>
-<span>        <span class="co"># one table of each page is considered as a list element</span></span>
-<span>        <span class="va">datas1</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">&lt;-</span><span class="fu">Extract_onetable</span><span class="op">(</span><span class="va">i</span><span class="op">)</span>        </span>
-<span>        <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># list of pages with only one tables</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pages<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">18</span>,<span class="dv">31</span>,<span class="dv">48</span>,<span class="dv">58</span>,<span class="dv">61</span>,<span class="dv">64</span>,<span class="dv">70</span>,<span class="dv">82</span>,<span class="dv">87</span>,<span class="dv">90</span>,<span class="dv">96</span>,<span class="dv">99</span>,<span class="dv">110</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># creating an empty data-frame</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>datas1<span class="ot">&lt;-</span><span class="cn">NULL</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the large data frame after extracting one table </span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> pages) </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># one table of each page is considered as a list element</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>        datas1[[i]]<span class="ot">&lt;-</span><span class="fu">Extract_onetable</span>(i)        </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>        }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in type.convert.default(X[[i]], ...): 'as.is' should be specified by
 the caller; using TRUE
@@ -769,90 +833,97 @@ the caller; using TRUE</code></pre>
 
 Warning in FUN(X[[i]], ...): NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># combining the multiple list data-frame as one data-frame</span></span>
-<span><span class="va">out2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="st">"rbind"</span>,<span class="va">datas1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combining the multiple list data-frame as one data-frame</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>out2<span class="ot">&lt;-</span><span class="fu">do.call</span>(<span class="st">"rbind"</span>,datas1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="SLelection/Presidential_Election/screenshots/output2.JPG" class="img-fluid"></p>
 <p>Now we have two data-frames which are named as out1 and out2 which needs to be combined based on rows. The combined data-frame is called Election2015 which has all the information of Presidential Election 2015 pdf file.</p>
 <div class="cell">
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># final data frame which has information from the entire pdf</span></span>
-<span><span class="co"># which means combining the out1 and out2 data-frames</span></span>
-<span><span class="va">Election2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">out1</span>,<span class="va">out2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># final data frame which has information from the entire pdf</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># which means combining the out1 and out2 data-frames</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>Election2015<span class="ot">&lt;-</span><span class="fu">rbind</span>(out1,out2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="SLelection/Presidential_Election/screenshots/Election2015.JPG" class="img-fluid"></p>
-</section><section id="validating-the-data" class="level1"><h1>Validating the Data</h1>
+</section>
+<section id="validating-the-data" class="level1">
+<h1>Validating the Data</h1>
 <p>Even though I claim the data extraction is complete there needs to be validation. I find that it will be reassuring to have some form of validation. Therefore the best way is to tally the votes in individual districts and compare them with the final vote(which is on the last page of the pdf file). I shall focus on the contestants Maithripala Sirisena, Mahinda Rajapaksa and data such as Valid Votes, Rejected votes and Total Polled. Below is the code to find those final votes which will be compared with the pdf file.</p>
 <div class="cell">
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># validating final votes of Maithripala Sirisena</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Election2015</span>,<span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Votes"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Maithripala Sirisena"</span> <span class="op">|</span></span>
-<span>                                   <span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Result"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Maithripala Sirisena"</span><span class="op">)</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Votes</span><span class="op">)</span>,by<span class="op">=</span><span class="st">"ColNames"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># validating final votes of Maithripala Sirisena</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>ElecFinal2015<span class="ot">&lt;-</span><span class="fu">subset</span>(Election2015,Electorate<span class="sc">==</span><span class="st">"Final District Votes"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Maithripala Sirisena"</span> <span class="sc">|</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>                                   Electorate<span class="sc">==</span><span class="st">"Final District Result"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Maithripala Sirisena"</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>ElecFinal2015[,<span class="fu">sum</span>(Votes),by<span class="ot">=</span><span class="st">"ColNames"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               ColNames      V1
 1: Maithripala Sirisena 4014047</code></pre>
 </div>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ElecFinal2015</span><span class="op">$</span><span class="va">Votes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(ElecFinal2015<span class="sc">$</span>Votes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4014047</code></pre>
 </div>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># validating final votes of Mahinda Rajapaksa</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Election2015</span>,<span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Votes"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Mahinda Rajapaksa"</span> <span class="op">|</span></span>
-<span>                              <span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Result"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Mahinda Rajapaksa"</span><span class="op">)</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Votes</span><span class="op">)</span>,by<span class="op">=</span><span class="st">"ColNames"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># validating final votes of Mahinda Rajapaksa</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>ElecFinal2015<span class="ot">&lt;-</span><span class="fu">subset</span>(Election2015,Electorate<span class="sc">==</span><span class="st">"Final District Votes"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Mahinda Rajapaksa"</span> <span class="sc">|</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>                              Electorate<span class="sc">==</span><span class="st">"Final District Result"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Mahinda Rajapaksa"</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>ElecFinal2015[,<span class="fu">sum</span>(Votes),by<span class="ot">=</span><span class="st">"ColNames"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            ColNames      V1
 1: Mahinda Rajapaksa 3390612</code></pre>
 </div>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ElecFinal2015</span><span class="op">$</span><span class="va">Votes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(ElecFinal2015<span class="sc">$</span>Votes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3390612</code></pre>
 </div>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># validating final votes of valid votes</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Election2015</span>,<span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Votes"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Valid Votes"</span> <span class="op">|</span></span>
-<span>                              <span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Result"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Valid Votes"</span><span class="op">)</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Votes</span><span class="op">)</span>,by<span class="op">=</span><span class="st">"ColNames"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># validating final votes of valid votes</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>ElecFinal2015<span class="ot">&lt;-</span><span class="fu">subset</span>(Election2015,Electorate<span class="sc">==</span><span class="st">"Final District Votes"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Valid Votes"</span> <span class="sc">|</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                              Electorate<span class="sc">==</span><span class="st">"Final District Result"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Valid Votes"</span>)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>ElecFinal2015[,<span class="fu">sum</span>(Votes),by<span class="ot">=</span><span class="st">"ColNames"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      ColNames V1
 1: Valid Votes NA</code></pre>
 </div>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ElecFinal2015</span><span class="op">$</span><span class="va">Votes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(ElecFinal2015<span class="sc">$</span>Votes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># validating final votes of rejected votes</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Election2015</span>,<span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Votes"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Rejected Votes"</span> <span class="op">|</span></span>
-<span>                              <span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Result"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Rejected Votes"</span><span class="op">)</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Votes</span><span class="op">)</span>,by<span class="op">=</span><span class="st">"ColNames"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># validating final votes of rejected votes</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>ElecFinal2015<span class="ot">&lt;-</span><span class="fu">subset</span>(Election2015,Electorate<span class="sc">==</span><span class="st">"Final District Votes"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Rejected Votes"</span> <span class="sc">|</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>                              Electorate<span class="sc">==</span><span class="st">"Final District Result"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Rejected Votes"</span>)</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>ElecFinal2015[,<span class="fu">sum</span>(Votes),by<span class="ot">=</span><span class="st">"ColNames"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         ColNames V1
 1: Rejected Votes NA</code></pre>
 </div>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ElecFinal2015</span><span class="op">$</span><span class="va">Votes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(ElecFinal2015<span class="sc">$</span>Votes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># validating final votes of polled votes</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Election2015</span>,<span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Votes"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Total Polled"</span> <span class="op">|</span></span>
-<span>                              <span class="va">Electorate</span><span class="op">==</span><span class="st">"Final District Result"</span> <span class="op">&amp;</span> <span class="va">ColNames</span><span class="op">==</span><span class="st">"Total Polled"</span><span class="op">)</span></span>
-<span><span class="va">ElecFinal2015</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Votes</span><span class="op">)</span>,by<span class="op">=</span><span class="st">"ColNames"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># validating final votes of polled votes</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>ElecFinal2015<span class="ot">&lt;-</span><span class="fu">subset</span>(Election2015,Electorate<span class="sc">==</span><span class="st">"Final District Votes"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Total Polled"</span> <span class="sc">|</span></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>                              Electorate<span class="sc">==</span><span class="st">"Final District Result"</span> <span class="sc">&amp;</span> ColNames<span class="sc">==</span><span class="st">"Total Polled"</span>)</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>ElecFinal2015[,<span class="fu">sum</span>(Votes),by<span class="ot">=</span><span class="st">"ColNames"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ColNames V1
 1: Total Polled NA</code></pre>
 </div>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ElecFinal2015</span><span class="op">$</span><span class="va">Votes</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(ElecFinal2015<span class="sc">$</span>Votes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
 <p>If we compare the above results with below table clearly our extraction is successful and the amounts are accurate.</p>
 <p><img src="SLelection/Presidential_Election/screenshots/validate.JPG" class="img-fluid"></p>
-</section><section id="issues-in-the-pdf-file" class="level1"><h1>Issues in the pdf file</h1>
+</section>
+<section id="issues-in-the-pdf-file" class="level1">
+<h1>Issues in the pdf file</h1>
 <p>Satisfying end to be honest, but there was one glitch. If we consider the final district result tables only in one occasion the heading was inconsistent. This occurred for the Kalutara district, it should have been “Final District Result” instead of “Final District Votes”. Rather than that no issues at all. Similarly if we identify some creative pattern step by step it is possible to extract all the presidential election data and create a much more lucrative data retrieval website. Well we could even add the parliament and provincial election results as well.</p>
 <p>For now One step at a time.</p>
 <p><strong>THANK YOU</strong></p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -893,6 +964,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -961,13 +1059,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1002,18 +1102,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1045,11 +1134,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1059,8 +1187,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1072,7 +1209,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1116,6 +1376,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1141,6 +1402,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1201,14 +1488,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left"><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></div>   
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></div>
+    <div class="nav-footer-right">
+<p><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></p>
+</div>
   </div>
 </footer>
+
+
 
 
 </body></html>

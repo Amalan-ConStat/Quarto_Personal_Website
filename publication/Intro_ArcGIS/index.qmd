@@ -1,0 +1,18 @@
+---
+title: "Introduction to ArcGIS"
+date: "2025-09-18"
+categories: 
+  - presentation
+  - QUT
+  - ArcGIS
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+[Download the PowerPoint](Teaching_ArcGIS_11_08_2025.pptx){.btn .btn-outline-primary}

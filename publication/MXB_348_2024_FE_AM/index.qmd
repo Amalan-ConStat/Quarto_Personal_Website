@@ -1,0 +1,22 @@
+---
+title: "MXB 348 - Work integrated Learning for Statistics - Feature engineering"
+date: "2025-09-18"
+categories: 
+  - presentation
+  - QUT
+  - MXB348
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+## Abstract
+
+This workshop introduces key tools for data manipulation and visualisation in _R_, focusing on the use of `dplyr`, `tidyr`, `ggplot2`, and `summarytools`. Participants learn how to transform and summarise data efficiently, apply the pipe operator to streamline workflows, and reshape datasets using `pivot_longer` and `pivot_wider`. Practical examples with the `storms` dataset demonstrate grouping, filtering, and plotting techniques, while additional case studies highlight applications such as attribution modelling with the `ChannelAttribution` package. The workshop emphasises reproducible workflows, clear data pipelines, and effective presentation of results using Quarto revealjs slides.
+
+<a class="btn btn-outline-primary" href="https://github.com/Amalan-ConStat/MXB_348_2024_FE_AM" role="button" style="padding: 5px 5px;">View the Presentation</a>

@@ -79,7 +79,7 @@ I have developed the below listed R packages and Shiny apps:
 :::
 
 On this website, I offer a glimpse into my vast body of knowledge, ongoing research, publications, conference posters and my interests.
-If you are interested in my work and have any questions or would like to discuss do not hesitate to [contact me](mailto:mail.amalan_0595@gmail.com)
+If you are interested in my work and have any questions or would like to discuss do not hesitate to [contact me](mailto:mail.amalan0595@gmail.com)
 :::
 
 :::

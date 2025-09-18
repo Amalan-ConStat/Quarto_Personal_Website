@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.45">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2019-02-06">
-<title>Amalan - Week 6 : Mortgage, Recession and States</title>
+<title>Week 6 : Mortgage, Recession and States – Amalan Mahendran</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -31,7 +31,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -77,7 +77,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -86,6 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -95,92 +101,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../../img/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">Amalan</span>
+    <span class="navbar-title">Amalan Mahendran</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../../publication/index.html" rel="" target="">
- <span class="menu-text">Publication</span></a>
+    <a class="nav-link" href="../../../publication/index.html"> 
+<span class="menu-text">Publication and Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts/index.html" rel="" target="">
- <span class="menu-text">Blog Posts</span></a>
+    <a class="nav-link" href="../../../posts/index.html"> 
+<span class="menu-text">Blog Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../tidytuesday/index.html" rel="" target="">
- <span class="menu-text">#TidyTuesday</span></a>
+    <a class="nav-link" href="../../../tidytuesday/index.html"> 
+<span class="menu-text">#TidyTuesday</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../interests/index.html" rel="" target="">
- <span class="menu-text">Interests</span></a>
+    <a class="nav-link" href="../../../interests/index.html"> 
+<span class="menu-text">Interests</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv/index.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Socials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">
 <li>
-    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat" rel="" target=""><i class="bi bi-hash" role="img">
+    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat"><i class="bi bi-hash" role="img">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="dropdown-text">BlueSky</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/Amalan-ConStat" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="dropdown-item" href="https://github.com/Amalan-ConStat"><i class="bi bi-github" role="img">
 </i> 
  <span class="dropdown-text">GitHub</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/"><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="dropdown-text">LinkedIn</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://scholar.google.com/citations?user=fj4E-GMAAAAJ&amp;hl=en" rel="" target=""><i class="bi bi-google" role="img">
+    <a class="dropdown-item" href="https://scholar.google.com/citations?user=fj4E-GMAAAAJ&amp;hl=en"><i class="bi bi-google" role="img">
 </i> 
  <span class="dropdown-text">Google Scholar</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran" rel="" target=""><i class="bi bi-r-square-fill" role="img">
+    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran"><i class="bi bi-r-square-fill" role="img">
 </i> 
  <span class="dropdown-text">Researchgate</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds" rel="" target=""><i class="bi bi-box-fill" role="img">
+    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds"><i class="bi bi-box-fill" role="img">
 </i> 
  <span class="dropdown-text">R Universe</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com" rel="" target=""><i class="bi bi-mailbox" role="img">
+    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com"><i class="bi bi-mailbox" role="img">
 </i> 
  <span class="dropdown-text">Email Me</span></a>
   </li>  
     </ul>
 </li>
 </ul>
-<div class="quarto-navbar-tools">
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
@@ -211,6 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header><div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load the packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
@@ -221,16 +228,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># load the data</span></span>
-<span><span class="va">mortgage</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"mortgage.csv"</span>, </span>
-<span>                     col_types <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/cols.html">cols</a></span><span class="op">(</span>adjustable_margin_5_1_hybrid <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>, </span>
-<span>                     adjustable_rate_5_1_hybrid <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>, </span>
-<span>                     fees_and_pts_15_yr <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>, fees_and_pts_30_yr <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>, </span>
-<span>                     fees_and_pts_5_1_hybrid <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>, </span>
-<span>                     fixed_rate_15_yr <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span>, </span>
-<span>                     spread_30_yr_fixed_and_5_1_adjustable <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_atomic.html">col_double</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">mortgage</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"mortgage.csv"</span>, </span>
+<span>                     col_types <span class="op">=</span> <span class="fu">cols</span><span class="op">(</span>adjustable_margin_5_1_hybrid <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>, </span>
+<span>                     adjustable_rate_5_1_hybrid <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>, </span>
+<span>                     fees_and_pts_15_yr <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>, fees_and_pts_30_yr <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>, </span>
+<span>                     fees_and_pts_5_1_hybrid <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>, </span>
+<span>                     fixed_rate_15_yr <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span>, </span>
+<span>                     spread_30_yr_fixed_and_5_1_adjustable <span class="op">=</span> <span class="fu">col_double</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span>                     <span class="op">)</span></span>
-<span><span class="va">recessions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"recessions.csv"</span><span class="op">)</span></span>
-<span><span class="va">state_hpi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"state_hpi.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">recessions</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"recessions.csv"</span><span class="op">)</span></span>
+<span><span class="va">state_hpi</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"state_hpi.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Week 6 has three data-sets, which are mortgage, recession and state_hpi. Number of variables in each data-set is less than 10. You can acquire the data-set from <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-05">here.</a></p>
 <p><a href="https://github.com/Amalan-ConStat/TidyTuesday/tree/master/2019/Week6">GitHub Code</a></p>
@@ -258,73 +265,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Vice versa of 2.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="va">fixed_rate_30_yr</span>,color<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/week.html">week</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Fixed Rate 30 Year Mortgage (%)"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Fixed Rate 30 Year Morgage Change by the Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
-<span>                axis.text.x <span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="va">fixed_rate_30_yr</span>,color<span class="op">=</span><span class="fu">week</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">geom_jitter</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">transition_time</span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Fixed Rate 30 Year Mortgage (%)"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Fixed Rate 30 Year Morgage Change by the Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">labs</span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
+<span>                axis.text.x <span class="op">=</span><span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span>    </span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes<span class="op">=</span><span class="fl">48</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes<span class="op">=</span><span class="fl">48</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/mortgage fixed rate 30 years-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/mortgage fixed rate 30 years-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="fixed-rate-15-years-from-1991-to-2018" class="level2"><h2 class="anchored" data-anchor-id="fixed-rate-15-years-from-1991-to-2018">Fixed Rate 15 Years from 1991 to 2018</h2>
 <p>From 1991 only we have Fixed Rate for 15 Years and in the beginning we can see the percentage slightly above 8. and over the years it is decreasing while some fluctuations occur. This fluctuations happen in the years of 2000, 2006, 2007 and 2018, where they brake pattern of decreasing.</p>
 <p>In the year 2018 it reaches slightly less than 4% in the first 20 or so weeks, but the last 20 weeks the percentage is above 4%.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">&gt;=</span><span class="fl">1991</span><span class="op">)</span>,</span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="va">fixed_rate_15_yr</span>,color<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/week.html">week</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Fixed Rate 15 Year Mortgage (%)"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Fixed Rate 15 Year Morgage Change by the Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
-<span>                axis.text.x <span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">&gt;=</span><span class="fl">1991</span><span class="op">)</span>,</span>
+<span>          <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="va">fixed_rate_15_yr</span>,color<span class="op">=</span><span class="fu">week</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">geom_jitter</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">transition_time</span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Fixed Rate 15 Year Mortgage (%)"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Fixed Rate 15 Year Morgage Change by the Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">labs</span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
+<span>          <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
+<span>                axis.text.x <span class="op">=</span><span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span>    </span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes<span class="op">=</span><span class="fl">28</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes<span class="op">=</span><span class="fl">28</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/mortgage fixed rate 15 years-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/mortgage fixed rate 15 years-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="fees-and-points-of-30-years-from-1971-to-2018" class="level2"><h2 class="anchored" data-anchor-id="fees-and-points-of-30-years-from-1971-to-2018">Fees and Points of 30 Years from 1971 to 2018</h2>
 <p>Highest peek occurs in 1983 which is 2.7 and it decreases over the years gradually. While in the year 1971 the points were close to 1. The gradual decrease is not in effect between the years 1995 and 1996 and its clear in the plot. Yet, we can see no other anomaly in the next few years after 1996, while in 2007 it reaches its lowest point of slightly less than 0.3 (Could be related to the Great recession)</p>
 <p>Anyway by year 2018 after this 2007 recession the points have increased but has not reached 1 and is always oscillating between 0.4 and 0.6 in the years of 2015 to 2018.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">fees_and_pts_30_yr</span><span class="op">)</span>,color<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/week.html">week</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
-<span>                            axis.text.x <span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Fees and Percentage points of the Loan Amount"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Fess and Percentage points (30 Years) of the Loan Amount \n </span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">fees_and_pts_30_yr</span><span class="op">)</span>,color<span class="op">=</span><span class="fu">week</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_jitter</span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
+<span>                            axis.text.x <span class="op">=</span><span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">xlab</span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Fees and Percentage points of the Loan Amount"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">labs</span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Fess and Percentage points (30 Years) of the Loan Amount \n </span></span>
 <span><span class="st">                by the Year : {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p1</span>,nframes<span class="op">=</span><span class="fl">48</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p1</span>,nframes<span class="op">=</span><span class="fl">48</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/mortgage fees and pts of 30 year-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/mortgage fees and pts of 30 year-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="fees-and-points-of-15-years-from-1991-to-2018" class="level2"><h2 class="anchored" data-anchor-id="fees-and-points-of-15-years-from-1991-to-2018">Fees and Points of 15 Years from 1991 to 2018</h2>
 <p>In 1991 the points are close to 1.9 and it wavers in between 1.6 and 1.8 until 1997. There is a significant drop from 1997 to 1998 where the points end up averaged around 1 and over the years it slowly decreases until year 2007. Where the lowest point of 0.3 occurs.</p>
 <p>After this new low it struggles to maintain any steady increase and rather holds below 0.8 over the next few years until 2018.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">&gt;=</span><span class="fl">1991</span><span class="op">)</span>,</span>
-<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">fees_and_pts_15_yr</span><span class="op">)</span>,color<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/week.html">week</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
-<span>                            axis.text.x <span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Fees and Percentage points of the Loan Amount"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Fees and Percentage points (15 Year)of the Loan Amount by the Year : {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">mortgage</span>,<span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">&gt;=</span><span class="fl">1991</span><span class="op">)</span>,</span>
+<span>          <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span>,y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">fees_and_pts_15_yr</span><span class="op">)</span>,color<span class="op">=</span><span class="fu">week</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_jitter</span><span class="op">(</span><span class="op">)</span><span class="op">+</span> <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>,</span>
+<span>                            axis.text.x <span class="op">=</span><span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">xlab</span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Fees and Percentage points of the Loan Amount"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">labs</span><span class="op">(</span>color<span class="op">=</span><span class="st">"Week of the Year"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Fees and Percentage points (15 Year)of the Loan Amount by the Year : {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="fu">year</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes<span class="op">=</span><span class="fl">28</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes<span class="op">=</span><span class="fl">28</span>, fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/mortgage fees and pts of 15 year-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/mortgage fees and pts of 15 year-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section></section><section id="states" class="level1"><h1>States</h1>
@@ -345,123 +364,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="new-england-region" class="level2"><h2 class="anchored" data-anchor-id="new-england-region">New England Region</h2>
 <p>Clear visibility of 2007 recession where US Avg and Price Index declining until 2010 and then improving over the next few years. All states begin very closely but end up very differently in 2018 and in troubled times.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"CT"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"ME"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MA"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"CT"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"ME"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MA"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"NH"</span><span class="op">|</span> <span class="va">state</span><span class="op">==</span><span class="st">"RI"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"VT"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region New England-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region New England-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="mideast-region" class="level2"><h2 class="anchored" data-anchor-id="mideast-region">Mideast Region</h2>
 <p>After the 2007 recession there is clear difference among DC and other states and the gap cannot be ignored at all.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"DE"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"DC"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MD"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"DE"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"DC"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MD"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"NJ"</span><span class="op">|</span> <span class="va">state</span><span class="op">==</span><span class="st">"NY"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"PA"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Mideast Region-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Mideast Region-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="great-lakes-region" class="level2"><h2 class="anchored" data-anchor-id="great-lakes-region">Great Lakes Region</h2>
 <p>After year 2000 there is clear difference among the 5 states and it becomes more complex with the 2007 recession and recovery periods. But this is not the case in year 2018 because all five states are now closely intact with the increase with both variables.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"IL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"OH"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"WI"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"IL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"OH"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"WI"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"IN"</span><span class="op">|</span> <span class="va">state</span><span class="op">==</span><span class="st">"MI"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Great Lakes-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Great Lakes-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="plains-region" class="level2"><h2 class="anchored" data-anchor-id="plains-region">Plains Region</h2>
 <p>Before the 2007 recession all states behaved very similarly, but this is not the case after year 2011 where North Dakota has a higher Price index and US Average than other states which is clearly seen in the plot.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"IO"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MN"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"NE"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"IO"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MN"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"NE"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"KS"</span><span class="op">|</span> <span class="va">state</span><span class="op">==</span><span class="st">"MS"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"ND"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"SD"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Plains-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Plains-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="southeast-region" class="level2"><h2 class="anchored" data-anchor-id="southeast-region">Southeast Region</h2>
 <p>Southeast region has alot of states therefore it would be time consuming to compare. Clearly the 2007 recession has a toll on both variables, but not as the effect from year 2000.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"AL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"FL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"KY"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"AL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"FL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"KY"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"AR"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"GA"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MS"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"LA"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"NC"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"SC"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"TN"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"VA"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"WV"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Southeast-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Southeast-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="southwest-region" class="level2"><h2 class="anchored" data-anchor-id="southwest-region">Southwest Region</h2>
 <p>Before the 2007 recession and after also we can see the clear changes. Before that in year 2000 also we can see rapid changes which lead up-to the recession. The damage done by the recession have not been recovered in some states even by 2018 according to the gap in Price index.</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"AZ"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"OK"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"AZ"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"OK"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"TX"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"NM"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Southwest-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Southwest-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="rocky-mountain-region" class="level2"><h2 class="anchored" data-anchor-id="rocky-mountain-region">Rocky Mountain Region</h2>
 <p>Changes after 2000 are very different for the 5 states in this region and after the 2007 recession also we can see the rapid set back in Us avg and price index. But this is not the case after 2013 even though it has already made significant amount of divide between the state of MO and other states, which is clearly seen at the end of year 2018.</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"CO"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MO"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"WY"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"CO"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"MO"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"WY"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"ID"</span><span class="op">|</span> <span class="va">state</span><span class="op">==</span><span class="st">"UT"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Rocky Mountain-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Rocky Mountain-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="far-west-region" class="level2"><h2 class="anchored" data-anchor-id="far-west-region">Far West Region</h2>
 <p>Early 1990 has a sudden raise and it quickly settles down close to year 1998. Where by 2000 all six states share the same price index value, but this changes over time with clear difference among two groups. Each group containing 3 states, but this progress entirely changes by the 2007 recession and its recovery. Because clearly after 2013 there is no more 2 groups, it is now 3 groups. Where state of Hawaii has the highest pricing index and lowest goes to Alaska, this is by the end of year 2018.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"AL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"NV"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"OR"</span><span class="op">|</span></span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span><span class="op">&lt;-</span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">state_hpi</span>,<span class="va">state</span><span class="op">==</span><span class="st">"AL"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"NV"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"OR"</span><span class="op">|</span></span>
 <span>                           <span class="va">state</span><span class="op">==</span><span class="st">"CA"</span><span class="op">|</span> <span class="va">state</span><span class="op">==</span><span class="st">"HI"</span><span class="op">|</span><span class="va">state</span><span class="op">==</span><span class="st">"WA"</span><span class="op">)</span>,</span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/shadow_mark.html">shadow_mark</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>       <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://gganimate.com/reference/ease_aes.html">ease_aes</a></span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://gganimate.com/reference/animate.html">animate</a></span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">us_avg</span>,y<span class="op">=</span><span class="va">price_index</span>,color<span class="op">=</span><span class="va">state</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span><span class="op">+</span><span class="fu">xlab</span><span class="op">(</span><span class="st">"US Average"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Price Index"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Price Index vs Us Avg change over Year: {round(frame_time)}"</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">shadow_mark</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>       <span class="fu">transition_time</span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span><span class="fu">ease_aes</span><span class="op">(</span><span class="st">"linear"</span><span class="op">)</span></span>
+<span><span class="fu">animate</span><span class="op">(</span><span class="va">p</span>,nframes <span class="op">=</span> <span class="fl">44</span>,fps<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/Region Far West-1.gif" class="img-fluid"></p>
+<div>
+<figure class="figure"><p><img src="index_files/figure-html/Region Far West-1.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>It might look that I have not done enough justice for the changes which occurred before the year 2000, and I do agree with you. But if I do add them into my consideration this article would be very long. Hopefully, the animated plots clearly indicate the strong changes which occurred in the pre-y2k era.</p>
@@ -509,6 +552,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -577,13 +647,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -618,18 +690,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -661,11 +722,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -675,8 +775,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -688,7 +797,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -732,6 +964,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -757,6 +990,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -818,11 +1077,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left"><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></div>   
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></div>
+    <div class="nav-footer-right">
+<p><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></p>
+</div>
   </div>
 </footer>
 

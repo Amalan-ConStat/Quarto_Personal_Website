@@ -2,7 +2,7 @@
 
 # website settings
 website:
-  title: "Amalan"  # Your name
+  title: "Amalan Mahendran"  # Your name
   description: "Amalan Mahendran is a applied statistician focusing on big data and experimental design"   # A brief slogan (optional)
   image: img/my_image.jpg
 
@@ -15,7 +15,7 @@ website:
 
     # your social media handles
     right:
-      - text: "Publication"
+      - text: "Publication and Teaching"
         href: publication/index.qmd
       - text: "Blog Posts"
         href: posts/index.qmd

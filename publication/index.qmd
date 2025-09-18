@@ -1,9 +1,9 @@
 ---
-title: "Publication"
+title: "Publications and Teaching"
 author: ""
 title-block-banner: true
 page-layout: full
-description-meta: "Welcome to my publications list, this contains brief summaries for publications and conference posters. Have a read through and let me know your thoughts."
+description-meta: "Welcome to my publications list and teaching material, this contains brief summaries for publications and conference posters and my presentations for teaching. Have a read through and let me know your thoughts."
 
 listing:
   - id: articles
@@ -18,6 +18,12 @@ listing:
     contents:
       - "OlympicRshiny/index.qmd"
       - "Presidential_Election/index.qmd"  
+  - id: Teaching
+    contents: 
+      - "MXB_348_2024_FE_AM/index.qmd"
+      - "MXB_348_2025_Rproj/index.qmd"
+      - "Intro_ArcGIS/index.qmd"
+      - "Intro_QGIS/index.qmd"
 toc-title: Year
 toc-location: right
 date-format: "MMMM D, YYYY"
@@ -26,10 +32,13 @@ code-tools: false
 comments: false    
 ---
 
-*Welcome to my publications list, this contains brief summaries for publications and conference posters. Have a read through and let me know your thoughts.*
+*Welcome to my publications list, this contains brief summaries for publications, conference posters and teaching material. Have a read through and let me know your thoughts.*
 
 :::{#articles}
 :::
 
 :::{#Rpackages}
+:::
+
+:::{#Teachings}
 :::

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
 <meta name="description" content="Welcome to my statistics related blog posts.">
 
-<title>Amalan - Blog Posts</title>
+<title>Blog Posts – Amalan Mahendran</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,7 +51,12 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -60,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -179,103 +185,130 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../img/logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Amalan</span>
+    <span class="navbar-title">Amalan Mahendran</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../publication/index.html" rel="" target="">
- <span class="menu-text">Publication</span></a>
+    <a class="nav-link" href="../publication/index.html"> 
+<span class="menu-text">Publication and Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../posts/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog Posts</span></a>
+    <a class="nav-link active" href="../posts/index.html" aria-current="page"> 
+<span class="menu-text">Blog Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tidytuesday/index.html" rel="" target="">
- <span class="menu-text">#TidyTuesday</span></a>
+    <a class="nav-link" href="../tidytuesday/index.html"> 
+<span class="menu-text">#TidyTuesday</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../interests/index.html" rel="" target="">
- <span class="menu-text">Interests</span></a>
+    <a class="nav-link" href="../interests/index.html"> 
+<span class="menu-text">Interests</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../cv/index.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Socials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">    
         <li>
-    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat" rel="" target=""><i class="bi bi-hash" role="img">
+    <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat"><i class="bi bi-hash" role="img">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="dropdown-text">BlueSky</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/Amalan-ConStat" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="dropdown-item" href="https://github.com/Amalan-ConStat"><i class="bi bi-github" role="img">
 </i> 
  <span class="dropdown-text">GitHub</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="dropdown-item" href="https://www.linkedin.com/in/amalan-mahendran-72b86b37/"><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="dropdown-text">LinkedIn</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://scholar.google.com/citations?user=fj4E-GMAAAAJ&amp;hl=en" rel="" target=""><i class="bi bi-google" role="img">
+    <a class="dropdown-item" href="https://scholar.google.com/citations?user=fj4E-GMAAAAJ&amp;hl=en"><i class="bi bi-google" role="img">
 </i> 
  <span class="dropdown-text">Google Scholar</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran" rel="" target=""><i class="bi bi-r-square-fill" role="img">
+    <a class="dropdown-item" href="https://www.researchgate.net/profile/Amalan_Mahendran"><i class="bi bi-r-square-fill" role="img">
 </i> 
  <span class="dropdown-text">Researchgate</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds" rel="" target=""><i class="bi bi-box-fill" role="img">
+    <a class="dropdown-item" href="https://amalan-constat.r-universe.dev/builds"><i class="bi bi-box-fill" role="img">
 </i> 
  <span class="dropdown-text">R Universe</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com" rel="" target=""><i class="bi bi-mailbox" role="img">
+    <a class="dropdown-item" href="mailto:mail.amalan0595@gmail.com"><i class="bi bi-mailbox" role="img">
 </i> 
  <span class="dropdown-text">Email Me</span></a>
   </li>  
     </ul>
   </li>
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -288,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -307,22 +340,23 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <p><em>Welcome to my statistics related blog posts.</em></p>
 <div id="listing-Subsampling" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Blog,Subsampling,Big data" data-listing-date-sort="1675519200000" data-listing-file-modified-sort="1707225151982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="0" data-categories="Blog,Subsampling,Big data" data-listing-date-sort="1675519200000" data-listing-file-modified-sort="1707225151982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1195">
 <div class="thumbnail">
-<p><a href="../posts/Subsampling/index.html"> <p class="card-img-top"><img src="Subsampling\index_files\figure-html\Subsampling without replacement-1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../posts/Subsampling/index.html" class="no-external"></a></p><a href="../posts/Subsampling/index.html" class="no-external">
+<p class="card-img-top"><img src="Subsampling\index_files\figure-html\Subsampling without replacement-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../posts/Subsampling/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Subsampling/index.html">
 <h3 class="no-anchor listing-title">
-Number of subsamples, that is sampling
+<a href="../posts/Subsampling/index.html" class="no-external">Number of subsamples, that is sampling</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Subsampling/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Blog'); return false;">
 Blog
@@ -334,14 +368,12 @@ Subsampling
 Big data
 </div>
 </div>
-<a href="../posts/Subsampling/index.html">
 <div class="listing-description">
-Analysing big data is computationally intensive and to resolve this scalable methods are developed, for example subsampling. Obtaining a subset of the big data based on a…
+<a href="../posts/Subsampling/index.html" class="no-external">Analysing big data is computationally intensive and to resolve this scalable methods are developed, for example subsampling. Obtaining a subset of the big data based on a…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Subsampling/index.html">
+<a href="../posts/Subsampling/index.html" class="no-external">
 <div class="listing-date">
 February 5, 2023
 </div>
@@ -355,19 +387,19 @@ No matching items
 </div>
 <div id="listing-Binomial_Distribution" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Binomial,Blog,fitODBOD" data-listing-date-sort="1550066400000" data-listing-file-modified-sort="1687070694310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25">
+<div class="quarto-post image-right" data-index="0" data-categories="Binomial,Blog,fitODBOD" data-listing-date-sort="1550066400000" data-listing-file-modified-sort="1687070694310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4874">
 <div class="thumbnail">
-<p><a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html"> <img src="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external"></a></p><a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html">
 <h3 class="no-anchor listing-title">
-Tree of Binomial Distribution
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external">Tree of Binomial Distribution</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Binomial'); return false;">
 Binomial
@@ -379,14 +411,12 @@ Blog
 fitODBOD
 </div>
 </div>
-<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html">
 <div class="listing-description">
-The binomial distribution can be defined, using the binomial expansion
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external">The binomial distribution can be defined, using the binomial expansion</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html">
+<a href="../posts/Binomial_Distribution/Tree_of_Binomial_Distribution/index.html" class="no-external">
 <div class="listing-date">
 February 14, 2019
 </div>
@@ -400,19 +430,19 @@ No matching items
 </div>
 <div id="listing-Development" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bbmle,fitODBOD,mle,mle2,R" data-listing-date-sort="1546005600000" data-listing-file-modified-sort="1687070283266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="0" data-categories="bbmle,fitODBOD,mle,mle2,R" data-listing-date-sort="1546005600000" data-listing-file-modified-sort="1687070283266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="506">
 <div class="thumbnail">
-<p><a href="../posts/Benchmarking/mleand2/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../posts/Benchmarking/mleand2/index.html" class="no-external"></a></p><a href="../posts/Benchmarking/mleand2/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../posts/Benchmarking/mleand2/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Benchmarking/mleand2/index.html">
 <h3 class="no-anchor listing-title">
-Benchmarking the mle and mle2 function
+<a href="../posts/Benchmarking/mleand2/index.html" class="no-external">Benchmarking the mle and mle2 function</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Benchmarking/mleand2/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('bbmle'); return false;">
 bbmle
@@ -430,33 +460,31 @@ mle2
 R
 </div>
 </div>
-<a href="../posts/Benchmarking/mleand2/index.html">
 <div class="listing-description">
-<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+<a href="../posts/Benchmarking/mleand2/index.html" class="no-external"><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Benchmarking/mleand2/index.html">
+<a href="../posts/Benchmarking/mleand2/index.html" class="no-external">
 <div class="listing-date">
 December 29, 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="BetaBinomial,fitODBOD,maxLik" data-listing-date-sort="1545228000000" data-listing-file-modified-sort="1687069940993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
+<div class="quarto-post image-right" data-index="1" data-categories="BetaBinomial,fitODBOD,maxLik" data-listing-date-sort="1545228000000" data-listing-file-modified-sort="1687069940993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2477">
 <div class="thumbnail">
-<p><a href="../posts/Benchmarking/maxLik/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../posts/Benchmarking/maxLik/index.html" class="no-external"></a></p><a href="../posts/Benchmarking/maxLik/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../posts/Benchmarking/maxLik/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Benchmarking/maxLik/index.html">
 <h3 class="no-anchor listing-title">
-Benchmarking the maxLik function
+<a href="../posts/Benchmarking/maxLik/index.html" class="no-external">Benchmarking the maxLik function</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Benchmarking/maxLik/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('BetaBinomial'); return false;">
 BetaBinomial
@@ -468,33 +496,31 @@ fitODBOD
 maxLik
 </div>
 </div>
-<a href="../posts/Benchmarking/maxLik/index.html">
 <div class="listing-description">
-<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+<a href="../posts/Benchmarking/maxLik/index.html" class="no-external"><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Benchmarking/maxLik/index.html">
+<a href="../posts/Benchmarking/maxLik/index.html" class="no-external">
 <div class="listing-date">
 December 20, 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="fitODBOD,optim,R" data-listing-date-sort="1544709600000" data-listing-file-modified-sort="1687070271646" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="2" data-categories="fitODBOD,optim,R" data-listing-date-sort="1544709600000" data-listing-file-modified-sort="1687070271646" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1981">
 <div class="thumbnail">
-<p><a href="../posts/Benchmarking/optim/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../posts/Benchmarking/optim/index.html" class="no-external"></a></p><a href="../posts/Benchmarking/optim/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../posts/Benchmarking/optim/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Benchmarking/optim/index.html">
 <h3 class="no-anchor listing-title">
-Benchmarking the optim function
+<a href="../posts/Benchmarking/optim/index.html" class="no-external">Benchmarking the optim function</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Benchmarking/optim/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
 fitODBOD
@@ -506,33 +532,31 @@ optim
 R
 </div>
 </div>
-<a href="../posts/Benchmarking/optim/index.html">
 <div class="listing-description">
-<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+<a href="../posts/Benchmarking/optim/index.html" class="no-external"><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Benchmarking/optim/index.html">
+<a href="../posts/Benchmarking/optim/index.html" class="no-external">
 <div class="listing-date">
 December 14, 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="bbmle,Beta-Binomial,fitODBOD,maxLik,mle,mle2,nlm,nlminb,optim,ucminf" data-listing-date-sort="1543845600000" data-listing-file-modified-sort="1687070406730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19">
+<div class="quarto-post image-right" data-index="3" data-categories="bbmle,Beta-Binomial,fitODBOD,maxLik,mle,mle2,nlm,nlminb,optim,ucminf" data-listing-date-sort="1543845600000" data-listing-file-modified-sort="1687070406730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3690">
 <div class="thumbnail">
-<p><a href="../posts/Benchmarking/fitODBOD/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external"></a></p><a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Benchmarking/fitODBOD/index.html">
 <h3 class="no-anchor listing-title">
-Benchmarking optimization functions in R
+<a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external">Benchmarking optimization functions in R</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('bbmle'); return false;">
 bbmle
@@ -565,14 +589,12 @@ optim
 ucminf
 </div>
 </div>
-<a href="../posts/Benchmarking/fitODBOD/index.html">
 <div class="listing-description">
-<strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong>
+<a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external"><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Benchmarking/fitODBOD/index.html">
+<a href="../posts/Benchmarking/fitODBOD/index.html" class="no-external">
 <div class="listing-date">
 December 4, 2018
 </div>
@@ -593,19 +615,19 @@ No matching items
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-Developing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="SL Election,Presidential Election" data-listing-date-sort="1563026400000" data-listing-file-modified-sort="1687065942387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15">
+<div class="quarto-post image-right" data-index="0" data-categories="SL Election,Presidential Election" data-listing-date-sort="1563026400000" data-listing-file-modified-sort="1687065942387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2912">
 <div class="thumbnail">
-<p><a href="../posts/Developing/SLelection/Presidential_Election/index.html"> <img src="../posts/Developing/SLelection/Presidential_Election/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external"></a></p><a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Developing/SLelection/Presidential_Election/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Developing/SLelection/Presidential_Election/index.html">
 <h3 class="no-anchor listing-title">
-Extract Presidential Election Data of 2015 from the Pdf file
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external">Extract Presidential Election Data of 2015 from the Pdf file</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('SL Election'); return false;">
 SL Election
@@ -614,33 +636,31 @@ SL Election
 Presidential Election
 </div>
 </div>
-<a href="../posts/Developing/SLelection/Presidential_Election/index.html">
 <div class="listing-description">
-Sri Lanka will face…
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external">Sri Lanka will face a presidential election by the end of this year, but in order to understand how people have voted so far in previous elections we need data. I was hoping…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Developing/SLelection/Presidential_Election/index.html">
+<a href="../posts/Developing/SLelection/Presidential_Election/index.html" class="no-external">
 <div class="listing-date">
 July 14, 2019
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="R,Website,Blog" data-listing-date-sort="1548597600000" data-listing-file-modified-sort="1687056636809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="1" data-categories="R,Website,Blog" data-listing-date-sort="1548597600000" data-listing-file-modified-sort="1687056636809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="766">
 <div class="thumbnail">
-<p><a href="../posts/Developing/PersonalWebsite/index.html"> <img src="../posts/Developing/PersonalWebsite/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Developing/PersonalWebsite/index.html" class="no-external"></a></p><a href="../posts/Developing/PersonalWebsite/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Developing/PersonalWebsite/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Developing/PersonalWebsite/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Developing/PersonalWebsite/index.html">
 <h3 class="no-anchor listing-title">
-Build Your Own Website or Blog Using R, RStudio and R Packages.
+<a href="../posts/Developing/PersonalWebsite/index.html" class="no-external">Build Your Own Website or Blog Using R, RStudio and R Packages.</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Developing/PersonalWebsite/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -652,33 +672,31 @@ Website
 Blog
 </div>
 </div>
-<a href="../posts/Developing/PersonalWebsite/index.html">
 <div class="listing-description">
-R enthusiasts are focused on developing packages and websites to promote their profile and share their knowledge to the world. Recently released packages such as hugo…
+<a href="../posts/Developing/PersonalWebsite/index.html" class="no-external">R enthusiasts are focused on developing packages and websites to promote their profile and share their knowledge to the world. Recently released packages such as hugo…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Developing/PersonalWebsite/index.html">
+<a href="../posts/Developing/PersonalWebsite/index.html" class="no-external">
 <div class="listing-date">
 January 28, 2019
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Rshiny,R" data-listing-date-sort="1548252000000" data-listing-file-modified-sort="1687065785792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="2" data-categories="Rshiny,R" data-listing-date-sort="1548252000000" data-listing-file-modified-sort="1687065785792" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="516">
 <div class="thumbnail">
-<p><a href="../posts/Developing/OlympicRshiny/index.html"> <img src="../posts/Developing/OlympicRshiny/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Developing/OlympicRshiny/index.html" class="no-external"></a></p><a href="../posts/Developing/OlympicRshiny/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Developing/OlympicRshiny/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Developing/OlympicRshiny/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Developing/OlympicRshiny/index.html">
 <h3 class="no-anchor listing-title">
-Olympic : Rshiny Approach
+<a href="../posts/Developing/OlympicRshiny/index.html" class="no-external">Olympic : Rshiny Approach</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Developing/OlympicRshiny/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Rshiny'); return false;">
 Rshiny
@@ -687,33 +705,31 @@ Rshiny
 R
 </div>
 </div>
-<a href="../posts/Developing/OlympicRshiny/index.html">
 <div class="listing-description">
-Rshiny is very popular in the rstats community. The glamourous interface and functionality has helped for this level of popularity. In perspective of…
+<a href="../posts/Developing/OlympicRshiny/index.html" class="no-external">Rshiny is very popular in the rstats community. The glamourous interface and functionality has helped for this level of popularity. In perspective of using an Rshiny App…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Developing/OlympicRshiny/index.html">
+<a href="../posts/Developing/OlympicRshiny/index.html" class="no-external">
 <div class="listing-date">
 January 24, 2019
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="fitODBOD,R" data-listing-date-sort="1547042400000" data-listing-file-modified-sort="1687066128736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="3" data-categories="fitODBOD,R" data-listing-date-sort="1547042400000" data-listing-file-modified-sort="1687066128736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1651">
 <div class="thumbnail">
-<p><a href="../posts/Developing/YourOwnPackage/index.html"> <img src="../posts/Developing/YourOwnPackage/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Developing/YourOwnPackage/index.html" class="no-external"></a></p><a href="../posts/Developing/YourOwnPackage/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Developing/YourOwnPackage/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Developing/YourOwnPackage/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Developing/YourOwnPackage/index.html">
 <h3 class="no-anchor listing-title">
-Developing an R package
+<a href="../posts/Developing/YourOwnPackage/index.html" class="no-external">Developing an R package</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Developing/YourOwnPackage/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('fitODBOD'); return false;">
 fitODBOD
@@ -722,78 +738,72 @@ fitODBOD
 R
 </div>
 </div>
-<a href="../posts/Developing/YourOwnPackage/index.html">
 <div class="listing-description">
-R package development is no longer as it was before 2010 because now most of the work can be done by just a simple mouse-click or with the use of a function. My intention of…
+<a href="../posts/Developing/YourOwnPackage/index.html" class="no-external">R package development is no longer as it was before 2010 because now most of the work can be done by just a simple mouse-click or with the use of a function. My intention of…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Developing/YourOwnPackage/index.html">
+<a href="../posts/Developing/YourOwnPackage/index.html" class="no-external">
 <div class="listing-date">
 January 10, 2019
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="R" data-listing-date-sort="1545487200000" data-listing-file-modified-sort="1687065528074" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="4" data-categories="R" data-listing-date-sort="1545487200000" data-listing-file-modified-sort="1687065528074" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="914">
 <div class="thumbnail">
-<p><a href="../posts/Developing/Newpackage/index.html"> <img src="../posts/Developing/Newpackage/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Developing/Newpackage/index.html" class="no-external"></a></p><a href="../posts/Developing/Newpackage/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Developing/Newpackage/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Developing/Newpackage/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Developing/Newpackage/index.html">
 <h3 class="no-anchor listing-title">
-Build a New Package with Existing R packages
+<a href="../posts/Developing/Newpackage/index.html" class="no-external">Build a New Package with Existing R packages</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Developing/Newpackage/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
 </div>
-<a href="../posts/Developing/Newpackage/index.html">
 <div class="listing-description">
-Package development is a sense of accomplishment for any statistical programmer who needs self satisfaction. I developed the R package fitODBOD for the purpose of fitting Over dispersed Binomial Outcome Data using Binomial Mixture Distributions and Alternate Binomial Distributions. It was a an amazing journey…
+<a href="../posts/Developing/Newpackage/index.html" class="no-external">Package development is a sense of accomplishment for any statistical programmer who needs self satisfaction. I developed the R package fitODBOD for the purpose of fitting…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Developing/Newpackage/index.html">
+<a href="../posts/Developing/Newpackage/index.html" class="no-external">
 <div class="listing-date">
 December 23, 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="R" data-listing-date-sort="1545400800000" data-listing-file-modified-sort="1687065550868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="5" data-categories="R" data-listing-date-sort="1545400800000" data-listing-file-modified-sort="1687065550868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="553">
 <div class="thumbnail">
-<p><a href="../posts/Developing/FindRpackage/index.html"> <img src="../posts/Developing/FindRpackage/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="../posts/Developing/FindRpackage/index.html" class="no-external"></a></p><a href="../posts/Developing/FindRpackage/index.html" class="no-external">
+<p><img loading="lazy" src="../posts/Developing/FindRpackage/featured.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/Developing/FindRpackage/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../posts/Developing/FindRpackage/index.html">
 <h3 class="no-anchor listing-title">
-How To Find Your R package ?
+<a href="../posts/Developing/FindRpackage/index.html" class="no-external">How To Find Your R package ?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../posts/Developing/FindRpackage/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
 </div>
-<a href="../posts/Developing/FindRpackage/index.html">
 <div class="listing-description">
-How to find your…
+<a href="../posts/Developing/FindRpackage/index.html" class="no-external">How to find your R package is simply a blog post helping people to provide a list of websites where they can find R packages. These websites were useful for me while…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../posts/Developing/FindRpackage/index.html">
+<a href="../posts/Developing/FindRpackage/index.html" class="no-external">
 <div class="listing-date">
 December 22, 2018
 </div>
@@ -846,6 +856,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -914,13 +951,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -955,18 +994,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -998,11 +1026,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1012,8 +1079,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1025,7 +1101,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1069,6 +1268,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1094,6 +1294,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1156,13 +1382,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left"><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></div>   
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right"><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></div>
+    <div class="nav-footer-right">
+<p><span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span></p>
+</div>
   </div>
 </footer>
+
 
 
 

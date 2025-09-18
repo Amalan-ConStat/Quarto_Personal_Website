@@ -1,0 +1,22 @@
+---
+title: "MXB 348 - Work integrated Learning for Statistics - Rproject Management"
+date: "2025-09-18"
+categories: 
+  - presentation
+  - QUT
+  - MXB348
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+## Abstract
+
+This workshop introduces best practices for workflow management in R using RStudio, R projects, and literate programming tools such as R Markdown and Quarto. It highlights the importance of reproducibility, portability, collaboration, and automation in data analysis, with practical demonstrations of clean coding practices, the use of the pipe operator, and the integration of tidyverse packages for streamlined workflows. The session also explores project structuring, version control, and the advantages of adopting Quarto as a modern framework for reproducible research outputs, including reports and presentations.
+
+<a class="btn btn-outline-primary" href="https://github.com/Amalan-ConStat/MXB_348_2025_Rproj" role="button" style="padding: 5px 5px;">View the Presentation</a>

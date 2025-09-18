@@ -1,0 +1,18 @@
+---
+title: "Introduction to QGIS"
+date: "2025-09-18"
+categories: 
+  - presentation
+  - QUT
+  - QGIS
+image: featured.png
+draft: false
+number-sections: false
+format:
+  html:
+    fig-cap-location: bottom
+resources: 
+  - "featured.png"
+---
+
+[Download the PowerPoint](Teaching_QGIS.pptx){.btn .btn-outline-primary}
