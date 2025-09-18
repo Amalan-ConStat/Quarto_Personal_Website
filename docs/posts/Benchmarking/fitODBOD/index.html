@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.45">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="M.Amalan">
 <meta name="dcterms.date" content="2018-12-04">
-
 <title>Benchmarking optimization functions in R – Amalan Mahendran</title>
 <style>
 code{white-space: pre-wrap;}
@@ -58,7 +55,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -76,8 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,16 +97,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
+}</script><script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -137,19 +124,14 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/logo.png" alt="" class="navbar-logo">
-    </a>
+    <img src="../../../img/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Amalan Mahendran</span>
     </a>
@@ -160,7 +142,7 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../../publication/index.html"> 
 <span class="menu-text">Publication and Teaching</span></a>
   </li>  
@@ -184,8 +166,8 @@ window.Quarto = {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Socials</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">
+<li>
     <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat"><i class="bi bi-hash" role="img">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
@@ -226,25 +208,19 @@ window.Quarto = {
  <span class="dropdown-text">Email Me</span></a>
   </li>  
     </ul>
-  </li>
+</li>
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Benchmarking optimization functions in R</h1>
   <div class="quarto-categories">
     <div class="quarto-category">bbmle</div>
@@ -283,15 +259,9 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<p><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></p>
-<section id="estimating-the-shape-parameters-by-maximizing-the-log-likelihood-value-of-beta-binomial-distribution." class="level1">
-<h1>Estimating the shape parameters by Maximizing the Log Likelihood value of Beta-Binomial Distribution.</h1>
-</section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+</header><p><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></p>
+<section id="estimating-the-shape-parameters-by-maximizing-the-log-likelihood-value-of-beta-binomial-distribution." class="level1"><h1>Estimating the shape parameters by Maximizing the Log Likelihood value of Beta-Binomial Distribution.</h1>
+</section><section id="introduction" class="level1"><h1>Introduction</h1>
 <p>When we need to estimate parameters from a discrete distribution or continuous distribution or a function we can use the below mentioned R functions. We will be using the technique of maximizing the Log Likelihood function or minimizing the Negative Log Likelihood function. Based on this technique we will compare these R functions because it might benefit people who are struggling which one to choose. We have 7 functions in total by my knowledge when I was writing this blog post.</p>
 <p>Using the <a href="https://cran.r-project.org/package=fitODBOD">fitODBOD</a> package, I will use the Alcohol Consumption data to try and model it for the Beta-Binomial Distribution, which has two shape parameters to estimate. The process is that we find values for shape parameters a and b (or <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>) which will maximize the Log Likelihood function of Beta Binomial Distribution or in our case minimize the Negative Log Likelihood function of Beta Binomial Distribution.</p>
 <p>Above mentioned Beta-Binomial distribution’s Probability Mass Function(PMF) is denoted as</p>
@@ -315,20 +285,18 @@ window.Quarto = {
 </ol>
 <p>Further, I will focus on the attributes of the above functions. Focusing from which package, Number of Inputs, Number of Outputs, Time to complete optimization and Analytical Methods used with the assistance in two tables. Alcohol Consumption data has two sets of frequency values but only values from week 1 will be used. Below is the the Alcohol Consumption data, where number of observations is 399 and the Binomial Random variable is a vector of values from zero to seven.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fitODBOD)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Alcohol_data,<span class="st">"html"</span>,<span class="at">align=</span><span class="fu">c</span>(<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>),<span class="at">font_size =</span> <span class="dv">14</span>,<span class="at">full_width =</span> F) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>,<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>,<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Amalan-ConStat/fitODBOD">fitODBOD</a></span><span class="op">)</span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">Alcohol_data</span>,<span class="st">"html"</span>,align<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">kable_styling</span><span class="op">(</span>bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span><span class="op">)</span>,font_size <span class="op">=</span> <span class="fl">14</span>,full_width <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">row_spec</span><span class="op">(</span><span class="fl">0</span>,color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">column_spec</span><span class="op">(</span><span class="fl">1</span>,color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Days</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">week1</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">week2</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center; color: red !important;">0</td>
@@ -372,43 +340,40 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-<section id="optim-function" class="level2">
-<h2 class="anchored" data-anchor-id="optim-function">optim Function</h2>
+<section id="optim-function" class="level2"><h2 class="anchored" data-anchor-id="optim-function">optim Function</h2>
 <p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html#O">optim</a> is the first function in concern. <a href="https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/optim">Documentation</a> of the optim function is useful and it indicates that this function is only used on one input situations only. This means our EstMLEBetaBin function has to be modified. Reason for this is only the parameters that should be estimated need to be input values but our EstMLEBetaBin function has four parameters which are a,b,x(Binomial Random Variable) and freq(corresponding frequency values).</p>
 <p>While using optim function first index refers to shape parameter a and second index refers to shape parameter b. Further, we have to input the observations or in our case the Binomial random variable values and their respective frequencies. I think it is inconvenient to modify the EstMLEBetaBin function, because if we want to estimate parameters for different data-sets it would become tedious. After modification we have a new function foroptim which can be used for demonstration and comparison.</p>
 <p>Below is the code to estimation and going through the outputs. It should be noted that we have to provide initial parameter values as an input to the optim function, and it is best to provide values in the domain of shape parameter values which we want to estimate.</p>
 <p>Here the shape parameters a and b are in the region of greater than zero but less than positive infinity (<span class="math inline">\(+\infty &gt;a,b&gt;0\)</span>). So for the initial parameters of a=0.1 and b=0.2 we are finding parameters which would minimize the Negative Log Likelihood function of Beta-Binomial distribution with the Alcohol Consumption data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># new function to facilitate optim criteria</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># only one input but has two elements</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>foroptim<span class="ot">&lt;-</span><span class="cf">function</span>(a)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days, <span class="at">freq=</span>Alcohol_data<span class="sc">$</span>week1,<span class="at">a=</span>a[<span class="dv">1</span>],<span class="at">b=</span>a[<span class="dv">2</span>])</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using default mathematical method</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>optim_answer<span class="ot">&lt;-</span><span class="fu">optim</span>(<span class="at">par=</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">fn=</span>foroptim)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(optim_answer)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#length of output</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(optim_answer)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>optim_answer<span class="sc">$</span>par <span class="co"># estimated values for a, b</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>optim_answer<span class="sc">$</span>value <span class="co"># minimized function value </span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>optim_answer<span class="sc">$</span>counts  <span class="co"># see the documentation to understand</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>optim_answer<span class="sc">$</span>convergence <span class="co"># indicates successful completion</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>optim_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>           optim_answer<span class="sc">$</span>par[<span class="dv">1</span>],optim_answer<span class="sc">$</span>par[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># new function to facilitate optim criteria</span></span>
+<span><span class="co"># only one input but has two elements</span></span>
+<span><span class="va">foroptim</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>, freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,b<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using default mathematical method</span></span>
+<span><span class="va">optim_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">foroptim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">optim_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">optim_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">optim_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">optim_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">optim_answer</span><span class="op">$</span><span class="va">counts</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">optim_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">optim_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">optim_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">optim_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So the foroptim function can be used as above and parameters are estimated for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> (or a, b) for the Alcohol Consumption data week 1. Further we have scrutinized the function as below.</p>
 <ul>
@@ -419,38 +384,35 @@ window.Quarto = {
 <li>No of outputs: 5</li>
 <li>No of Analytical Methods : 6</li>
 <li>Default Method : Nelder-Mead</li>
-</ul>
-</section>
-<section id="nlm-function" class="level2">
-<h2 class="anchored" data-anchor-id="nlm-function">nlm Function</h2>
+</ul></section><section id="nlm-function" class="level2"><h2 class="anchored" data-anchor-id="nlm-function">nlm Function</h2>
 <p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html#N">nlm</a> function is also similar to optim but only one analytical method will be used, which is a Newton-type Algorithm. Here also there needs to be changes made to our EstMLEBetaBin function as previously. After making those changes we have called the new Negative Log-likelihood function of Beta-Binomial distribution as fornlm. Then we can use the nlm function and estimate a and b for the initial shape parameter values of 0.1 and 0.2 respectively. <a href="https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/nlm">Documentation</a> of nlm function is very useful so that we can understand how it works.</p>
 <p>Below is the code for using nlm function appropriately and fiddling with the results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#new function to facilitate nlm criteria</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fornlm<span class="ot">&lt;-</span><span class="cf">function</span>(a)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days, <span class="at">freq=</span>Alcohol_data<span class="sc">$</span>week1,<span class="at">a=</span>a[<span class="dv">1</span>],a[<span class="dv">2</span>])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#optimizing values for a,b using the only analytical method</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>nlm_answer<span class="ot">&lt;-</span><span class="fu">nlm</span>(<span class="at">f=</span>fornlm,<span class="at">p=</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#obtaining class of output</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nlm_answer)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#length of output</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(nlm_answer)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>nlm_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>nlm_answer<span class="sc">$</span>minimum <span class="co"># minimized function value </span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>nlm_answer<span class="sc">$</span>gradient  <span class="co"># gradient at the estimated minimum of given funciton</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>nlm_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>nlm_answer<span class="sc">$</span>iterations <span class="co"># number of iterations performed</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>           nlm_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],nlm_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#new function to facilitate nlm criteria</span></span>
+<span><span class="va">fornlm</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>, freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span><span class="co">#optimizing values for a,b using the only analytical method</span></span>
+<span><span class="va">nlm_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/nlm.html">nlm</a></span><span class="op">(</span>f<span class="op">=</span><span class="va">fornlm</span>,p<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">nlm_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nlm_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">nlm_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">nlm_answer</span><span class="op">$</span><span class="va">minimum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">nlm_answer</span><span class="op">$</span><span class="va">gradient</span>  <span class="co"># gradient at the estimated minimum of given funciton</span></span>
+<span><span class="va">nlm_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">nlm_answer</span><span class="op">$</span><span class="va">iterations</span> <span class="co"># number of iterations performed</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter  values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">nlm_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">nlm_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Similarly for the fornlm function we have estimated values for a and b which would fit the Alcohol consumption data of week 1. Below is a point form summary of nlm function.</p>
 <ul>
@@ -461,39 +423,36 @@ window.Quarto = {
 <li>No of outputs: 5</li>
 <li>No of Analytical Methods : 1</li>
 <li>Default Method : Newton-type Algorithm</li>
-</ul>
-</section>
-<section id="nlminb-function" class="level2">
-<h2 class="anchored" data-anchor-id="nlminb-function">nlminb Function</h2>
+</ul></section><section id="nlminb-function" class="level2"><h2 class="anchored" data-anchor-id="nlminb-function">nlminb Function</h2>
 <p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html#N">nlminb</a> is also similar and requires the EstMLEBetaBin function to be restructured as similar to previous situations. After this task we now have a function called fornlminb. nlminb function is based on analytical method of unconstrained and box-constrained optimization using PORT routines.</p>
 <p>After choosing initial parameter values for a and b, which are respectively 0.1 and 0.2 the estimation was done following the process below</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># new function to facilitate nlminb criteria</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fornlminb<span class="ot">&lt;-</span><span class="cf">function</span>(a)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days, <span class="at">freq=</span>Alcohol_data<span class="sc">$</span>week1,<span class="at">a=</span>a[<span class="dv">1</span>],a[<span class="dv">2</span>])</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using default analytical method</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="ot">&lt;-</span><span class="fu">nlminb</span>(<span class="at">start=</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">objective=</span>fornlminb)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nlminb_answer)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(nlminb_answer)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="sc">$</span>par <span class="co"># estimated values for a, b</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="sc">$</span>objective <span class="co"># minimized function value </span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="sc">$</span>evaluations  <span class="co"># see the documentation to understand</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="sc">$</span>convergence <span class="co"># indicates successful completion</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>nlminb_answer<span class="sc">$</span>iterations <span class="co"># number of iterations performed</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>           nlminb_answer<span class="sc">$</span>par[<span class="dv">1</span>],nlminb_answer<span class="sc">$</span>par[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># new function to facilitate nlminb criteria</span></span>
+<span><span class="va">fornlminb</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>, freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using default analytical method</span></span>
+<span><span class="va">nlminb_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/nlminb.html">nlminb</a></span><span class="op">(</span>start<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, objective<span class="op">=</span><span class="va">fornlminb</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">nlminb_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nlminb_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">nlminb_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">nlminb_answer</span><span class="op">$</span><span class="va">objective</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">nlminb_answer</span><span class="op">$</span><span class="va">evaluations</span>  <span class="co"># see the documentation to understand</span></span>
+<span><span class="va">nlminb_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">nlminb_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">nlminb_answer</span><span class="op">$</span><span class="va">iterations</span> <span class="co"># number of iterations performed</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">nlminb_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">nlminb_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/nlminb">Documentation</a> includes the information related to the function therefore referring it will be useful. After estimating values for a and b using nlminb function these were noticed regarding the function in concern</p>
 <ul>
@@ -504,41 +463,38 @@ window.Quarto = {
 <li>No of outputs: 6</li>
 <li>No of Analytical Methods : 1</li>
 <li>Default Method : Unconstrained and box-constrained optimization using PORT routines</li>
-</ul>
-</section>
-<section id="ucminf-function" class="level2">
-<h2 class="anchored" data-anchor-id="ucminf-function">ucminf Function</h2>
+</ul></section><section id="ucminf-function" class="level2"><h2 class="anchored" data-anchor-id="ucminf-function">ucminf Function</h2>
 <p>Package <a href="https://cran.r-project.org/package=ucminf">ucminf</a> produces the ucminf function, as previously mentioned functions here also we have to change the EstMLEBetaBin function. After making the changes we will be using the forucminf function to the estimation process of shape parameters a and b.</p>
 <p>When initial parameter values are set to a=0.1 and b=0.2 we will obtain results from ucminf function, which will minimize the Negative Log-likelihood value of Beta-Binomial distribution. Below is the code for estimation and using the results to understand the function ucminf.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ucminf)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># new function to facilitate ucminf criteria</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>forucminf<span class="ot">&lt;-</span><span class="cf">function</span>(a)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days,<span class="at">freq =</span> Alcohol_data<span class="sc">$</span>week1,<span class="at">a=</span>a[<span class="dv">1</span>],a[<span class="dv">2</span>])</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using default analytical method</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="ot">&lt;-</span><span class="fu">ucminf</span>(<span class="at">par=</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">fn=</span>forucminf)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#obtaining class</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ucminf_answer)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(ucminf_answer)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="sc">$</span>par <span class="co"># estimated values for a, b</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="sc">$</span>value <span class="co"># minimized function value </span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="sc">$</span>invhessian.lt  <span class="co"># see the documentation understand</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="sc">$</span>convergence <span class="co"># indicates successful completion</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>ucminf_answer<span class="sc">$</span>info</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>           ucminf_answer<span class="sc">$</span>par[<span class="dv">1</span>],ucminf_answer<span class="sc">$</span>par[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hdakpo/ucminf">ucminf</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># new function to facilitate ucminf criteria</span></span>
+<span><span class="va">forucminf</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,freq <span class="op">=</span> <span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using default analytical method</span></span>
+<span><span class="va">ucminf_answer</span><span class="op">&lt;-</span><span class="fu">ucminf</span><span class="op">(</span>par<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,fn<span class="op">=</span><span class="va">forucminf</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#obtaining class</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">ucminf_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">ucminf_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">ucminf_answer</span><span class="op">$</span><span class="va">par</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">ucminf_answer</span><span class="op">$</span><span class="va">value</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">ucminf_answer</span><span class="op">$</span><span class="va">invhessian.lt</span>  <span class="co"># see the documentation understand</span></span>
+<span><span class="va">ucminf_answer</span><span class="op">$</span><span class="va">convergence</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">ucminf_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">ucminf_answer</span><span class="op">$</span><span class="va">info</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">ucminf_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">ucminf_answer</span><span class="op">$</span><span class="va">par</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>With the help of R <a href="https://www.rdocumentation.org/packages/ucminf/versions/1.1-4/topics/ucminf">Documentation</a> the estimation was done for shape parameter values a and b using the ucminf function. Below is the initial understanding of the ucminf function</p>
 <ul>
@@ -549,46 +505,43 @@ window.Quarto = {
 <li>No of outputs: 6</li>
 <li>No of Analytical Methods : 1</li>
 <li>Default Method : Quasi-Newton Algorithm type with BFGS updating</li>
-</ul>
-</section>
-<section id="maxlik-function" class="level2">
-<h2 class="anchored" data-anchor-id="maxlik-function">maxLik Function</h2>
+</ul></section><section id="maxlik-function" class="level2"><h2 class="anchored" data-anchor-id="maxlik-function">maxLik Function</h2>
 <p>maxLik function is from the <a href="https://cran.r-project.org/package=maxLik">maxLik</a> package, which only maximizes the Log Likelihood function. Therefore we have to restructure EstMLEBetaBin as previously mentioned, but as an addition a negative sign is added for the output. This new function will be called as formaxLik.</p>
 <p>For the initial parameter values where a=0.1 and b=0.2 the maxLik function will be used and results will be evaluated as below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maxLik)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># new function to facilitate maxLik criteria</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>formaxLik<span class="ot">&lt;-</span><span class="cf">function</span>(a)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days,<span class="at">freq =</span> Alcohol_data<span class="sc">$</span>week1,<span class="at">a=</span>a[<span class="dv">1</span>],a[<span class="dv">2</span>])</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using default analytical method</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>))</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(maxLik_answer)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(maxLik_answer)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>maxLik_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>           maxLik_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],maxLik_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">maxLik</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># new function to facilitate maxLik criteria</span></span>
+<span><span class="va">formaxLik</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="op">-</span><span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,freq <span class="op">=</span> <span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using default analytical method</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">maxLik_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">maxLik_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">maxLik_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">maxLik_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">maxLik_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using the <a href="https://www.rdocumentation.org/packages/maxLik/versions/1.3-4/topics/maxLik">Documentation</a> of maxLik and the <a href="https://www.rdocumentation.org/packages/maxLik/versions/1.3-4/topics/maxNR">Documentation</a> of maxNR function the above analysis was done for the maxLik function. According to the above code, below are the findings from the maxLik function in point form</p>
 <ul>
@@ -599,53 +552,50 @@ window.Quarto = {
 <li>No of outputs: 11</li>
 <li>No of Analytical Methods : 7</li>
 <li>Default Method : Automatically chosen</li>
-</ul>
-</section>
-<section id="mle-function" class="level2">
-<h2 class="anchored" data-anchor-id="mle-function">mle Function</h2>
+</ul></section><section id="mle-function" class="level2"><h2 class="anchored" data-anchor-id="mle-function">mle Function</h2>
 <p><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats4/html/00Index.html">stats4</a> package is installed so that mle function can be operated for the purpose of estimating a and b parameters. Here also as previously we need to make some changes as below and create a new Negative Log Likelihood function called formle.</p>
 <p>For the initial parameter values of a=0.1 and b=0.2 the Negative Log Likelihood value of Beta-Binomial distribution has been minimized using mle function. Below is the code for estimation and investigation from the outputs of mle after estimation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stats4)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># new function to facilitate mle criteria</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>formle<span class="ot">&lt;-</span><span class="cf">function</span>(a,b)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days,<span class="at">freq =</span> Alcohol_data<span class="sc">$</span>week1,a,b)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using default analytical method</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="ot">&lt;-</span><span class="fu">mle</span>(<span class="at">minuslogl=</span>formle,<span class="at">start =</span> <span class="fu">list</span>(<span class="at">a=</span><span class="fl">0.1</span>,<span class="at">b=</span><span class="fl">0.2</span>))</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mle_answer)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(mle_answer)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>call <span class="co"># inputs i have used </span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>coef <span class="co"># estimated values for a,b</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>fullcoef <span class="co"># all values, even the fixed values we did not want to estimate</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>vcov <span class="co"># variance covariance matrix for a,b</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>min <span class="co"># minimized function value</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>details <span class="co"># details after estimation process</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>nobs <span class="co"># number of observations to be used for computing only if given </span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>mle_answer<span class="sc">@</span>method <span class="co"># optimization methods used</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Methods used</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mle_answer) <span class="co"># confidence intervals for estimated values</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="fu">logLik</span>(mle_answer) <span class="co"># Negative loglikelihood value for estimated values </span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="fu">profile</span>(mle_answer) <span class="co"># Likelihood profile generation.</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">nobs</span>(mle_answer) <span class="co"># number of observations to be used for computing only if given</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(mle_answer) <span class="co"># display object briefly</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mle_answer) <span class="co"># generate a summary</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#update()   # updating if we have new data and need to estimate new values</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="fu">vcov</span>(mle_answer) <span class="co"># variance covariance matrix</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>           mle_answer<span class="sc">@</span>coef[<span class="dv">1</span>],mle_answer<span class="sc">@</span>coef[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">stats4</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># new function to facilitate mle criteria</span></span>
+<span><span class="va">formle</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span>,<span class="va">b</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,freq <span class="op">=</span> <span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,<span class="va">a</span>,<span class="va">b</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using default analytical method</span></span>
+<span><span class="va">mle_answer</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats4/mle.html">mle</a></span><span class="op">(</span>minuslogl<span class="op">=</span><span class="va">formle</span>,start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">0.1</span>,b<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">call</span> <span class="co"># inputs i have used </span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">coef</span> <span class="co"># estimated values for a,b</span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">fullcoef</span> <span class="co"># all values, even the fixed values we did not want to estimate</span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">vcov</span> <span class="co"># variance covariance matrix for a,b</span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">min</span> <span class="co"># minimized function value</span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">details</span> <span class="co"># details after estimation process</span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">nobs</span> <span class="co"># number of observations to be used for computing only if given </span></span>
+<span><span class="va">mle_answer</span><span class="op">@</span><span class="va">method</span> <span class="co"># optimization methods used</span></span>
+<span></span>
+<span><span class="co"># Methods used</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/confint.html">confint</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># confidence intervals for estimated values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/logLik.html">logLik</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># Negative loglikelihood value for estimated values </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/profile.html">profile</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># Likelihood profile generation.</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/nobs.html">nobs</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># number of observations to be used for computing only if given</span></span>
+<span><span class="fu">show</span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># display object briefly</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># generate a summary</span></span>
+<span><span class="co">#update()   # updating if we have new data and need to estimate new values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/vcov.html">vcov</a></span><span class="op">(</span><span class="va">mle_answer</span><span class="op">)</span> <span class="co"># variance covariance matrix</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">mle_answer</span><span class="op">@</span><span class="va">coef</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">mle_answer</span><span class="op">@</span><span class="va">coef</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It should be noted that in all 5 previous functions we had only outputs in the form of lists, but through mle we are seeing a class of mle output.The <a href="https://www.rdocumentation.org/packages/stats4/versions/3.5.1/topics/mle">Documention</a> explains the inputs and outputs of mle. <a href="https://www.rdocumentation.org/packages/stats4/versions/3.5.1/topics/mle-class">Documentation</a> for mle-class explains further about the methods that can be used. Below is a list of findings based on the outputs of the mle function.</p>
 <ul>
@@ -657,54 +607,51 @@ window.Quarto = {
 <li>Methods for output: 8</li>
 <li>No of Analytical Methods :6</li>
 <li>Default Method : Nelder and Mead</li>
-</ul>
-</section>
-<section id="mle2-function" class="level2">
-<h2 class="anchored" data-anchor-id="mle2-function">mle2 Function</h2>
+</ul></section><section id="mle2-function" class="level2"><h2 class="anchored" data-anchor-id="mle2-function">mle2 Function</h2>
 <p>mle2 function is advanced than mle function and it is from the package <a href="https://cran.r-project.org/package=bbmle">bbmle</a>. Here, there is no need to modify the EstMLEBetabin function from the fitODBOD package to estimation as all previous situations .</p>
 <p>For the initial parameter values of a=0.1 and b=0.2 Negative Log Likelihood function of Beta-Binomial distribution will be minimized where outputs will be investigated and methods related to output of class mle2 will be used.</p>
 <p>Below is the code for using mle2 function and scrutinizing the output and methods related to it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bbmle)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using default analytical method</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="ot">&lt;-</span><span class="fu">mle2</span>(<span class="at">minuslogl=</span> EstMLEBetaBin,<span class="at">start =</span> <span class="fu">list</span>(<span class="at">a=</span><span class="fl">0.1</span>,<span class="at">b=</span><span class="fl">0.2</span>),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> <span class="fu">list</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days,<span class="at">freq=</span>Alcohol_data<span class="sc">$</span>week1))</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mle2_answer)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(mle2_answer)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>call <span class="co"># inputs generally considered </span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>call.orig <span class="co"># inputs i have given</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>coef <span class="co"># estimated values for a,b</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>fullcoef <span class="co"># all values, even the fixed values we did not want to estimate</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>vcov <span class="co"># variance covariance matrix for a,b</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>min <span class="co"># minimized function value</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>details <span class="co"># details after estimation process</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>method <span class="co"># optimization methods used</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>data <span class="co"># data used for estimation </span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>formula <span class="co"># if a formula was specified in the input </span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>mle2_answer<span class="sc">@</span>optimizer <span class="co"># function used for optimizing</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Methods used</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mle2_answer) <span class="co"># extrat the estimated values</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mle2_answer) <span class="co"># confidence intervals for estimated values</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(mle2_answer) <span class="co"># display object briefly</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mle2_answer) <span class="co"># generate a summary</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co">#update()   #updating if we have new data and need to estimate new values</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="fu">vcov</span>(mle2_answer) <span class="co"># variance covariance matrix</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co">#formula(mle2_answer) # if a formula was specified in the input </span></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(mle2_answer) # plot the profile</span></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="fu">logLik</span>(mle2_answer) <span class="co"># Negative loglikelihood value for estimated values </span></span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="fu">profile</span>(mle2_answer) <span class="co"># profile of estimated values</span></span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>           mle2_answer<span class="sc">@</span>coef[<span class="dv">1</span>],mle2_answer<span class="sc">@</span>coef[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bbolker/bbmle">bbmle</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using default analytical method</span></span>
+<span><span class="va">mle2_answer</span><span class="op">&lt;-</span><span class="fu">mle2</span><span class="op">(</span>minuslogl<span class="op">=</span> <span class="va">EstMLEBetaBin</span>,start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">0.1</span>,b<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span>,</span>
+<span>                  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">call</span> <span class="co"># inputs generally considered </span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">call.orig</span> <span class="co"># inputs i have given</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">coef</span> <span class="co"># estimated values for a,b</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">fullcoef</span> <span class="co"># all values, even the fixed values we did not want to estimate</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">vcov</span> <span class="co"># variance covariance matrix for a,b</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">min</span> <span class="co"># minimized function value</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">details</span> <span class="co"># details after estimation process</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">method</span> <span class="co"># optimization methods used</span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">data</span> <span class="co"># data used for estimation </span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">formula</span> <span class="co"># if a formula was specified in the input </span></span>
+<span><span class="va">mle2_answer</span><span class="op">@</span><span class="va">optimizer</span> <span class="co"># function used for optimizing</span></span>
+<span></span>
+<span><span class="co"># Methods used</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># extrat the estimated values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/confint.html">confint</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># confidence intervals for estimated values</span></span>
+<span><span class="fu">show</span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># display object briefly</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># generate a summary</span></span>
+<span><span class="co">#update()   #updating if we have new data and need to estimate new values</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/vcov.html">vcov</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># variance covariance matrix</span></span>
+<span><span class="co">#formula(mle2_answer) # if a formula was specified in the input </span></span>
+<span><span class="co">#plot(mle2_answer) # plot the profile</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/logLik.html">logLik</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># Negative loglikelihood value for estimated values </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/profile.html">profile</a></span><span class="op">(</span><span class="va">mle2_answer</span><span class="op">)</span> <span class="co"># profile of estimated values</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">mle2_answer</span><span class="op">@</span><span class="va">coef</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">mle2_answer</span><span class="op">@</span><span class="va">coef</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://www.rdocumentation.org/packages/bbmle/versions/1.0.20/topics/mle2">Documention</a> of mle2 function and <a href="https://www.rdocumentation.org/packages/bbmle/versions/1.0.20/topics/mle2-class">Documentation</a> of mle2-class<br>
 provide a few findings as mentioned below in point form.</p>
@@ -717,19 +664,14 @@ provide a few findings as mentioned below in point form.</p>
 <li>Methods for output: 9</li>
 <li>No of Analytical Methods : 6</li>
 <li>Default Method : Nelder and Mead</li>
-</ul>
-</section>
-</section>
-<section id="summary-of-the-seven-optimization-functions-in-r" class="level1">
-<h1>Summary of the seven optimization functions in R</h1>
+</ul></section></section><section id="summary-of-the-seven-optimization-functions-in-r" class="level1"><h1>Summary of the seven optimization functions in R</h1>
 <p>After completing a brief fact finding of the R functions optim, nlm, nlminb, ucminf, maxLik, mle and mle2. We can record the facts and results in two tables. Using them we can choose the best suitable function for our needs of estimation from optimization.</p>
 <p>Mostly I prefer mle2 function than others because it provides special methods to handle the mle2 outputs, and the output themselves are very thorough than other R function outputs.</p>
 <p>It can be seen that estimated a and b shape parameter values are different only from the third decimal point in all outputs. But this does not effect the minimized Negative Log Likelihood value of Beta-Binomial distribution for our Alcohol Consumption data, which is same for all outputs.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Function</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">optim</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">nlm</th>
@@ -738,8 +680,7 @@ provide a few findings as mentioned below in point form.</p>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">maxLik</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">mle</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">mle2</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center; color: red !important;">Package</td>
@@ -843,42 +784,37 @@ provide a few findings as mentioned below in point form.</p>
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-</section>
-<section id="summary-of-time-evaluation-for-the-seven-optimization-r-functions" class="level1">
-<h1>Summary of Time evaluation for the seven optimization R functions</h1>
+</section><section id="summary-of-time-evaluation-for-the-seven-optimization-r-functions" class="level1"><h1>Summary of Time evaluation for the seven optimization R functions</h1>
 <p>Further at the beginning I have mentioned to evaluate the system process time for the seven functions. In order to do this time comparison it is possible to use the <a href="https://www.rdocumentation.org/packages/rbenchmark/versions/1.0.0/topics/benchmark">benchmark</a> function of <a href="https://cran.r-project.org/package=rbenchmark">rbenchmark</a> package, and below mentioned code chunk provides the output in a table form. It includes the functions and their respective time values. The estimation process of the parameters where each function has been replicated 1000 times to receive a more accurate table of time values.</p>
 <p>The table is in ascending order according to the elapsed time values column. According to this we can see that least time takes to the nlminb function and most time is taken to the mle2 function. These times completely depends on the Negative Log Likelihood function you need to minimize, the data you provided, the number of estimators that needs to be estimated, the complexity of the function and finally your computer’s processing power.</p>
 <p>Therefore based on the needs of your output and the function which needs estimation choose the best function out of the above seven. Because as I said related to the earlier table the estimated values are slightly different but does not make any strong influence on the results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rbenchmark)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Results2<span class="ot">&lt;-</span><span class="fu">benchmark</span>(</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>          <span class="st">"optim"</span><span class="ot">=</span>{<span class="fu">optim</span>(<span class="at">par =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">fn =</span> foroptim)},</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"nlm"</span><span class="ot">=</span>{<span class="fu">nlm</span>(<span class="at">f =</span> fornlm, <span class="at">p =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>))},</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">"nlminb"</span><span class="ot">=</span>{<span class="fu">nlminb</span>(<span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">objective =</span> fornlminb)},</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">"ucminf"</span><span class="ot">=</span>{<span class="fu">ucminf</span>(<span class="at">par =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">fn =</span> forucminf)},</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"maxLik"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik =</span> formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>))},</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>          <span class="st">"mle"</span><span class="ot">=</span>{<span class="fu">mle</span>(<span class="at">minuslogl =</span> formle, <span class="at">start =</span> <span class="fu">list</span>(<span class="at">a=</span><span class="fl">0.1</span>,<span class="at">b=</span><span class="fl">0.2</span>))},</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>          <span class="st">"mle2"</span><span class="ot">=</span>{<span class="fu">mle2</span>(<span class="at">minuslogl =</span> EstMLEBetaBin, <span class="at">start =</span> <span class="fu">list</span>(<span class="at">a=</span><span class="fl">0.1</span>, <span class="at">b=</span><span class="fl">0.2</span>),</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> <span class="fu">list</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days, <span class="at">freq=</span>Alcohol_data<span class="sc">$</span>week1))},</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">replications =</span> <span class="dv">1000</span>,</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"test"</span>,<span class="st">"replications"</span>,<span class="st">"elapsed"</span>,</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"relative"</span>,<span class="st">"user.self"</span>,<span class="st">"sys.self"</span>),</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">order =</span> <span class="st">'elapsed'</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>          )</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Results2,<span class="st">"html"</span>,<span class="at">align =</span> <span class="fu">c</span>(<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> F,<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>),<span class="at">font_size =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>,<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>,<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://rbenchmark.googlecode.com">rbenchmark</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Results2</span><span class="op">&lt;-</span><span class="fu">benchmark</span><span class="op">(</span></span>
+<span>          <span class="st">"optim"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"nlm"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/nlm.html">nlm</a></span><span class="op">(</span>f <span class="op">=</span> <span class="va">fornlm</span>, p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"nlminb"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/nlminb.html">nlminb</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, objective <span class="op">=</span> <span class="va">fornlminb</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"ucminf"</span><span class="op">=</span><span class="op">{</span><span class="fu">ucminf</span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">forucminf</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"maxLik"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span> <span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"mle"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats4/mle.html">mle</a></span><span class="op">(</span>minuslogl <span class="op">=</span> <span class="va">formle</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">0.1</span>,b<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"mle2"</span><span class="op">=</span><span class="op">{</span><span class="fu">mle2</span><span class="op">(</span>minuslogl <span class="op">=</span> <span class="va">EstMLEBetaBin</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>a<span class="op">=</span><span class="fl">0.1</span>, b<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span>,</span>
+<span>                       data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>, freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span><span class="op">)</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          replications <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>          columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"test"</span>,<span class="st">"replications"</span>,<span class="st">"elapsed"</span>,</span>
+<span>                      <span class="st">"relative"</span>,<span class="st">"user.self"</span>,<span class="st">"sys.self"</span><span class="op">)</span>,</span>
+<span>          order <span class="op">=</span> <span class="st">'elapsed'</span></span>
+<span>          <span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">Results2</span>,<span class="st">"html"</span>,align <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">kable_styling</span><span class="op">(</span>full_width <span class="op">=</span> <span class="cn">F</span>,bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span><span class="op">)</span>,font_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">row_spec</span><span class="op">(</span><span class="fl">0</span>,color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">column_spec</span><span class="op">(</span><span class="fl">1</span>,color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;"></th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">test</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">replications</th>
@@ -886,8 +822,7 @@ provide a few findings as mentioned below in point form.</p>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">relative</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">user.self</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">sys.self</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left; color: red !important;">3</td>
@@ -954,20 +889,15 @@ provide a few findings as mentioned below in point form.</p>
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-</section>
-<section id="summary-of-results-after-estimating-parameters-using-the-optimization-r-functions" class="level1">
-<h1>Summary of Results after estimating parameters using the optimization R functions</h1>
+</section><section id="summary-of-results-after-estimating-parameters-using-the-optimization-r-functions" class="level1"><h1>Summary of Results after estimating parameters using the optimization R functions</h1>
 <p>After using the functions optim, nlm, nlminb, ucminf, maxLik, mle and mle2 to estimate the shape parameters a, b we can use the estimated parameters in the function fitBetaBin. Using this function we can find expected frequencies for each of the estimated parameters a,b and compare p-values and over-dispersion and understand if using different optimization functions had any effect on them.</p>
 <p>According to the below table there is no significant changes between the expected frequencies, p-values or the over dispersion values. This is a clear indication that it does not matter what function we use for the optimization. Because the process will occur effectively only efficiency(time) will be affected.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">BinomialRandomVariable</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Frequency</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">optim</th>
@@ -977,8 +907,7 @@ provide a few findings as mentioned below in point form.</p>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">maxLik</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">mle</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">mle2</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center; color: red !important;">0</td>
@@ -1103,21 +1032,14 @@ provide a few findings as mentioned below in point form.</p>
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-</section>
-<section id="final-conclusion" class="level1">
-<h1>Final Conclusion</h1>
+</section><section id="final-conclusion" class="level1"><h1>Final Conclusion</h1>
 <p>We had 7 functions to compare but choosing one over the other is completely harmless to the final result of estimation as seen by our tables. The only issue is time, therefore I would recommend choose the best function based on your needs of output and research objective.</p>
 <p><em>THANK YOU</em></p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1682,8 +1604,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></p>
 </div>   
@@ -1695,8 +1616,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

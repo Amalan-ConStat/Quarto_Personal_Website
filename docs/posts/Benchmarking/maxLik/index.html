@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.45">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="dcterms.date" content="2018-12-20">
-
 <title>Benchmarking the maxLik function – Amalan Mahendran</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -75,8 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -101,16 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
+}</script><script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -136,19 +123,14 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/logo.png" alt="" class="navbar-logo">
-    </a>
+    <img src="../../../img/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Amalan Mahendran</span>
     </a>
@@ -159,7 +141,7 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../../publication/index.html"> 
 <span class="menu-text">Publication and Teaching</span></a>
   </li>  
@@ -183,8 +165,8 @@ window.Quarto = {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-socials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Socials</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-socials">
+<li>
     <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat"><i class="bi bi-hash" role="img">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
@@ -225,25 +207,19 @@ window.Quarto = {
  <span class="dropdown-text">Email Me</span></a>
   </li>  
     </ul>
-  </li>
+</li>
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Benchmarking the maxLik function</h1>
   <div class="quarto-categories">
     <div class="quarto-category">BetaBinomial</div>
@@ -269,15 +245,9 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<p><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></p>
-<section id="estimating-the-shape-parameters-of-beta-binomial-distribution" class="level1">
-<h1>Estimating the shape parameters of Beta-Binomial Distribution</h1>
-</section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+</header><p><strong>NOTE : Below post is valid for Package version 1.4.0 and Before. </strong></p>
+<section id="estimating-the-shape-parameters-of-beta-binomial-distribution" class="level1"><h1>Estimating the shape parameters of Beta-Binomial Distribution</h1>
+</section><section id="introduction" class="level1"><h1>Introduction</h1>
 <p>Beginning of this month I wrote a <a href="https://amalan-con-stat.netlify.com/post/fitodbod_1/benchmarking-maximum-liklihood-functions-from-r/#maxlik-function">small section</a> regarding maxLik function by comparing it to other optimization functions. Here, we will further study the analytical methods which can be used in this function and compare them to find suitability. maxLik function is from the package <a href="https://cran.r-project.org/web/packages/maxLik/index.html">maxLik</a>. Further, <a href="https://www.rdocumentation.org/packages/maxLik/versions/1.3-4/topics/maxLik">Documentation</a> clearly indicates all things related to the function in detail.</p>
 <p>Focusing on the seven analytical methods is my intention from this blog post. So, we have the Beta-Binomial distribution and Binomial Outcome data, and need to estimate proper shape parameters which would Maximize the Log Likelihood value of the Beta-Binomial distribution for the Alcohol Consumption data. In this case Alcohol Consumption data from the <a href="https://cran.r-project.org/package=fitODBOD">fitODBOD</a> package will be used.</p>
 <p>Further we will focus on the process time to optimization, estimated shape parameters, maximized Log Likelihood value, expected frequencies, p-value and Over-dispersion with tables.</p>
@@ -293,20 +263,18 @@ window.Quarto = {
 </ol>
 <p>Alcohol Consumption data has two sets of frequency values but only values from week 1 will be used. Below is the the Alcohol Consumption data, where number of observations is 399 and the Binomial Random variable is a vector of values from zero to seven.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fitODBOD)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Alcohol_data,<span class="st">"html"</span>,<span class="at">align=</span><span class="fu">c</span>(<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>),<span class="at">font_size =</span> <span class="dv">14</span>,<span class="at">full_width =</span> F) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>,<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>,<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Amalan-ConStat/fitODBOD">fitODBOD</a></span><span class="op">)</span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">Alcohol_data</span>,<span class="st">"html"</span>,align<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">kable_styling</span><span class="op">(</span>bootstrap_options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span><span class="op">)</span>,font_size <span class="op">=</span> <span class="fl">14</span>,full_width <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">row_spec</span><span class="op">(</span><span class="fl">0</span>,color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">column_spec</span><span class="op">(</span><span class="fl">1</span>,color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Days</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">week1</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">week2</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center; color: red !important;">0</td>
@@ -350,24 +318,21 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-<section id="brief-of-maxlik-function" class="level2">
-<h2 class="anchored" data-anchor-id="brief-of-maxlik-function">Brief of maxLik Function</h2>
+<section id="brief-of-maxlik-function" class="level2"><h2 class="anchored" data-anchor-id="brief-of-maxlik-function">Brief of maxLik Function</h2>
 <p>Small <a href="https://amalan-con-stat.netlify.com/post/fitodbod_1/benchmarking-maximum-liklihood-functions-from-r/#maxlik-function">section</a> about the maxLik function will be very useful to understand this blog post.</p>
 <p>Reference : Henningsen, A. and Toomet, O. (2011): maxLik: A package for maximum likelihood estimation in R Computational Statistics 26, 443–458 Marquardt, D.W., (1963)</p>
 <p>An Algorithm for Least-Squares Estimation of Nonlinear Parameters, Journal of the Society for Industrial &amp; Applied Mathematics 11, 2, 431–441</p>
 <p>So for the initial parameters of a=0.1 and b=0.2 we will be finding estimated parameters from different analytical methods which would maximize the Log Likelihood value of the Beta-Binomial distribution.</p>
 <p>First we are transforming the given EstMLEBetaBin function to satisfy the maxLik function conditions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># new function to facilitate maxLik criteria</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># only one input but has two elements</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>formaxLik<span class="ot">&lt;-</span><span class="cf">function</span>(a)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="fu">EstMLEBetaBin</span>(<span class="at">x=</span>Alcohol_data<span class="sc">$</span>Days, <span class="at">freq=</span>Alcohol_data<span class="sc">$</span>week1,<span class="at">a=</span>a[<span class="dv">1</span>],<span class="at">b=</span>a[<span class="dv">2</span>])</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># new function to facilitate maxLik criteria</span></span>
+<span><span class="co"># only one input but has two elements</span></span>
+<span><span class="va">formaxLik</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span>  <span class="op">{</span></span>
+<span>  <span class="op">-</span><span class="fu">EstMLEBetaBin</span><span class="op">(</span>x<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>, freq<span class="op">=</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,a<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,b<span class="op">=</span><span class="va">a</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So the formaxLik function can be used as above and parameters are estimated for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> (or a, b) for the Alcohol Consumption data week 1. Further the maxLik function can be scrutinized as below.</p>
 <ul>
@@ -378,237 +343,218 @@ window.Quarto = {
 <li>No of outputs: 11</li>
 <li>No of Analytical Methods : 7</li>
 <li>Default Method : Automatically chosen</li>
-</ul>
-</section>
-<section id="nr-method" class="level2">
-<h2 class="anchored" data-anchor-id="nr-method">NR method</h2>
+</ul></section><section id="nr-method" class="level2"><h2 class="anchored" data-anchor-id="nr-method">NR method</h2>
 <p>NR is an abbreviation for Unconstrained and equality-constrained maximization based on the quadratic approximation (Newton) method. The idea of the Newton method is to approximate the function at a given location by a multidimensional quadratic function, and use the estimated maximum as the start value for the next iteration.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maxLik)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using NR analytical method</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">method =</span> <span class="st">"NR"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(NR_answer)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(NR_answer)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>NR_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>           NR_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],NR_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">maxLik</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># optimizing values for a,b using NR analytical method</span></span>
+<span><span class="va">NR_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,method <span class="op">=</span> <span class="st">"NR"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">NR_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">NR_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">NR_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">NR_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">NR_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="bfgs-method" class="level2">
-<h2 class="anchored" data-anchor-id="bfgs-method">BFGS method</h2>
+</section><section id="bfgs-method" class="level2"><h2 class="anchored" data-anchor-id="bfgs-method">BFGS method</h2>
 <p>BFGS is a Quasi-Newton method (also known as a variable metric algorithm), specifically that published simultaneously in 1970 by Broyden, Fletcher, Goldfarb and Shanno. This uses function values and gradients to build up a picture of the surface to be optimized.</p>
 <p>Reference : Broyden, C.G., 1967. Quasi-Newton methods and their application to function minimization. Mathematics of Computation, 21(99), pp.368-381.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using BFGS analytical method</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">method =</span> <span class="st">"BFGS"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(BFGS_answer)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(BFGS_answer)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>BFGS_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>           BFGS_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],BFGS_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using BFGS analytical method</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,method <span class="op">=</span> <span class="st">"BFGS"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">BFGS_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">BFGS_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">BFGS_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">BFGS_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">BFGS_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="bfgsr-method" class="level2">
-<h2 class="anchored" data-anchor-id="bfgsr-method">BFGSR method</h2>
+</section><section id="bfgsr-method" class="level2"><h2 class="anchored" data-anchor-id="bfgsr-method">BFGSR method</h2>
 <p>Combination of two methods which are Newton-Raphson, BFGS (Broyden 1970, Fletcher 1970, Goldfarb 1970, Shanno 1970).</p>
 <p>Reference : Broyden, C.G., 1967. Quasi-Newton methods and their application to function minimization. Mathematics of Computation, 21(99), pp.368-381.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using BFGSR analytical method</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">method =</span> <span class="st">"BFGSR"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(BFGSR_answer)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(BFGSR_answer)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>BFGSR_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>           BFGSR_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],BFGSR_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using BFGSR analytical method</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,method <span class="op">=</span> <span class="st">"BFGSR"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">BFGSR_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">BFGSR_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">BFGSR_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="bhhh-method" class="level2">
-<h2 class="anchored" data-anchor-id="bhhh-method">BHHH method</h2>
+</section><section id="bhhh-method" class="level2"><h2 class="anchored" data-anchor-id="bhhh-method">BHHH method</h2>
 <p>BHHH method (Berndt, Hall, Hall, Hausman 1974). The BHHH (information equality) approximation is only valid for log-likelihood functions. It requires the score (gradient) values by individual observations and hence those must be returned by individual observations by grad or fn. With the complexity of BHHH method I choose not to discuss it here, but a reference is mentioned to anyone who has interest in this analytical method.</p>
 <p>Reference : Berndt, E., Hall, B., Hall, R. and Hausman, J. (1974): Estimation and Inference in Nonlinear Structural Models, Annals of Social Measurement 3, 653–665.</p>
-</section>
-<section id="sann-method" class="level2">
-<h2 class="anchored" data-anchor-id="sann-method">SANN method</h2>
+</section><section id="sann-method" class="level2"><h2 class="anchored" data-anchor-id="sann-method">SANN method</h2>
 <p>Method SANN is by default a variant of simulated annealing given in Belisle (1992). Simulated-annealing belongs to the class of stochastic global optimization methods. It uses only function values but is relatively slow. It will also work for non-differential functions. This implementation uses the Metropolis function for the acceptance probability.</p>
 <p>By default the next candidate point is generated from a Gaussian Markov kernel with scale proportional to the actual temperature. If a function to generate a new candidate point is given, method SANN can also be used to solve combinatorial optimization problems. Temperatures are decreased according to the logarithmic cooling schedule as given in Belisle (1992, p.890); specifically, the temperature is set to <span class="math inline">\(temp / log(((t-1) %/% tmax)*tmax + exp(1))\)</span>, where <span class="math inline">\(t\)</span> is the current iteration step and temp and tmax are specifiable via control.</p>
 <p>Note that the SANN method depends critically on the settings of the control parameters. It is not a general-purpose method but can be very useful in getting to a good value on a very rough surface.</p>
 <p>Reference : Belisle, C.J., 1992. Convergence theorems for a class of simulated annealing algorithms on R d.&nbsp;Journal of Applied Probability, 29(4), pp.885-895.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using SANN analytical method</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">method =</span> <span class="st">"SANN"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(SANN_answer)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(SANN_answer)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>SANN_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>           SANN_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],SANN_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using SANN analytical method</span></span>
+<span><span class="va">SANN_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,method <span class="op">=</span> <span class="st">"SANN"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">SANN_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">SANN_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">SANN_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">SANN_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">SANN_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="cg-method" class="level2">
-<h2 class="anchored" data-anchor-id="cg-method">CG method</h2>
+</section><section id="cg-method" class="level2"><h2 class="anchored" data-anchor-id="cg-method">CG method</h2>
 <p>Method CG is a conjugate gradients method based on that by Fletcher and Reeves (1964) (but with the option of Polak-Ribiere or Beale-Sorenson updates). Conjugate gradient methods will generally be more fragile than the BFGS method, but as they do not store a matrix they may be successful in much larger optimization problems.</p>
 <p>Reference : Fletcher, R. and Reeves, C.M., 1964. Function minimization by conjugate gradients. The computer journal, 7(2), pp.149-154.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using CG analytical method</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">method =</span> <span class="st">"CG"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(CG_answer)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(CG_answer)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>CG_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>           CG_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],CG_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using CG analytical method</span></span>
+<span><span class="va">CG_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,method <span class="op">=</span> <span class="st">"CG"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">CG_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">CG_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">CG_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">CG_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">CG_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="nm-method" class="level2">
-<h2 class="anchored" data-anchor-id="nm-method">NM method</h2>
+</section><section id="nm-method" class="level2"><h2 class="anchored" data-anchor-id="nm-method">NM method</h2>
 <p>NM is the abbreviation to Nelder and Mead method. According to the documentation it uses only function values and is robust but relatively slow. It will work reasonably well for non-differential functions.</p>
 <p>Reference : Nelder, J.A. and Mead, R., 1965. A simplex method for function minimization. The computer journal, 7(4), pp.308-313.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># optimizing values for a,b using NM analytical method</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="ot">&lt;-</span><span class="fu">maxLik</span>(<span class="at">logLik =</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>),<span class="at">method =</span> <span class="st">"NM"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># obtaining class of output</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(NM_answer)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># length of output</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(NM_answer)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the outputs</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>estimate <span class="co"># estimated values for a, b</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>maximum <span class="co"># minimized function value </span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>iterations  <span class="co"># no of iterations to succeed</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>gradient <span class="co"># last gradient value which was calculated</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>message <span class="co"># additional information</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>hessian <span class="co"># hessian matrix</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>code <span class="co"># indicates successful completion</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>fixed <span class="co"># logical vector indicating which parameters are constants</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>type <span class="co"># type of maximization</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>last.step <span class="co"># list describing the last unsuccessful step</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>NM_answer<span class="sc">$</span>control <span class="co"># see the documentation understand</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">fitBetaBin</span>(Alcohol_data<span class="sc">$</span>Days,Alcohol_data<span class="sc">$</span>week1,</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>           NM_answer<span class="sc">$</span>estimate[<span class="dv">1</span>],NM_answer<span class="sc">$</span>estimate[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># optimizing values for a,b using NM analytical method</span></span>
+<span><span class="va">NM_answer</span><span class="op">&lt;-</span><span class="fu">maxLik</span><span class="op">(</span>logLik <span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>,method <span class="op">=</span> <span class="st">"NM"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># obtaining class of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">NM_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># length of output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">NM_answer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the outputs</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">estimate</span> <span class="co"># estimated values for a, b</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">maximum</span> <span class="co"># minimized function value </span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">iterations</span>  <span class="co"># no of iterations to succeed</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">gradient</span> <span class="co"># last gradient value which was calculated</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">message</span> <span class="co"># additional information</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">hessian</span> <span class="co"># hessian matrix</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">code</span> <span class="co"># indicates successful completion</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">fixed</span> <span class="co"># logical vector indicating which parameters are constants</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">type</span> <span class="co"># type of maximization</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">last.step</span> <span class="co"># list describing the last unsuccessful step</span></span>
+<span><span class="va">NM_answer</span><span class="op">$</span><span class="va">control</span> <span class="co"># see the documentation understand</span></span>
+<span></span>
+<span><span class="co"># fitting the Beta-Binomial distribution with estimated shape parameter values</span></span>
+<span><span class="fu">fitBetaBin</span><span class="op">(</span><span class="va">Alcohol_data</span><span class="op">$</span><span class="va">Days</span>,<span class="va">Alcohol_data</span><span class="op">$</span><span class="va">week1</span>,</span>
+<span>           <span class="va">NM_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">NM_answer</span><span class="op">$</span><span class="va">estimate</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="sumary-of-time-evalutation-for-different-analytical-methods-of-maxlik-function" class="level1">
-<h1>Sumary of Time evalutation for different Analytical methods of maxLik function</h1>
+</section></section><section id="sumary-of-time-evalutation-for-different-analytical-methods-of-maxlik-function" class="level1"><h1>Sumary of Time evalutation for different Analytical methods of maxLik function</h1>
 <p>Below table will compare the system process time for different analytical methods. In order to do this time comparison it is possible to use the <a href="https://www.rdocumentation.org/packages/rbenchmark/versions/1.0.0/topics/benchmark">benchmark</a> function of <a href="https://cran.r-project.org/package=rbenchmark">rbenchmark</a> package. Below mentioned code chunk provides the output in a table form which includes the analytical methods and their respective time values. The estimation process of the parameters where each method has been replicated 1000 times to receive a more accurate table for time values.</p>
 <p>Table is in the ascending order for elapsed time column. It is evidently clear that SANN analytical method has taken the most time. Before that the analytical method BFGSR is in 5th place. While NM or Nelder Mead method has taken the least time. This time is calculated for 1000 replications of the function being repeated under same conditions. These times does not only reflect based on analytical method, rather on the Log Likelihood function that needs to be maximized, the data provided, the number of estimated that needs to be estimated, the complexity of the function and finally the computer’s processing power.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rbenchmark)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Results1<span class="ot">&lt;-</span><span class="fu">benchmark</span>(</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>          <span class="st">"NR"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik=</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">method =</span> <span class="st">"NR"</span>)},</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">"BFGS"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik=</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">method =</span> <span class="st">"BFGS"</span>)},</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">"BFGSR"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik=</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">method =</span> <span class="st">"BFGSR"</span>)},</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">"SANN"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik=</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">method =</span> <span class="st">"SANN"</span>)},</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">"CG"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik=</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">method =</span> <span class="st">"CG"</span>)},</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>          <span class="st">"NM"</span><span class="ot">=</span>{<span class="fu">maxLik</span>(<span class="at">logLik=</span>formaxLik, <span class="at">start =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.2</span>), <span class="at">method =</span> <span class="st">"NM"</span>)},</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">replications =</span> <span class="dv">100</span>,</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"test"</span>,<span class="st">"replications"</span>,<span class="st">"elapsed"</span>,</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"relative"</span>,<span class="st">"user.self"</span>,<span class="st">"sys.self"</span>),</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">order =</span> <span class="st">'elapsed'</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>          )</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Results1,<span class="st">"html"</span>,<span class="at">align =</span> <span class="fu">c</span>(<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width=</span>T,<span class="at">bootstrap_options=</span><span class="fu">c</span>(<span class="st">"striped"</span>),<span class="at">font_size =</span> <span class="dv">14</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>,<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>,<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://rbenchmark.googlecode.com">rbenchmark</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Results1</span><span class="op">&lt;-</span><span class="fu">benchmark</span><span class="op">(</span></span>
+<span>          <span class="st">"NR"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik<span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"NR"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"BFGS"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik<span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"BFGS"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"BFGSR"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik<span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"BFGSR"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"SANN"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik<span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"SANN"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"CG"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik<span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"CG"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          <span class="st">"NM"</span><span class="op">=</span><span class="op">{</span><span class="fu">maxLik</span><span class="op">(</span>logLik<span class="op">=</span><span class="va">formaxLik</span>, start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"NM"</span><span class="op">)</span><span class="op">}</span>,</span>
+<span>          replications <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>          columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"test"</span>,<span class="st">"replications"</span>,<span class="st">"elapsed"</span>,</span>
+<span>                      <span class="st">"relative"</span>,<span class="st">"user.self"</span>,<span class="st">"sys.self"</span><span class="op">)</span>,</span>
+<span>          order <span class="op">=</span> <span class="st">'elapsed'</span></span>
+<span>          <span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">Results1</span>,<span class="st">"html"</span>,align <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span>,<span class="st">'c'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">kable_styling</span><span class="op">(</span>full_width<span class="op">=</span><span class="cn">T</span>,bootstrap_options<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"striped"</span><span class="op">)</span>,font_size <span class="op">=</span> <span class="fl">14</span><span class="op">)</span><span class="op">%&gt;%</span></span>
+<span>  <span class="fu">row_spec</span><span class="op">(</span><span class="fl">0</span>,color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">column_spec</span><span class="op">(</span><span class="fl">1</span>,color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;"></th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">test</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">replications</th>
@@ -616,8 +562,7 @@ window.Quarto = {
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">relative</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">user.self</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">sys.self</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left; color: red !important;">6</td>
@@ -675,21 +620,16 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-</section>
-<section id="summary-of-results-after-using-the-maxlik-function-for-different-analytical-methods" class="level1">
-<h1>Summary of results after using the maxLik function for different analytical methods</h1>
+</section><section id="summary-of-results-after-using-the-maxlik-function-for-different-analytical-methods" class="level1"><h1>Summary of results after using the maxLik function for different analytical methods</h1>
 <p>Estimated the shape parameters a,b pair wise from the analytical methods NR, BFGS, BFGSR, SANN, CG and NM. These estimated parameters will be now used in the fitBetaBin function to find the expected frequencies, p-values and over-dispersion. The above measurements can be used to compare each analytical method for any significance difference.</p>
 <p>Comparing p-values it is clear that all analytical methods generate the same value up-to third decimal point. This is not the case in Maximum Log Likelihood value where analytical methods NR, BFGS, CG and NM have obtained the value -813.4571, while BFGSR and SANN have shown -813.4576. Further, Over-dispersion values are similar until third decimal point, but after that there is a clear difference among all six methods.</p>
 <p>All of the analytical methods have produced distinct values for estimated shape parameters of a and b. For the shape parameter a, similarity is only until second decimal point, and for shape parameter b, similarity of value is only on first decimal point.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">BinomialRandomVariable</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">Frequency</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">NR</th>
@@ -698,8 +638,7 @@ window.Quarto = {
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">SANN</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">CG</th>
 <th data-quarto-table-cell-role="th" style="text-align: center; color: blue !important;">NM</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center; color: red !important;">0</td>
@@ -833,21 +772,14 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-</section>
-<section id="final-conclusion" class="level1">
-<h1>Final Conclusion</h1>
+</section><section id="final-conclusion" class="level1"><h1>Final Conclusion</h1>
 <p>Now we can conclude the above findings using the tables provided, and it is clear that there is no strong change in expected frequencies, maximum Log Likelihood value or p-value if we use any one of the methods mentioned above. If time is crucial it is best to avoid BFGSR and SANN methods as they take considerable amount of time. I would recommend choose the analytical method from maxLik function based on your needs of output and research objective.</p>
 <p><em>THANK YOU</em></p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1412,8 +1344,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></p>
 </div>   
@@ -1425,8 +1356,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
