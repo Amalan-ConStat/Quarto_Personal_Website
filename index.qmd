@@ -1,5 +1,5 @@
 ---
-title: About Amalan Mahendran
+title: Amalan Mahendran
 about:
   template: solana
   id: about-block
@@ -47,7 +47,15 @@ I have developed the below listed R packages and Shiny apps:
 ::: columns
 
 ::: {.column width="80%"}
-1. [fitODBOD](https://cran.r-project.org/package=fitODBOD) and [fitODBODRshiny](https://cran.r-project.org/package=fitODBODRshiny): Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD
+1. [NeEDS4BigData](https://github.com/Amalan-ConStat/NeEDS4BigData) : Implementing subsampling methods to find informative samples from big data
+:::
+
+::: {.column width="20%"}
+![](img/logo_NeEDS4BigData.png){width=20%,height=25%}
+:::
+
+::: {.column width="80%"}
+2. [fitODBOD](https://cran.r-project.org/package=fitODBOD) and [fitODBODRshiny](https://cran.r-project.org/package=fitODBODRshiny): Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD
 :::
 
 ::: {.column width="20%"}
@@ -55,7 +63,7 @@ I have developed the below listed R packages and Shiny apps:
 :::
 
 ::: {.column width="80%"}
-2. [OlympicRshiny](https://cran.r-project.org/package=OlympicRshiny): 'Shiny' Application for Olympic Data
+3. [OlympicRshiny](https://cran.r-project.org/package=OlympicRshiny): 'Shiny' Application for Olympic Data
 :::
 
 ::: {.column width="20%"}
@@ -63,7 +71,7 @@ I have developed the below listed R packages and Shiny apps:
 :::
 
 ::: {.column width="80%"}
-3. [SLPresElection](https://cran.r-project.org/package=SLPresElection): Presidential Election Data of "Sri Lanka" from 1982 to 2015.
+4. [SLPresElection](https://cran.r-project.org/package=SLPresElection): Presidential Election Data of "Sri Lanka" from 1982 to 2015.
 :::
 
 ::: {.column width="20%"}
@@ -71,7 +79,7 @@ I have developed the below listed R packages and Shiny apps:
 :::
 
 ::: {.column width="80%"}
-4. [SouthParkRshiny](https://cran.r-project.org/package=SouthParkRshiny): Script data and rating and votes data for the tv show "SouthPark" was web scraped until season 26 is stored as data and an [Rshiny](https://amalan-con-stat.shinyapps.io/SouthParkRshiny/) application.
+5. [SouthParkRshiny](https://cran.r-project.org/package=SouthParkRshiny): Script data and rating and votes data for the tv show "SouthPark" was web scraped until season 26 is stored as data and an [Rshiny](https://amalan-con-stat.shinyapps.io/SouthParkRshiny/) application.
 :::
 
 ::: {.column width="20%"}
