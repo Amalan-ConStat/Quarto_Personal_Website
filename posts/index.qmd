@@ -1,7 +1,7 @@
 ---
 title: "Blog Posts"
 author: ""
-title-block-banner: true
+title-block-banner: false
 page-layout: full
 description-meta: "Welcome to my statistics related blog posts."
 

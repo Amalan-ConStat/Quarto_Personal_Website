@@ -143,6 +143,10 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Research Fellow Projects</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../../publication/index.html"> 
 <span class="menu-text">Publication and Teaching</span></a>
   </li>  
@@ -171,11 +175,6 @@ window.Quarto = {
     <a class="dropdown-item" href="https://twitter.com/Amalan_Con_Stat"><i class="bi bi-hash" role="img">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://bsky.app/profile/amalanconstat.bsky.social"><i class="bi bi-twitter" role="img">
-</i> 
- <span class="dropdown-text">BlueSky</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://github.com/Amalan-ConStat"><i class="bi bi-github" role="img">
@@ -791,7 +790,7 @@ provide a few findings as mentioned below in point form.</p>
 <p>The table is in ascending order according to the elapsed time values column. According to this we can see that least time takes to the nlminb function and most time is taken to the mle2 function. These times completely depends on the Negative Log Likelihood function you need to minimize, the data you provided, the number of estimators that needs to be estimated, the complexity of the function and finally your computer’s processing power.</p>
 <p>Therefore based on the needs of your output and the function which needs estimation choose the best function out of the above seven. Because as I said related to the earlier table the estimated values are slightly different but does not make any strong influence on the results.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://rbenchmark.googlecode.com">rbenchmark</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/eddelbuettel/rbenchmark">rbenchmark</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">Results2</span><span class="op">&lt;-</span><span class="fu">benchmark</span><span class="op">(</span></span>
 <span>          <span class="st">"optim"</span><span class="op">=</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/stats/optim.html">optim</a></span><span class="op">(</span>par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.2</span><span class="op">)</span>, fn <span class="op">=</span> <span class="va">foroptim</span><span class="op">)</span><span class="op">}</span>,</span>
@@ -1606,7 +1605,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p><span class="faux-block">© 2023 Amalan CC BY-SA 4.0</span></p>
+<p><span class="faux-block">© 2026 Amalan CC BY-SA 4.0</span></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

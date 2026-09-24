@@ -1,7 +1,7 @@
 ---
 title: "Publications and Teaching"
 author: ""
-title-block-banner: true
+title-block-banner: False
 page-layout: full
 description-meta: "Welcome to my publications list and teaching material, this contains brief summaries for publications and conference posters and my presentations for teaching. Have a read through and let me know your thoughts."
 

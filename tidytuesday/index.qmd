@@ -1,7 +1,7 @@
 ---
 title: "#TidyTuesday"
 author: ""
-title-block-banner: true
+title-block-banner: False
 page-layout: full
 description-meta: "Welcome to #Tidytuesday related blog posts."
 

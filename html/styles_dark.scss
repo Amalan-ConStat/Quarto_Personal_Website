@@ -31,7 +31,7 @@ $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-200 !default;
+$light:         $gray-400 !default;
 $dark:          $gray-700 !default;
 
 $min-contrast-ratio:   2.05 !default;
@@ -60,10 +60,10 @@ $dropdown-link-hover-bg:            $primary !default;
 
 // Navs
 
-$nav-link-padding-y:                .5rem !default;
+$nav-link-padding-y:                .75rem !default;
 $nav-link-padding-x:                2rem !default;
 $nav-link-disabled-color:           $gray-600 !default;
-$nav-tabs-border-color:             $gray-200 !default;
+$nav-tabs-border-color:             $gray-400 !default;
 
 // Navbar
 
@@ -106,3 +106,62 @@ $breadcrumb-border-radius:          .25rem !default;
 $btn-close-color:            $white !default;
 $btn-close-opacity:          .4 !default;
 $btn-close-hover-opacity:    1 !default;
+
+/* Homepage about section */
+.about-intro {
+  display: grid;
+  grid-template-columns: 15em 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-images img {
+  width: 15em;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: none;
+  display: block;
+}
+
+.about-text {
+  min-width: 0;
+  text-align: justify;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .about-images img {
+    width: 10em;
+    height: 12em;
+  }
+}
+
+/* Navbar styling */
+.navbar-nav .nav-link {
+  font-size: 1.15rem;
+}
+
+.navbar-brand {
+  font-size: 1.35rem;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}

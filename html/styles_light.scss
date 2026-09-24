@@ -26,27 +26,27 @@ $green:   #118230 !default;
 $teal:    #068194 !default;
 $cyan:    #68c4fc !default;
 
-$primary:   $gray-300!default;
+$primary:   $blue!default;
 $secondary: $gray-600 !default;
 $success:   $green !default;
 $info:      $cyan !default;
 $warning:   $orange !default;
 $danger:    $red !default;
-$light:     $gray-400 !default;
+$light:     $gray-500 !default;
 $dark:      $black !default;
 
 // Links
-$link-color: $primary !default;
+$link-color: $cyan !default;
 $link-decoration: none !default;
 $link-hover-color: $red !default;
 $link-hover-decoration: underline !default;
 
 // Footer
 $footer-bg: $gray-900 !default;
-$footer-fg: $gray-300 !default;
+$footer-fg: $gray-400 !default;
 
 // Inline code
-$code-bg: $gray-200 !default;
+$code-bg: $gray-400 !default;
 $code-color: $gray-900 !default;
 
 // TOC
@@ -56,6 +56,15 @@ $toc-font-size: 1em;
 // Code copy
 $btn-code-copy-color-active: $orange !default;
 
+// Navbar
+
+$navbar-padding-y:                  1rem !default;
+$navbar-dark-color:                 $white !default;
+$navbar-dark-hover-color:           $primary !default;
+$navbar-dark-active-color:          $primary !default;
+
+$navbar-dark-brand-color:                 $white !default;
+$navbar-dark-brand-hover-color:           $navbar-dark-brand-color !default;
 
 /*-- scss:rules --*/
 
@@ -76,7 +85,7 @@ $btn-code-copy-color-active: $orange !default;
         padding-bottom: 0.2em;
     }
 
-    // In the default Quarto template, .nav-footer-center has position: absolute 
+    // In the default Quarto template, .nav-footer-center has position: absolute
     // turned on, which makes the div not be a flex item
     // This changes that so that it *is* a flex item
     .nav-footer-center {
@@ -90,7 +99,7 @@ $btn-code-copy-color-active: $orange !default;
         }
     }
 
-    // When the screen is medium or smaller, make each footer chunk be 100% width 
+    // When the screen is medium or smaller, make each footer chunk be 100% width
     // and centered; otherwise make them be 33% width and left/right/centerd
     .nav-footer-left,
     .nav-footer-right,
@@ -115,4 +124,63 @@ $btn-code-copy-color-active: $orange !default;
             flex: 1 1 33%;
         }
     }
+}
+
+/* Homepage about section */
+.about-intro {
+  display: grid;
+  grid-template-columns: 15em 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-images img {
+  width: 15em;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: none;
+  display: block;
+}
+
+.about-text {
+  min-width: 0;
+  text-align: justify;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .about-images img {
+    width: 10em;
+    height: 12em;
+  }
+}
+
+/* Navbar styling */
+.navbar-nav .nav-link {
+  font-size: 1.15rem;
+}
+
+.navbar-brand {
+  font-size: 1.35rem;
+}
+
+.navbar-brand img {
+  max-height: 50px;
 }
