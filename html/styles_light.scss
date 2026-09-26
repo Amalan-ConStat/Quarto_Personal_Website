@@ -129,7 +129,7 @@ $navbar-dark-brand-hover-color:           $navbar-dark-brand-color !default;
 /* Homepage about section */
 .about-intro {
   display: grid;
-  grid-template-columns: 15em 1fr;
+  grid-template-columns: 12em 1fr;
   gap: 2.5rem;
   align-items: start;
   margin-bottom: 2rem;
@@ -142,8 +142,8 @@ $navbar-dark-brand-hover-color:           $navbar-dark-brand-color !default;
 }
 
 .about-images img {
-  width: 15em;
-  height: 20em;
+  width: 12em;
+  height: 15em;
   object-fit: cover;
   border-radius: 50%;
   max-width: none;
@@ -167,22 +167,22 @@ $navbar-dark-brand-hover-color:           $navbar-dark-brand-color !default;
   }
 
   .about-images img {
-    width: 10em;
-    height: 12em;
+    width: 9em;
+    height: 11em;
   }
 }
 
 /* Navbar styling */
 .navbar-nav .nav-link {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .navbar-brand {
-  font-size: 1.35rem;
+  font-size: 1.05rem;
 }
 
 .navbar-brand img {
-  max-height: 50px;
+  max-height: 40px;
 }
 
 .project-paired-image {
