@@ -956,21 +956,49 @@
     "href": "projects/index.html",
     "title": "Research Fellow Projects",
     "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+    "text": "I am a Research Fellow in Transport Engineering and Planning at the School of Civil and Environmental Engineering, Queensland University of Technology (QUT). My research applies statistical modelling, data science, spatial analysis, and data visualisation to transport engineering problems, with a particular focus on road safety, travel behaviour, heavy vehicles, and pavement performance.\nMy role involves working with large and complex transport datasets, developing and evaluating appropriate statistical models, preparing reproducible analyses, and communicating findings through technical reports, presentations, figures, and research outputs for academic and industry partners."
   },
   {
-    "objectID": "projects/index.html#the-languages-of-middle-earth",
-    "href": "projects/index.html#the-languages-of-middle-earth",
+    "objectID": "projects/index.html#research-fellow-in-transport-engineering-and-planning",
+    "href": "projects/index.html#research-fellow-in-transport-engineering-and-planning",
     "title": "Research Fellow Projects",
     "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+    "text": "I am a Research Fellow in Transport Engineering and Planning at the School of Civil and Environmental Engineering, Queensland University of Technology (QUT). My research applies statistical modelling, data science, spatial analysis, and data visualisation to transport engineering problems, with a particular focus on road safety, travel behaviour, heavy vehicles, and pavement performance.\nMy role involves working with large and complex transport datasets, developing and evaluating appropriate statistical models, preparing reproducible analyses, and communicating findings through technical reports, presentations, figures, and research outputs for academic and industry partners."
   },
   {
-    "objectID": "projects/index.html#the-history-of-the-war-of-the-ring",
-    "href": "projects/index.html#the-history-of-the-war-of-the-ring",
+    "objectID": "projects/index.html#research-approach",
+    "href": "projects/index.html#research-approach",
     "title": "Research Fellow Projects",
-    "section": "The History of the War of the Ring",
-    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView source on GitHub"
+    "section": "Research Approach",
+    "text": "Research Approach\nAcross these projects, my work combines statistical methodology with applied transport engineering problems. I use R extensively for data cleaning, statistical modelling, visualisation, spatial analysis, reproducible reporting, and the processing of large datasets.\nA recurring theme in my research is transforming complex transport data into interpretable statistical evidence that can support engineering analysis and decision-making. This includes working with road-segment-level and spatial datasets, developing statistical models appropriate to the structure of the data, and communicating results through technical reports, research publications, presentations, and visualisations."
+  },
+  {
+    "objectID": "projects/index.html#incorporating-road-safety-throughout-the-network-level-transport-planning-process",
+    "href": "projects/index.html#incorporating-road-safety-throughout-the-network-level-transport-planning-process",
+    "title": "Research Fellow Projects",
+    "section": "Incorporating Road Safety Throughout the Network-Level Transport Planning Process",
+    "text": "Incorporating Road Safety Throughout the Network-Level Transport Planning Process\nThis project investigates how road safety can be incorporated directly into network-level transport planning. I developed and evaluated crash prediction models across different road stereotypes and crash types in Queensland.\n\n\n\nSpatial distribution of expected crashes across the Southeast Queensland road network.\n\n\nExpected crashes across the Southeast Queensland transport network.\n\n\nA major component of the project involved estimating expected crashes at the 100 m road-segment level and integrating these estimates into the Southeast Queensland transport network. The resulting road-safety information was subsequently incorporated into SA2-level origin–destination analyses, providing a framework for considering expected crash outcomes alongside network-level travel patterns.\nMy work on this project included statistical modelling, preparation and integration of spatial and transport datasets, development of figures and visualisations, and coordination of project reports.\nKey areas: Crash prediction modelling · Road safety · Network-level planning · Spatial analysis · Origin–destination analysis · Statistical modelling"
+  },
+  {
+    "objectID": "projects/index.html#active-transport-and-travel-demand-in-brisbane-insights-from-survey-and-smart-travel-diary-data",
+    "href": "projects/index.html#active-transport-and-travel-demand-in-brisbane-insights-from-survey-and-smart-travel-diary-data",
+    "title": "Research Fellow Projects",
+    "section": "Active Transport and Travel Demand in Brisbane: Insights from Survey and Smart Travel Diary Data",
+    "text": "Active Transport and Travel Demand in Brisbane: Insights from Survey and Smart Travel Diary Data\nThis project examines travel behaviour and active transport patterns across Greater Brisbane using travel survey and smart travel diary data.\n\n\nOrigin–destination travel patterns across Greater Brisbane derived from travel survey data.\n\nWorking as a transport analyst, I analysed travel survey data and developed origin–destination visualisations to investigate travel patterns across Greater Brisbane. The analysis supported the interpretation and communication of spatial travel-demand patterns and contributed to research outputs from the project.\nKey areas: Active transport · Travel demand · Travel surveys · Origin–destination analysis · Data visualisation · Brisbane"
+  },
+  {
+    "objectID": "projects/index.html#study-of-the-effect-of-heavy-vehicle-size-on-crash-rates-in-queensland",
+    "href": "projects/index.html#study-of-the-effect-of-heavy-vehicle-size-on-crash-rates-in-queensland",
+    "title": "Research Fellow Projects",
+    "section": "Study of the Effect of Heavy Vehicle Size on Crash Rates in Queensland",
+    "text": "Study of the Effect of Heavy Vehicle Size on Crash Rates in Queensland\nThis project investigates the relationship between heavy vehicle characteristics and crash rates across Queensland.\nI collaborated with engineers from the Queensland Department of Transport and Main Roads (TMR) to develop crash count models and estimate crash rates for different heavy vehicle types. The statistical analysis was used to examine differences in crash occurrence and crash rates across vehicle categories.\nIn addition to the modelling, I prepared and maintained technical reports and developed figures and tables to communicate the analytical results to project stakeholders.\nKey areas: Heavy vehicles · Crash count modelling · Crash rates · Road safety · Statistical modelling · Technical reporting"
+  },
+  {
+    "objectID": "projects/index.html#analysing-meteorological-data-and-pavement-performance-statistics-to-optimise-maintenance-prioritisation-and-reduce-whole-of-life-cost",
+    "href": "projects/index.html#analysing-meteorological-data-and-pavement-performance-statistics-to-optimise-maintenance-prioritisation-and-reduce-whole-of-life-cost",
+    "title": "Research Fellow Projects",
+    "section": "Analysing Meteorological Data and Pavement Performance Statistics to Optimise Maintenance Prioritisation and Reduce Whole-of-Life Cost",
+    "text": "Analysing Meteorological Data and Pavement Performance Statistics to Optimise Maintenance Prioritisation and Reduce Whole-of-Life Cost\nThis project investigates pavement deterioration across the Queensland road network by combining pavement-condition, road-attribute, traffic, and meteorological information.\n\n\nSpatial and temporal variation in pavement and seal age along Road Section 36B.\n\nThe analysis involves more than two million records representing approximately 100 m road segments across Queensland. The resulting longitudinal dataset provides repeated observations of pavement and environmental conditions and enables deterioration to be examined across both space and time.\nMy work involves extensive data cleaning and preparation, integration of pavement and meteorological datasets, exploratory and spatial analysis, and statistical modelling. Generalised Clusterwise Regression is being applied to identify pavement deterioration patterns and develop cluster-specific deterioration models.\nThe broader objective is to better understand variation in pavement deterioration and provide quantitative evidence that can support pavement maintenance prioritisation and whole-of-life cost management.\nKey areas: Pavement deterioration · Big data · Longitudinal data · Meteorological data · Generalised Clusterwise Regression · Spatial analysis · Statistical modelling"
   },
   {
     "objectID": "posts/index.html",
