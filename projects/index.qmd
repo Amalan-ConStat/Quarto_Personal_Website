@@ -48,7 +48,11 @@ This project investigates how road safety can be incorporated directly into netw
 A major component of the project involved estimating expected crashes at the 100 m road-segment level and integrating these estimates into the Southeast Queensland transport network. 
 The resulting road-safety information was subsequently incorporated into SA2-level origin–destination analyses, providing a framework for considering expected crash outcomes alongside network-level travel patterns.
 
-My work on this project included statistical modelling, preparation and integration of spatial and transport datasets, development of figures and visualisations, and coordination of project reports.
+My work on this project included statistical modelling, preparation and integration of spatial and transport datasets, development of figures and visualisations, and coordination of project reports to the Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts, Queensland.
+
+This work was presented at the Transport Academic Partnership Showcase 2025, Brisbane, Australia, as a Poster titled "Predicting and Mapping Expected Crashes to Support Road Safety Planning in SEQ".
+
+This work was presented in partial at the International Choice Modelling Conference, 2026, Goldcoast Australia, as a Poster titled "A Safety‑Augmented Travel Activity Model of Everyday Behaviour".
 
 **Key areas:** Crash prediction modelling · Road safety · Network-level planning · Spatial analysis · Origin–destination analysis · Statistical modelling
 
@@ -67,24 +71,28 @@ This project examines travel behaviour and active transport patterns across Grea
 :::
 
 Working as a transport analyst, I analysed travel survey data and developed origin–destination visualisations to investigate travel patterns across Greater Brisbane. 
-The analysis supported the interpretation and communication of spatial travel-demand patterns and contributed to research outputs from the project.
+The analysis supported the interpretation and communication of spatial travel-demand patterns and contributed to research outputs from the project for iMOVE with Department of Transport and Main Roads, Queensland.
+
+![Publication](https://imoveaustralia.com/project/project-outcomes/active-transport-and-travel-demand-in-brisbane/)
 
 **Key areas:** Active transport · Travel demand · Travel surveys · Origin–destination analysis · Data visualisation · Brisbane
 
 ----
 
-## Study of the Effect of Heavy Vehicle Size on Crash Rates in Queensland
+## Study of the Effect of Heavy Vehicle Size on Crash Rates in Queensland (One of the Chief Investigators)
 
 This project investigates the relationship between heavy vehicle characteristics and crash rates across Queensland.
 
 I collaborated with engineers from the Queensland Department of Transport and Main Roads (TMR) to develop crash count models and estimate crash rates for different heavy vehicle types. 
 The statistical analysis was used to examine differences in crash occurrence and crash rates across vehicle categories.
 
-In addition to the modelling, I prepared and maintained technical reports and developed figures and tables to communicate the analytical results to project stakeholders.
+In addition to the modelling, I prepared and maintained technical reports and developed figures and tables to communicate the analytical results to project stakeholders, Department of Transport and Main Roads, Queensland.
+
+This work was presented at the Transport Academic Partnership Showcase 2026, Brisbane, Australia, as a Poster titled "Study of the Effect of Heavy Vehicle Size on Crash Rates in QLD".
 
 **Key areas:** Heavy vehicles · Crash count modelling · Crash rates · Road safety · Statistical modelling · Technical reporting
 
-## Analysing Meteorological Data and Pavement Performance Statistics to Optimise Maintenance Prioritisation and Reduce Whole-of-Life Cost
+## Analysing Meteorological Data and Pavement Performance Statistics to Optimise Maintenance Prioritisation and Reduce Whole-of-Life Cost (One of the Chief Investigators)
 
 This project investigates pavement deterioration across the Queensland road network by combining pavement-condition, road-attribute, traffic, and meteorological information.
 
@@ -105,4 +113,9 @@ Generalised Clusterwise Regression is being applied to identify pavement deterio
 
 The broader objective is to better understand variation in pavement deterioration and provide quantitative evidence that can support pavement maintenance prioritisation and whole-of-life cost management.
 
+This work was presented at the Transport Academic Partnership Showcase 2026, Brisbane, Australia, as a Poster titled "From Pavement Data to Deterioration Modelling: Preparing 15 Years of QLD Road Network Data".
+
 **Key areas:** Pavement deterioration · Big data · Longitudinal data · Meteorological data · Generalised Clusterwise Regression · Spatial analysis · Statistical modelling
+
+## Incorporating Quantitative Safety Risk into Road Design Domains Using Predictive Safety-Performance Models (One of the Chief Investigators)
+

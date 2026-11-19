@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">r4ds_members</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu">read_csv</span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-07-16/r4ds_members.csv"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">r4ds_members</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-07-16/r4ds_members.csv"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># load the packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
@@ -234,12 +234,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="timely-change" class="level1"><h1>Timely Change</h1>
 <section id="timely-change-for-full-members" class="level2"><h2 class="anchored" data-anchor-id="timely-change-for-full-members">Timely Change for Full Members</h2>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">r4ds_members</span>,<span class="fu">aes</span><span class="op">(</span><span class="va">date</span>,<span class="va">full_members</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu">geom_point</span><span class="op">(</span>color<span class="op">=</span><span class="va">blues9</span><span class="op">[</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span><span class="op">+</span></span>
-<span>      <span class="fu">ggthemes</span><span class="fu">::</span><span class="fu">theme_stata</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
-<span>      <span class="fu">xlab</span><span class="op">(</span><span class="st">"Date"</span><span class="op">)</span><span class="op">+</span><span class="fu">ylab</span><span class="op">(</span><span class="st">"Full Members"</span><span class="op">)</span><span class="op">+</span></span>
-<span>      <span class="fu">scale_x_date</span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">"%y %b %d"</span>,breaks <span class="op">=</span> <span class="st">'1 month'</span><span class="op">)</span><span class="op">+</span></span>
-<span>      <span class="fu">theme</span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">60</span>,hjust<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
-<span>      <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"How R4DS Members have involved over the Years"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">r4ds_members</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">date</span>,<span class="va">full_members</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>color<span class="op">=</span><span class="va">blues9</span><span class="op">[</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span><span class="op">+</span></span>
+<span>      <span class="fu">ggthemes</span><span class="fu">::</span><span class="fu"><a href="https://jrnold.github.io/ggthemes/reference/theme_stata.html">theme_stata</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Date"</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Full Members"</span><span class="op">)</span><span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">"%y %b %d"</span>,breaks <span class="op">=</span> <span class="st">'1 month'</span><span class="op">)</span><span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">60</span>,hjust<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"How R4DS Members have involved over the Years"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="index_files/figure-html/Timely Change-1.png" class="img-fluid figure-img" width="1152"></p>
@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section></section><section id="daily-members" class="level1"><h1>Daily Members</h1>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggscatterstats</span><span class="op">(</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggscatterstats.html">ggscatterstats</a></span><span class="op">(</span></span>
 <span>               data <span class="op">=</span> <span class="va">r4ds_members</span>,</span>
 <span>               x <span class="op">=</span> <span class="va">daily_active_members</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">daily_members_posting_messages</span>,</span>
@@ -267,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="daily-members-by-day-of-week" class="level1"><h1>Daily Members by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">grouped_ggscatterstats</span><span class="op">(</span>data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/grouped_ggscatterstats.html">grouped_ggscatterstats</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                       x<span class="op">=</span><span class="va">daily_active_members</span>,</span>
 <span>                       y<span class="op">=</span><span class="va">daily_members_posting_messages</span>,</span>
 <span>                       grouping.var <span class="op">=</span> <span class="va">day</span>,</span>
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="weekly-members" class="level1"><h1>Weekly Members</h1>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggscatterstats</span><span class="op">(</span></span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggscatterstats.html">ggscatterstats</a></span><span class="op">(</span></span>
 <span>               data <span class="op">=</span> <span class="va">r4ds_members</span>,</span>
 <span>               x <span class="op">=</span> <span class="va">weekly_active_members</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">weekly_members_posting_messages</span>,</span>
@@ -297,8 +297,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="weekly-members-by-day-of-week" class="level1"><h1>Weekly Members by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">grouped_ggscatterstats</span><span class="op">(</span></span>
-<span>                       data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,</span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/grouped_ggscatterstats.html">grouped_ggscatterstats</a></span><span class="op">(</span></span>
+<span>                       data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                       x <span class="op">=</span> <span class="va">weekly_active_members</span>,</span>
 <span>                       y <span class="op">=</span> <span class="va">weekly_members_posting_messages</span>,</span>
 <span>                       grouping.var<span class="op">=</span><span class="va">day</span>,</span>
@@ -310,11 +310,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="messages-in-public-private-and-dm-channels" class="level1"><h1>Messages in Public, Private and DM Channels</h1>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="fu">select</span><span class="op">(</span><span class="va">r4ds_members</span>,<span class="st">"messages_in_public_channels"</span>,</span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">r4ds_members</span>,<span class="st">"messages_in_public_channels"</span>,</span>
 <span>                                          <span class="st">"messages_in_private_channels"</span>,</span>
-<span>                                          <span class="st">"messages_in_d_ms"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>                      <span class="fu">gather</span><span class="op">(</span><span class="st">"Type"</span>,<span class="st">"Count"</span><span class="op">)</span>,</span>
+<span>                                          <span class="st">"messages_in_d_ms"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>                      <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="st">"Type"</span>,<span class="st">"Count"</span><span class="op">)</span>,</span>
 <span>               x <span class="op">=</span> <span class="va">Type</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">Count</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Type of Channel"</span>,</span>
@@ -331,11 +331,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="percent-based-messages-in-public-private-and-dm-channels" class="level1"><h1>Percent Based Messages in Public, Private and DM Channels</h1>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="fu">select</span><span class="op">(</span><span class="va">r4ds_members</span>,<span class="st">"percent_of_messages_public_channels"</span>,</span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">r4ds_members</span>,<span class="st">"percent_of_messages_public_channels"</span>,</span>
 <span>                                          <span class="st">"percent_of_messages_private_channels"</span>,</span>
-<span>                                          <span class="st">"percent_of_messages_d_ms"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>                      <span class="fu">gather</span><span class="op">(</span><span class="st">"Type"</span>,<span class="st">"Count"</span><span class="op">)</span>,</span>
+<span>                                          <span class="st">"percent_of_messages_d_ms"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>                      <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="st">"Type"</span>,<span class="st">"Count"</span><span class="op">)</span>,</span>
 <span>               x <span class="op">=</span> <span class="va">Type</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">Count</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Type of Channel"</span>,</span>
@@ -352,9 +352,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="messages-in-public-channels-by-day-of-week" class="level1"><h1>Messages in Public Channels by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>                      <span class="fu">select</span><span class="op">(</span><span class="st">"messages_in_public_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">"messages_in_public_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
 <span>               x <span class="op">=</span> <span class="va">day</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">messages_in_public_channels</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Week of the Day"</span>,</span>
@@ -371,9 +371,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="percent-based-messages-in-public-channels-by-day-of-week" class="level1"><h1>Percent Based Messages in Public Channels by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>                      <span class="fu">select</span><span class="op">(</span><span class="st">"percent_of_messages_public_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">"percent_of_messages_public_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
 <span>               x <span class="op">=</span> <span class="va">day</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">percent_of_messages_public_channels</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Week of the Day"</span>,</span>
@@ -390,9 +390,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="messages-in-private-channels-by-day-of-week" class="level1"><h1>Messages in Private Channels by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>                      <span class="fu">select</span><span class="op">(</span><span class="st">"messages_in_private_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">"messages_in_private_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
 <span>               x <span class="op">=</span> <span class="va">day</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">messages_in_private_channels</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Week of the Day"</span>,</span>
@@ -409,9 +409,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="percent-based-messages-in-private-channels-by-day-of-week" class="level1"><h1>Percent Based Messages in Private Channels by day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>                      <span class="fu">select</span><span class="op">(</span><span class="st">"percent_of_messages_private_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">"percent_of_messages_private_channels"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
 <span>               x <span class="op">=</span> <span class="va">day</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">percent_of_messages_private_channels</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Week of the Day"</span>,</span>
@@ -428,9 +428,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="messages-in-dm-by-day-of-week" class="level1"><h1>Messages in DM by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>                      <span class="fu">select</span><span class="op">(</span><span class="st">"messages_in_d_ms"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">"messages_in_d_ms"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
 <span>               x <span class="op">=</span> <span class="va">day</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">messages_in_d_ms</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Week of the Day"</span>,</span>
@@ -447,9 +447,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="percent-based-messages-in-dm-by-day-of-week" class="level1"><h1>Percent Based Messages in DM by Day of Week</h1>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggbetweenstats</span><span class="op">(</span></span>
-<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>day<span class="op">=</span><span class="fu">wday</span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>                      <span class="fu">select</span><span class="op">(</span><span class="st">"percent_of_messages_d_ms"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://www.indrapatil.com/ggstatsplot/reference/ggbetweenstats.html">ggbetweenstats</a></span><span class="op">(</span></span>
+<span>               data <span class="op">=</span> <span class="va">r4ds_members</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>day<span class="op">=</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">date</span>,label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>                      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">"percent_of_messages_d_ms"</span>,<span class="st">"day"</span><span class="op">)</span>, </span>
 <span>               x <span class="op">=</span> <span class="va">day</span>,</span>
 <span>               y <span class="op">=</span> <span class="va">percent_of_messages_d_ms</span>,</span>
 <span>               xlab <span class="op">=</span> <span class="st">"Week of the Day"</span>,</span>
