@@ -96,7 +96,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+}</script><script src="../../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../../site_libs/d3-3.3.8/d3.min.js"></script><script src="../../../site_libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="../../../site_libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="../../../site_libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="../../../site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="../../../site_libs/chromatography-0.1/chromatography.js"></script><script src="../../../site_libs/DiagrammeR-binding-1.0.12/DiagrammeR.js"></script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -275,7 +277,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rich-iannone.github.io/DiagrammeR/">DiagrammeR</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">            A[Binomial &lt;br&gt; Distribution]--&gt;B[Binomial &lt;br&gt; Not Parent];</span></span>
 <span><span class="st">            A--&gt;D[Other with &lt;br&gt; no sub groups];</span></span>
 <span><span class="st">            A--&gt;C[Binomial &lt;br&gt; Parent];</span></span>
@@ -290,11 +292,15 @@ window.Quarto = {
 <span><span class="st">            CA--&gt;CAF[Cumulative Distribution &lt;br&gt; Function];</span></span>
 <span><span class="st">            CA--&gt;CAD[p &lt;br&gt; Binomial];</span></span>
 <span><span class="st">            CA--&gt;CAG[Log Inverse &lt;br&gt; Distribution &lt;br&gt; 0,1 Domain]"</span>,width<span class="op">=</span><span class="fl">1000</span>,height<span class="op">=</span><span class="fl">400</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-e87dfd8c167150abebd3" style="width:100%;height:260px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e87dfd8c167150abebd3">{"x":{"diagram":"graph TB;\n            A[Binomial <br> Distribution]-->B[Binomial <br> Not Parent];\n            A-->D[Other with <br> no sub groups];\n            A-->C[Binomial <br> Parent];\n            A-->M[Alternate Binomial <br> Distribution];\n            A-->N[Neyman Type A <br> Distribution];\n            A-->O[Hermite Distribution];\n            C-->CA[Mixing Parameter];\n            CA-->CAA[N/n <br> Binomial];\n            CA-->CAB[K <br> Binomial];\n            CA-->CAC[Y <br> Binomial];\n            CA-->CAE[p transformed <br> Binomial];\n            CA-->CAF[Cumulative Distribution <br> Function];\n            CA-->CAD[p <br> Binomial];\n            CA-->CAG[Log Inverse <br> Distribution <br> 0,1 Domain]"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <section id="other-with-no-sub-groups" class="level2"><h2 class="anchored" data-anchor-id="other-with-no-sub-groups">Other With No Sub-Groups</h2>
 <p>First sub group in discussion is “Other With No Sub-Groups”, which is an abbreviation for Binomial distributions which were direcly created for the purpose of satisfying specific real world situations and theoretical concepts.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">            B[Binomial &lt;br&gt; Distribution]--&gt;A[Other with &lt;br&gt; no sub groups];</span></span>
 <span><span class="st">            A--&gt;D[Grassia Binomial &lt;br&gt; Distribution];</span></span>
 <span><span class="st">            A--&gt;E[Zero Modified &lt;br&gt; Binomial Distribution];</span></span>
@@ -305,6 +311,10 @@ window.Quarto = {
 <span><span class="st">            A--&gt;J[Binomial Distribution &lt;br&gt; of order K];</span></span>
 <span><span class="st">            A--&gt;K[Truncated Binomial &lt;br&gt; Distribution];</span></span>
 <span><span class="st">            A--&gt;L[Weighted Binomial &lt;br&gt; Distribution];"</span>,width<span class="op">=</span><span class="fl">1000</span>,height<span class="op">=</span><span class="fl">400</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-1db02656f568af0dcb17" style="width:100%;height:260px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1db02656f568af0dcb17">{"x":{"diagram":"graph TB;\n            B[Binomial <br> Distribution]-->A[Other with <br> no sub groups];\n            A-->D[Grassia Binomial <br> Distribution];\n            A-->E[Zero Modified <br> Binomial Distribution];\n            A-->F[Dandekar's Modified <br> Binomial Distribution];\n            A-->G[Simplex Binomial <br> Mixture Model];\n            A-->H[Double Binomial <br> Distribution];\n            A-->I[Finite Binomial <br> Mixtures];\n            A-->J[Binomial Distribution <br> of order K];\n            A-->K[Truncated Binomial <br> Distribution];\n            A-->L[Weighted Binomial <br> Distribution];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <p>Below is the list of Distributions in this sub group with article references.</p>
 <section id="grassia-binomial-distribution" class="level3"><h3 class="anchored" data-anchor-id="grassia-binomial-distribution">Grassia Binomial Distribution</h3>
@@ -363,12 +373,16 @@ window.Quarto = {
 </section></section><section id="binomial-not-parent" class="level2"><h2 class="anchored" data-anchor-id="binomial-not-parent">Binomial Not Parent</h2>
 <p>This is the sub group where Binomial Distribution is not the parent but rather some other different distribution like Hypergeometric or Negative Binomial or Poisson.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">            A[Binomial &lt;br&gt; Distribution]--&gt;B[Binomial Not Parent];</span></span>
 <span><span class="st">            B--&gt;BA[Hypergeometric &lt;br&gt; + Binomial];</span></span>
 <span><span class="st">            B--&gt;BB[Negative Binomial &lt;br&gt; + Binomial];</span></span>
 <span><span class="st">            B--&gt;BC[Poisson + &lt;br&gt; Binomial];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">400</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-e0b55bff3cf70ce34e67" style="width:100%;height:325px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e0b55bff3cf70ce34e67">{"x":{"diagram":"graph TB;\n            A[Binomial <br> Distribution]-->B[Binomial Not Parent];\n            B-->BA[Hypergeometric <br> + Binomial];\n            B-->BB[Negative Binomial <br> + Binomial];\n            B-->BC[Poisson + <br> Binomial];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <section id="hypergeometric-binomial" class="level3"><h3 class="anchored" data-anchor-id="hypergeometric-binomial">Hypergeometric + Binomial</h3>
 <p><span class="math display">\[Hypergeometric (n,Y,N) \bigwedge_Y Binomial(N,p)\]</span></p>
@@ -379,7 +393,7 @@ window.Quarto = {
 </section></section><section id="alternate-binomial-distributions" class="level2"><h2 class="anchored" data-anchor-id="alternate-binomial-distributions">Alternate Binomial Distributions</h2>
 <p>This is a sub group of distributions which can be used as an alternative to Binomial Distribution.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">            A[Binomial &lt;br&gt; Distribution]--&gt;B[Alternate Binomial &lt;br&gt; Distribution];</span></span>
 <span><span class="st">            B--&gt;C[Additive Binomial &lt;br&gt; Distribution];</span></span>
 <span><span class="st">            B--&gt;D[Beta-Correlated &lt;br&gt; Binomial Distribution];</span></span>
@@ -387,6 +401,10 @@ window.Quarto = {
 <span><span class="st">            B--&gt;F[Correlated Binomial &lt;br&gt; Distribution];</span></span>
 <span><span class="st">            B--&gt;G[Multiplicative Binomial &lt;br&gt; Distribution];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">400</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-6acdbb7130d327bf3611" style="width:100%;height:325px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6acdbb7130d327bf3611">{"x":{"diagram":"graph TB;\n            A[Binomial <br> Distribution]-->B[Alternate Binomial <br> Distribution];\n            B-->C[Additive Binomial <br> Distribution];\n            B-->D[Beta-Correlated <br> Binomial Distribution];\n            B-->E[COM-Poisson Binomial <br> Distribution];\n            B-->F[Correlated Binomial <br> Distribution];\n            B-->G[Multiplicative Binomial <br> Distribution];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <section id="additive-binomial-distribution" class="level3"><h3 class="anchored" data-anchor-id="additive-binomial-distribution">Additive Binomial Distribution</h3>
 <p>Johnson, N. L., Kemp, A. W., &amp; Kotz, S. (2005). Univariate discrete distributions (Vol. 444). Hoboken, NJ: Wiley-Interscience.</p>
@@ -407,12 +425,16 @@ window.Quarto = {
 <p>Paul, S.R., 1985. A three-parameter generalization of the binomial distribution. Communications in Statistics - Theory and Methods, 14(6), pp.1497-1506.</p>
 </section></section><section id="neyman-type-a-distribution" class="level2"><h2 class="anchored" data-anchor-id="neyman-type-a-distribution">Neyman Type A Distribution</h2>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">            A[Binomial &lt;br&gt; Distribution]--&gt;B[ Neyman Type A &lt;br&gt; Distribution];</span></span>
 <span><span class="st">            B--&gt;C[Poisson + Binomial +  Beta];</span></span>
 <span><span class="st">            B--&gt;D[Poisson + Poisson + Binomial + Beta &lt;br&gt; or Poisson + Binomial + Poisson + Beta];</span></span>
 <span><span class="st">            B--&gt;E[Poisson + Binomial + Poisson + Beta &lt;br&gt; or Binomial + Poisson + Poisson + Beta];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">400</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-b245fe570cad1a2b68a6" style="width:100%;height:325px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b245fe570cad1a2b68a6">{"x":{"diagram":"graph TB;\n            A[Binomial <br> Distribution]-->B[ Neyman Type A <br> Distribution];\n            B-->C[Poisson + Binomial +  Beta];\n            B-->D[Poisson + Poisson + Binomial + Beta <br> or Poisson + Binomial + Poisson + Beta];\n            B-->E[Poisson + Binomial + Poisson + Beta <br> or Binomial + Poisson + Poisson + Beta];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <section id="poisson-binomial-beta" class="level3"><h3 class="anchored" data-anchor-id="poisson-binomial-beta">Poisson + Binomial + Beta</h3>
 <p><span class="math display">\[Poisson(\phi) \bigvee Binomial(1,P) \bigwedge_P Beta(\alpha,\beta)\]</span></p>
@@ -426,11 +448,15 @@ window.Quarto = {
 <p>Subrahmaniam, Kathleen (1978). The Pascal-Poisson distribution revisited: Estimation and efficiency, Communications in Statistics-Theory and Methods, A7, 673-683.</p>
 </section></section><section id="hermite-distribution" class="level2"><h2 class="anchored" data-anchor-id="hermite-distribution">Hermite Distribution</h2>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">           A[Binomial &lt;br&gt; Distribution]--&gt;B[Hermite &lt;br&gt; Distribution];</span></span>
 <span><span class="st">           B--&gt;C[Binomial + Poisson];</span></span>
 <span><span class="st">           B--&gt;D[Poisson + Binomial];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">400</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-04689396926e1c24234a" style="width:100%;height:325px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-04689396926e1c24234a">{"x":{"diagram":"graph TB;\n           A[Binomial <br> Distribution]-->B[Hermite <br> Distribution];\n           B-->C[Binomial + Poisson];\n           B-->D[Poisson + Binomial];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <section id="binomial-poisson" class="level3"><h3 class="anchored" data-anchor-id="binomial-poisson">Binomial + Poisson</h3>
 <p><span class="math display">\[Binomial(N,p) \bigwedge_{N/2} Poisson(\lambda)\]</span></p>
@@ -445,7 +471,7 @@ window.Quarto = {
 <section id="nn-k-and-y-mixtures" class="level3"><h3 class="anchored" data-anchor-id="nn-k-and-y-mixtures">N/n , K and Y Mixtures</h3>
 <p>The first mixtures with few distributions are mentioned below.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">           A[Binomial &lt;br&gt; Distribution]--&gt;B[Binomial &lt;br&gt; Parent];</span></span>
 <span><span class="st">           B--&gt;C[Mixing Parameter];</span></span>
 <span><span class="st">           C--&gt;D[N/n &lt;br&gt; Binomial];</span></span>
@@ -458,6 +484,10 @@ window.Quarto = {
 <span><span class="st">           C--&gt;F[Y &lt;br&gt; Binomial];</span></span>
 <span><span class="st">           F--&gt;FA[Hypergeometric];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">400</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-ff9c8571503ccc0c8279" style="width:100%;height:325px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ff9c8571503ccc0c8279">{"x":{"diagram":"graph TB;\n           A[Binomial <br> Distribution]-->B[Binomial <br> Parent];\n           B-->C[Mixing Parameter];\n           C-->D[N/n <br> Binomial];\n           D-->DA[Poisson];\n           D-->DB[Binomial];\n           D-->DC[Negative Binomial];\n           D-->DD[Logarithmic];\n           C-->E[K <br> Binomial];\n           E-->EA[Poisson];\n           C-->F[Y <br> Binomial];\n           F-->FA[Hypergeometric];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <section id="poisson-mix-for-nn-of-binomial-distributon" class="level4"><h4 class="anchored" data-anchor-id="poisson-mix-for-nn-of-binomial-distributon">Poisson Mix for N/n of Binomial distributon</h4>
 <p><span class="math display">\[Binomial(N,p) \bigwedge_{N/n} Poisson(\lambda)\]</span></p>
@@ -473,7 +503,7 @@ window.Quarto = {
 <p><span class="math display">\[Binomial(m,\frac{Y}{n}) \bigwedge_{Y} Hypergeometric(n,Np,N)\]</span></p>
 </section></section><section id="p-transformed-binomial" class="level3"><h3 class="anchored" data-anchor-id="p-transformed-binomial">p Transformed Binomial</h3>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph LR;</span></span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph LR;</span></span>
 <span><span class="st">           A[Binomial &lt;br&gt; Distribution]--&gt;B[Binomial &lt;br&gt; Parent];</span></span>
 <span><span class="st">           B--&gt;C[Mixing Parameter];</span></span>
 <span><span class="st">           C--&gt;D[p transformed &lt;br&gt; Binomial];</span></span>
@@ -495,13 +525,17 @@ window.Quarto = {
 <span><span class="st">           D--&gt;G[p = cy];</span></span>
 <span><span class="st">           G--&gt;GA[Binomial Generalized Beta 4 Distribution];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">1000</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-315aeacd25e42135e9d0" style="width:100%;height:812px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-315aeacd25e42135e9d0">{"x":{"diagram":"graph LR;\n           A[Binomial <br> Distribution]-->B[Binomial <br> Parent];\n           B-->C[Mixing Parameter];\n           C-->D[p transformed <br> Binomial];\n           D-->E[p = 1 - exp_-t_ ];\n           E-->EA[Binomial Exponential <br> Distribution];\n           E-->EB[Binomial Gamma 1 <br> Distribution];\n           E-->EC[Binomial Gamma 2 <br> Distribution];\n           E-->ED[Binomial Generalized <br> Exponential 1 Distribution];\n           E-->EE[Binomial Generalized <br> Exponential 2 Distribution];\n           D-->F[p = exp_-t_ ];\n           F-->FA[Binomial Exponential <br> Distribution];\n           F-->FB[Binomial Gamma 1 <br> Distribution];\n           F-->FC[Binomial Gamma 2 <br> Distribution];\n           F-->FD[Binomial Generalized <br> Exponential 1 Distribution];\n           F-->FE[Binomial Generalized <br> Exponential 2 Distribution];\n           F-->FF[Binomial Variated <br> Exponential Distribution];\n           F-->FG[Binomial Variated <br> Gamma 2,alpha Distribution];\n           F-->FH[Binomial Inverse <br> Gaussian Distribution];\n           D-->G[p = cy];\n           G-->GA[Binomial Generalized Beta 4 Distribution];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <p>Bowman, K. O., Shenton, L. R., Kastenbaum, M. A., &amp; Broman, K. (1992). Overdispersion: Notes on Discrete distributions. Oak Ridge Tennessee : Oak Ridge National Laboratory.</p>
 <p>Alanko, T., &amp; Duffy, J. C. (1996). Compound Binomial distributions for modeling consumption data. Journal of the Royal Statistical society, series D (The Statistician) Vol. 45, No.&nbsp;3 ,269-286.</p>
 <p>Gerstenkorn, T. (2004). A compound of the Generalized Negative Binomial distribution with the Generalized Beta distribution. Central European Science journals, CEJM 2 (4), 527-537.</p>
 </section><section id="log-inverse-distribution-01-domain" class="level3"><h3 class="anchored" data-anchor-id="log-inverse-distribution-01-domain">Log Inverse Distribution [0,1] Domain</h3>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph LR;</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph LR;</span></span>
 <span><span class="st">           A[Binomial &lt;br&gt; Distribution]--&gt;B[Binomial &lt;br&gt; Parent];</span></span>
 <span><span class="st">           B--&gt;C[Mixing Parameter];</span></span>
 <span><span class="st">           C--&gt;D[Log Inverse &lt;br&gt; Distribution &lt;br&gt; 0,1 Domain];</span></span>
@@ -517,12 +551,16 @@ window.Quarto = {
 <span><span class="st">           D--&gt;DK[Binomial Type 2 &lt;br&gt; Log Inverse &lt;br&gt; Generalized &lt;br&gt; Exponential 2 &lt;br&gt; Distribution];</span></span>
 <span><span class="st">           D--&gt;DL[Binomial Type 1 &lt;br&gt; Log Inverse &lt;br&gt; Gamma 3 &lt;br&gt; Distribution];"</span>,width<span class="op">=</span><span class="fl">800</span>,height<span class="op">=</span><span class="fl">1000</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-d2c65a9a84b437234182" style="width:100%;height:812px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2c65a9a84b437234182">{"x":{"diagram":"graph LR;\n           A[Binomial <br> Distribution]-->B[Binomial <br> Parent];\n           B-->C[Mixing Parameter];\n           C-->D[Log Inverse <br> Distribution <br> 0,1 Domain];\n           D-->DA[Binomial Type 1 <br> Log Inverse <br> Exponential Distribution];\n           D-->DB[Binomial Type 2 <br> Log Inverse <br> Exponential Distribution];\n           D-->DC[Binomial Type 1 <br> Log Inverse <br> Gamma 1 Distribution];\n           D-->DD[Binomial Type 2 <br> Log Inverse <br> Gamma 1 Distribution];\n           D-->DE[Binomial Type 1 <br> Log Inverse <br> Gamma 2 Distribution];\n           D-->DF[Binomial Type 2 <br> Log Inverse <br> Gamma 2 Distribution];\n           D-->DG[Binomial Type 1 <br> Log Inverse <br> Generalized <br> Exponential 1 <br> Distribution];\n           D-->DH[Binomial Type 2 <br> Log Inverse <br> Generalized <br> Exponential 1 <br> Distribution];\n           D-->DJ[Binomial Type 1 <br> Log Inverse <br> Generalized <br> Exponential 2 <br> Distribution];\n           D-->DK[Binomial Type 2 <br> Log Inverse <br> Generalized <br> Exponential 2 <br> Distribution];\n           D-->DL[Binomial Type 1 <br> Log Inverse <br> Gamma 3 <br> Distribution];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <p>Grassia, A. (1977). On a family of distributions with argument between 0 and 1 obtained by transformations of the Gamma and derived compound distributions. Australian journal of Statistics, 19 (2) 108-114.</p>
 <p>McDonald, J. B., &amp; Yexiao, J. X. (1995). A generalization of the Beta distribution with applications. Journal of Econometrics 66,133-152.</p>
 </section><section id="cumulative-distribution-function" class="level3"><h3 class="anchored" data-anchor-id="cumulative-distribution-function">Cumulative Distribution Function</h3>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph TB;</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph TB;</span></span>
 <span><span class="st">            A[Binomial &lt;br&gt; Distribution]--&gt;B[Binomial Parent];</span></span>
 <span><span class="st">            B--&gt;C[Mixing Parameter];</span></span>
 <span><span class="st">            C--&gt;D[Cumulative Distribution];</span></span>
@@ -534,13 +572,17 @@ window.Quarto = {
 <span><span class="st">            DB--&gt;DBA[Binomial &lt;br&gt; Kumaraswamy &lt;br&gt; Power Distribution];</span></span>
 <span><span class="st">            DB--&gt;DBB[Binomial &lt;br&gt; Kumaraswamy &lt;br&gt; Exponential &lt;br&gt; Distribution];"</span>,width<span class="op">=</span><span class="fl">1000</span>,height<span class="op">=</span><span class="fl">750</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-419cd1ec09a85a05b33e" style="width:100%;height:487px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-419cd1ec09a85a05b33e">{"x":{"diagram":"graph TB;\n            A[Binomial <br> Distribution]-->B[Binomial Parent];\n            B-->C[Mixing Parameter];\n            C-->D[Cumulative Distribution];\n            D-->DA[Beta Generated <br> Distribution];\n            DA-->DAA[Binomial <br> Beta Exponential <br> Distribution];\n            DA-->DAB[Binomial <br> Beta Generalized <br> Exponential Distribution];\n            DA-->DAC[Binomial <br> Beta Power <br> Distribution];\n            D-->DB[Kumaraswamy <br> Generated <br> Distribution];\n            DB-->DBA[Binomial <br> Kumaraswamy <br> Power Distribution];\n            DB-->DBB[Binomial <br> Kumaraswamy <br> Exponential <br> Distribution];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <p>Eugene, N., Lee, C., &amp; Famoye, F. (2002). Beta-normal distributions and its applications. Communications in Statistics-Theory and Methods 31, 4 ,497-512.</p>
 <p>Nadarajah, S., &amp; Kotz, S. (2006). The Beta Exponential distribution. Reliability engineering and system safety, Vol. 91, Issue 6 ,689-697</p>
 <p>Barreto-Souza, W., Santos, A., &amp; Cordeiro, G. M. (2009). The Beta Generalized Exponential distribution. Journal of Statistical Computation and Simulation , 1-14.</p>
 </section><section id="p-binomial" class="level3"><h3 class="anchored" data-anchor-id="p-binomial">p Binomial</h3>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DiagrammeR</span><span class="op">(</span><span class="st">"graph LR;</span></span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rich-iannone.github.io/DiagrammeR/reference/DiagrammeR.html">DiagrammeR</a></span><span class="op">(</span><span class="st">"graph LR;</span></span>
 <span><span class="st">           A[Binomial &lt;br&gt; Distribution]--&gt;B[ Binomial &lt;br&gt; Parent];</span></span>
 <span><span class="st">           B--&gt;C[Mixing Parameter];</span></span>
 <span><span class="st">           C--&gt;D[p &lt;br&gt; Binomial];</span></span>
@@ -565,6 +607,10 @@ window.Quarto = {
 <span><span class="st">           DB--&gt;DBH[Binomial Truncated &lt;br&gt; Beta Distribution];</span></span>
 <span><span class="st">           DB--&gt;DBI[Binomial Arcsine &lt;br&gt; Distribution];"</span>,width<span class="op">=</span><span class="fl">700</span>,height<span class="op">=</span><span class="fl">1200</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-260a66e017923a78212e" style="width:100%;height:1114px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-260a66e017923a78212e">{"x":{"diagram":"graph LR;\n           A[Binomial <br> Distribution]-->B[ Binomial <br> Parent];\n           B-->C[Mixing Parameter];\n           C-->D[p <br> Binomial];\n           D-->DA[Beyond Beta <br> Distribution];\n           DA-->DAA[Binomial Triangular <br> Distribution];\n           DA-->DAB[Binomial Kumaraswamy 2 <br> Distribution];\n           DA-->DAC[Binomial Kumaraswamy 1 <br> Distribution];\n           DA-->DAD[Binomial Truncated <br> Exponential Distribution];\n           DA-->DAE[Binomial Truncated <br> Gamma Distribution];\n           DA-->DAF[Binomial - MinusLog <br> Distribution];\n           DA-->DAG[Binomial Standard <br> Two Sied Power <br> Distribution];\n           DA-->DAH[Binomial Ogive <br> Distribution];\n           DA-->DAI[Binomial - Two Sided <br> Ogive Distribution];\n           D-->DB[Beta Distribution];\n           DB-->DBA[Beta - Binomial <br> Distribution];\n           DB-->DBB[McDonald Generalized <br> Beta - Binomial <br> Distribution];\n           DB-->DBC[Libby and Novick <br> Generalized Beta - Binomial <br> Distribution];\n           DB-->DBD[Gauss Hypergeometric <br> Binomial Distribution];\n           DB-->DBE[Confluent Hypergeometric <br> Binomial Distribution];\n           DB-->DBF[Binomial Uniform <br> Distribution];\n           DB-->DBG[Binomial Power <br> Function Distribution];\n           DB-->DBH[Binomial Truncated <br> Beta Distribution];\n           DB-->DBI[Binomial Arcsine <br> Distribution];"},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 <p>Karlis, D., &amp; Xekalaki, E. (2006). The Polygonal distributions, ntemational Conference on Mathematical and Statistical modeling in honnor of Enrique Castillo. University of Castilla-La Mancha.</p>
 <p>Jones, M. C. (2009). Kumaraswamy’s distribution: a beta-type distibution with some tractability advantages. Statistical Methodology Vol. 6, Issue 1 ,70-81.</p>
